@@ -46,6 +46,8 @@ pip install -r requirements.txt
 python main.py --model=resnet
 ```
 
+**Note** Parameters can be changed in YAML file.
+
 **🔥 Basic ConvNet**
 
   - Simple Convolutional Network with BatchNorm.
