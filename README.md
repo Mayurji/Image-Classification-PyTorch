@@ -1,2 +1,3 @@
-# CNNs
-Building and Learning Convolutional Neural Networks using PyTorch
+# Convolutional Neural Networks
+
+**Building and Learning Convolutional Neural Networks using PyTorch.**
