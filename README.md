@@ -78,11 +78,37 @@ across GPUs these days.
 
 ![AlexNet Block](Images/alexnet.png)
 
-**🔥 VGGNet**
+<details>
+  <summary>🔥 VGGNet</summary>
+  <p>
+  VGGNet brought in the idea of buliding **a block of network** like a template unlike previous CNN architecture where the network is built layer by layer with increasing complexity.
+  
+  VGG network helps researchers think in terms of block of network. A typical network of convolution would 
+require following steps
+  
+* Conv with padding for maintaining resolution.
+* Activation Function
+* Pooling for spatial downsampling
+  
+Note: I don't recommend running this until you have GPU, the number of parameters is increased by huge number compared
+to AlexNet.
+  
+Changes made for faster convergence and which deviates from VGG Net is learning rate is changed to 0.05 and reduce the
+number channels by 1/4th.
+  
+Check out the loss with these changes, since lr is high compared to typical values, the loss moves drastically and then
+converges.
+  
+*****Without Xavier's Weight Initialization, the model performs poorly.*********************************
 
+  Why VGG is slower than AlexNet?
+
+  One reason is that AlexNet uses (11x11 with a stride of 4), while VGG uses very small receptive fields (3x3 with a
+stride of 1) which makes it slower to move over the image and overall the parameters are 3 times the AlexNet.
+This architecture is VGG-11.
+</p>
+</details>
   ![VGGNet Block](Images/vggnet.png)
-
-  - It brought in the idea of buliding **a block of network** like a template unlike previous CNN architecture where the network is built layer by layer with increasing complexity.
 
 **🔥 NIN**
 
