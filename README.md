@@ -81,7 +81,7 @@ across GPUs these days.
 <details>
   <summary>🔥 VGGNet</summary>
   
-  <p>VGGNet brings in the idea of buliding **a block of network** like a template unlike previous CNN architecture 
+  <p>VGGNet brings in the idea of buliding a block of network like a template unlike previous CNN architecture 
     where the network is built layer by layer with increasing complexity.
   
   VGG network helps researchers think in terms of block of network. A typical network of convolution would 
@@ -109,12 +109,24 @@ This architecture is VGG-11.
 </details>
   
 ![VGGNet Block](Images/vggnet.png)
+<details>
+  <summary>🔥 NIN</summary>
+  NIN - Network In Network
+<p>
+  <strong>Network In Network introduced one of the key concept in deep neural network of dimension downsampling/upsampling using 1x1Conv layer.
+  It applies MLP on the channels for each pixel separately.<strong>
 
-**🔥 NIN**
+  The idea behind NiN is to apply a fully-connected layer at each pixel location (for each height and width). 
+If we tie the weights across each spatial location, we could think of this as a 1×1 convolutional layer 
+or as a fully-connected layer acting independently on each pixel location. Another way to view this is to think
+of each element in the spatial dimension (height and width) as equivalent to an example and a channel as equivalent
+to a feature.
 
-  ![NIN Block](Images/nin.png)
-
-  - **Network In Network** introduced one of the key concept in deep neural network of **dimension downsampling/upsampling using 1x1Conv layer.**
+  NIN introduces the 1x1 Convolution. Smaller batch size results in better performance even though it is slow.
+  </p>
+</details>
+  
+![NIN Block](Images/nin.png)
 
 **🔥 GoogLeNet**
 
