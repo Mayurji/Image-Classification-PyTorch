@@ -94,6 +94,6 @@ python main.py --model=resnet
 
 **🔥 Squeeze And Excitation Network**
 
-  ![SENet Block](Images/senet.jpg)
+  ![SENet Block](Images/senet.png)
 
   - Squeeze and Excitation Network models the interdependencies of channels in the images.
