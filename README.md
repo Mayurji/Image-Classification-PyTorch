@@ -6,18 +6,28 @@
 
 <details>
   <summary> Convolutional Neural Networks</summary>
-  🔥 Basic ConvNet
+      🔥 Basic ConvNet
+      <br>
+      🔥 AlexNet
   <br>
-  **🔥 AlexNet** \
-  **🔥 VGGNet** \
-  **🔥 NIN** \
-  **🔥 GoogLeNet** \
-  **🔥 BatchNorm + ConvNet** \
-  **🔥 ResNet** \
-  **🔥 DenseNet** \
-  **🔥 SE Network** \
-  **🚀 EfficientNet Network** \
-  **🚀 MLPMixer Network**
+      🔥 VGGNet
+  <br>
+      🔥 NIN
+  <br>
+      🔥 GoogLeNet
+  <br>
+      🔥 BatchNorm + ConvNet
+  <br>
+      🔥 ResNet
+  <br>
+      🔥 DenseNet
+  <br>
+      🔥 SE Network
+  <br>
+      🚀 EfficientNet Network
+  <br>
+      🚀 MLPMixer Network
+  <br>
 </details>
 
 ### Create Environment
