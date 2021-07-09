@@ -22,7 +22,7 @@
       <br>
       🔥 DenseNet
       <br>
-      🔥 SE Network
+      🔥 Squeeze and Excitation Network
       <br>
       🚀 EfficientNet Network
       <br>
