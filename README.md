@@ -6,7 +6,8 @@
 
 <details>
   <summary> Convolutional Neural Networks</summary>
-  **🔥 Basic ConvNet** \
+  🔥 Basic ConvNet
+  <br>
   **🔥 AlexNet** \
   **🔥 VGGNet** \
   **🔥 NIN** \
