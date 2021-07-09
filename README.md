@@ -116,7 +116,7 @@ This architecture is VGG-11.
   NIN - Network In Network
 <p>
   <strong>Network In Network introduced one of the key concept in deep neural network of dimension downsampling/upsampling using 1x1Conv layer.
-  It applies MLP on the channels for each pixel separately.<strong>
+  It applies MLP on the channels for each pixel separately.</strong>
 
   The idea behind NiN is to apply a fully-connected layer at each pixel location (for each height and width). 
 If we tie the weights across each spatial location, we could think of this as a 1×1 convolutional layer 
