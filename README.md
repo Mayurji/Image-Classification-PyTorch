@@ -94,7 +94,7 @@ python main.py --model=resnet
 
 <details>
 <summary>🔥 Squeeze And Excitation Network</summary>
-<p>Squeeze and Excitation Network
+<p>
 A typical convolution network has kernels running through image channels and combining
 the feature maps generated per channel. For each channel, we'll have separate kernel which
 learns the weights through backpropagation.
