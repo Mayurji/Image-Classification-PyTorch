@@ -91,3 +91,9 @@ python main.py --model=resnet
   ![DenseNet Block](Images/Densenet.png)
 
   - Building upon ResNet, DenseNet introduced the idea of **concatenating** the previous layers output and as well the inputs to the next layers.
+
+**🔥 Squeeze And Excitation Network**
+
+  ![DenseNet Block](Images/senet.png)
+
+  - Squeeze and Excitation Network models the interdependencies of channels in the images.
