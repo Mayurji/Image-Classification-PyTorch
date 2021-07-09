@@ -4,17 +4,20 @@
 
 ### Content
 
-**🔥 Basic ConvNet** \
-**🔥 AlexNet** \
-**🔥 VGGNet** \
-**🔥 NIN** \
-**🔥 GoogLeNet** \
-**🔥 BatchNorm + ConvNet** \
-**🔥 ResNet** \
-**🔥 DenseNet** \
-**🔥 SE Network** \
-**🚀 EfficientNet Network** \
-**🚀 MLPMixer Network**
+<details>
+  <summary> Convolutional Neural Networks</summary>
+  **🔥 Basic ConvNet** \
+  **🔥 AlexNet** \
+  **🔥 VGGNet** \
+  **🔥 NIN** \
+  **🔥 GoogLeNet** \
+  **🔥 BatchNorm + ConvNet** \
+  **🔥 ResNet** \
+  **🔥 DenseNet** \
+  **🔥 SE Network** \
+  **🚀 EfficientNet Network** \
+  **🚀 MLPMixer Network**
+</details>
 
 ### Create Environment
 ```python
