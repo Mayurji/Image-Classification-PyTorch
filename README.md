@@ -8,8 +8,7 @@
   <summary> Convolutional Neural Networks</summary>
       🔥 Basic ConvNet
       <br>
-      <summary>🔥 AlexNet</summary>
-      
+      🔥 AlexNet
       <br>
       🔥 VGGNet
       <br>
