@@ -1,8 +1,8 @@
 # Convolutional Neural Networks
 
-**Building and Learning Convolutional Neural Networks using PyTorch.**
+**Learning and Building Convolutional Neural Networks using PyTorch.**
 
-### CNN Architectures
+### Content
 
 **🔥 Basic ConvNet** \
 **🔥 AlexNet** \
@@ -15,3 +15,19 @@
 **🔥 SE Network** \
 **🚀 EfficientNet Network** \
 **🚀 MLPMixer Network**
+
+### Create Environment
+```python
+python -m venv CNNs 
+source CNNs/bin/activate 
+```
+
+### Installation
+```python
+pip install -r requirements.txt
+```
+
+### Run
+```python
+python main.py --model=resnet
+```
