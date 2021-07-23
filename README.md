@@ -306,14 +306,14 @@ Width muliplier (denoted by α) is a global hyperparameter that is used to const
 computionally expensive models.Its value lies between 0 and 1.For a given layer and value of α, the 
 number of input channels 'M' becomes α * M and the number of output channels 'N' becomes α * N hence 
 reducing the cost of computation and size of the model at the cost of performance.The computation cost 
-and number of parameters decrease roughly by a factor of α2.Some commonly used values of α are 1,0.75,0.5,0.25.
+and number of parameters decrease roughly by a factor of α**2.Some commonly used values of α are 1,0.75,0.5,0.25.
 
 * Resolution Multiplier
 
 The second parameter introduced in MobileNets is called resolution multiplier and is denoted by ρ.This 
 hyperparameter is used to decrease the resolution of the input image and this subsequently reduces the 
 input to every layer by the same factor. For a given value of ρ the resolution of the input image becomes 
-224 * ρ. This reduces the computational cost by a factor of ρ2.
+224 * ρ. This reduces the computational cost by a factor of ρ**2.
 
 The above parameters helps in trade-off between latency (speed of inference) and accuracy.
 
