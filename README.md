@@ -56,6 +56,7 @@ python main.py --model=resnet
 <details>
   <summary>🔥 AlexNet</summary>
 <p>
+
 Before AlexNet, SIFT(scale-invariant feature transform), SURF or HOG were some of the hand tuned feature extractors for Computer Vision.
 
   In AlexNet, Interestingly in the lowest layers of the network, the model learned feature extractors that resembled some traditional filters.
@@ -77,9 +78,8 @@ across GPUs these days.
   Note:
     Instead of using ImageNet, I am using MNIST and resizing the image to 224 x 224 dimension to make it justify with the AlexNet architecture.
 </p>
- <img src="Images/alexnet.png" alt="AlexNet"> 
   
-  <!--![AlexNet Block](Images/alexnet.png)-->
+ <img src="Images/alexnet.png" alt="AlexNet"> 
 </details>
 
 
@@ -112,9 +112,8 @@ Why VGG is slower than AlexNet?
 stride of 1) which makes it slower to move over the image and overall the parameters are 3 times the AlexNet.
 This architecture is VGG-11.
   </p>
+<img src="Images/vgg.png" alt="VGGNet">
 </details>
-  
-![VGGNet Block](Images/vggnet.png)
 <details>
   <summary>🔥 NIN</summary>
   NIN - Network In Network
@@ -130,9 +129,10 @@ to a feature.
 
   NIN introduces the 1x1 Convolution. Smaller batch size results in better performance even though it is slow.
   </p>
-</details>
   
-![NIN Block](Images/nin.png)
+<img src="Images/nin.png" alt="NIN">
+</details>
+ 
 <details>
 <summary>🔥 GoogLeNet</summary>
 <p>
@@ -152,18 +152,15 @@ across different filters.
 * 1×1 convolutions reduce channel dimensionality on a per-pixel level. Maximum pooling reduces the resolution.
 * If you're wondering how these dimensions were decided, it is based on trial and error & based on ImageNet 
 Dataset.
-  
 </p>
+<img src="Images/googlenet.png" alt="GoogLeNet">
 </details>
-
-![GoogLeNet Block](Images/googlenet.png)
-  
-**🔥 BatchNorm + ConvNet**
-
-  ![BatchNorm Block](Images/batchnorm.png)
-
+<details>
+<summary>🔥 BatchNorm + ConvNet</summary>
   - BatchNorm was introduced as a concept to **normalize the mini-batches traversing through the layer** and had an impactful results having **regularization** effect. But why BatchNorm is effective is quite unclear? the author suggests that BatchNorm reduce internal variant shift but other researchers  pointed out that the effects which batchNorm is effective against is not related to covariant shift. It is still widely discussed topic in DL.
-
+  </p>
+<img src="Images/batchnorm.png" alt="BatchNorm + ConvNet">
+</details>
 <details>
 <summary>🔥 ResNet</summary>
 <p>
@@ -194,10 +191,8 @@ There are 4 convolutional layers in each module (excluding the 1×1 convolutiona
 Together with the first 7×7 convolutional layer and the final fully-connected layer, there are 
 18 layers in total. Therefore, this model is commonly known as ResNet-18.
 </p>
+<img src="Images/resnet.png" alt="ResNet">
 </details>
-
-![ResNet Block](Images/resnet.png)
-
 <details>
 <summary>🔥 DenseNet</summary>
   <p>
@@ -223,10 +218,8 @@ why DenseNet is Dense?
 Two blocks comprise DenseNet, one is DenseBlock for concat operation and other is 
 transition layer for controlling channels meaning dimensions (recall 1x1 Conv).
   </p>
+<img src="Images/Densenet.png" alt="DenseNet">
 </details>
-
-![DenseNet Block](Images/Densenet.png)
-
 <details>
 <summary>🔥 Squeeze And Excitation Network</summary>
 <p>
@@ -256,10 +249,8 @@ ResNet or Inception V1 etc.
 
   Reference: https://amaarora.github.io/2020/07/24/SeNet.html
 </p>
+<img src="Images/senet.png" alt="SENet">
 </details>
-
-![SENet Block](Images/senet.png)
-
 <details>
 <summary>🔥 MLP-Mixer</summary>
   <p>
@@ -282,14 +273,10 @@ done throughout the network using Layer Normalization.
 * It passed into Global Average Pooling and then 
 into Fully connected layer.
 
-
 Best tutorial to learn about einops: https://github.com/arogozhnikov/einops/blob/master/docs
-
   </p>
+<img src="Images/mlpmixer.png" alt="MLP-Mixer">
 </details>
-
-![MLP-Mixer Block](Images/mlpmixer.png)
-
 <details>
 <summary>🔥 MobileNet</summary>
 <p>
