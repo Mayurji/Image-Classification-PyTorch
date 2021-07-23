@@ -6,53 +6,7 @@
 
 <details>
   <summary> Convolutional Neural Networks</summary>
-      🔥 Basic ConvNet
-      <br>
-      🔥 AlexNet
-      <br>
-      🔥 VGGNet
-      <br>
-      🔥 NIN
-      <br>
-      🔥 GoogLeNet
-      <br>
-      🔥 BatchNorm + ConvNet
-      <br>
-      🔥 ResNet
-      <br>
-      🔥 DenseNet
-      <br>
-      🔥 Squeeze and Excitation Network
-      <br>
-      🔥 MLP-Mixer Network
-      <br>
-      🔥 MobileNet Network
-      <br>
-      
-</details>
-
-### Create Environment
-```python
-python -m venv CNNs 
-source CNNs/bin/activate 
-```
-
-### Installation
-```python
-pip install -r requirements.txt
-```
-
-### Run
-```python
-python main.py --model=resnet
-```
-
-**Note** Parameters can be changed in YAML file.
-
-**🔥 Basic ConvNet**
-
-  - Simple Convolutional Network with BatchNorm.
-
+  
 <details>
   <summary>🔥 AlexNet</summary>
 <p>
@@ -81,8 +35,6 @@ across GPUs these days.
   
  <img src="Images/alexnet.png" alt="AlexNet"> 
 </details>
-
-
 
 <details>
   <summary>🔥 VGGNet</summary>
@@ -309,3 +261,24 @@ The above parameters helps in trade-off between latency (speed of inference) and
 
 MobileNet is 28 layers neural net represented by both the depthwise convolution and pointwise convolution.</p>
 </details>
+
+</details>
+<!--##########################################################################################-->
+
+### Create Environment
+```python
+python -m venv CNNs 
+source CNNs/bin/activate 
+```
+
+### Installation
+```python
+pip install -r requirements.txt
+```
+
+### Run
+```python
+python main.py --model=resnet
+```
+
+**Note** Parameters can be changed in YAML file.
