@@ -24,9 +24,9 @@
       <br>
       🔥 Squeeze and Excitation Network
       <br>
-      🔥 MLPMixer Network
+      🔥 MLP-Mixer Network
       <br>
-      🚀 MobileNet Network
+      🔥 MobileNet Network
       <br>
       
 </details>
