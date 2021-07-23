@@ -38,11 +38,12 @@ across GPUs these days.
 
 <details>
   <summary>🔥 VGGNet</summary>
+  <p>
+    
+ VGGNet brings in the idea of buliding a block of network like a template unlike previous CNN architecture 
+ where the network is built layer by layer with increasing complexity.
   
-  <p>VGGNet brings in the idea of buliding a block of network like a template unlike previous CNN architecture 
-    where the network is built layer by layer with increasing complexity.
-  
-  VGG network helps researchers think in terms of block of network. A typical network of convolution would 
+ VGG network helps researchers think in terms of block of network. A typical network of convolution would 
 require following steps
   
 * Conv with padding for maintaining resolution.
@@ -68,8 +69,8 @@ This architecture is VGG-11.
 </details>
 <details>
   <summary>🔥 NIN</summary>
-  NIN - Network In Network
 <p>
+  
   <strong>Network In Network introduced one of the key concept in deep neural network of dimension downsampling/upsampling using 1x1Conv layer.
   It applies MLP on the channels for each pixel separately.</strong>
 
@@ -84,13 +85,13 @@ to a feature.
   
 <img src="Images/nin.png" alt="NIN">
 </details>
- 
 <details>
 <summary>🔥 GoogLeNet</summary>
 <p>
+  
 It combined ideas from NIN and VGG network introducing InceptionV1 also known as GoogLeNet. 
 
-  In AlexNet, we've used 11x11 Conv, in NIN, we used 1x1 Conv. And in this paper, we identify
+In AlexNet, we've used 11x11 Conv, in NIN, we used 1x1 Conv. And in this paper, we identify
 among different kernel, which sized convolutional kernels are best. It is the version 1 of Inception
 model. 
 
@@ -109,14 +110,16 @@ Dataset.
 </details>
 <details>
 <summary>🔥 BatchNorm + ConvNet</summary>
-  - BatchNorm was introduced as a concept to **normalize the mini-batches traversing through the layer** and had an impactful results having **regularization** effect. But why BatchNorm is effective is quite unclear? the author suggests that BatchNorm reduce internal variant shift but other researchers  pointed out that the effects which batchNorm is effective against is not related to covariant shift. It is still widely discussed topic in DL.
+<p>
+  BatchNorm was introduced as a concept to **normalize the mini-batches traversing through the layer** and had an impactful results having **regularization** effect. But why BatchNorm is effective is quite unclear? the author suggests that BatchNorm reduce internal variant shift but other researchers  pointed out that the effects which batchNorm is effective against is not related to covariant shift. It is still widely discussed topic in DL.
   </p>
 <img src="Images/batchnorm.png" alt="BatchNorm + ConvNet">
 </details>
 <details>
 <summary>🔥 ResNet</summary>
 <p>
-  ResNet Architecture has huge influence in current DNN architectures. It introduces the idea of **skip connection**, a concept of **adding** an unfiltered input to the conv layers.
+  
+ResNet Architecture has huge influence in current DNN architectures. It introduces the idea of **skip connection**, a concept of **adding** an unfiltered input to the conv layers.
   
 Why ResNet?
 
@@ -148,6 +151,7 @@ Together with the first 7×7 convolutional layer and the final fully-connected l
 <details>
 <summary>🔥 DenseNet</summary>
   <p>
+    
 Building upon ResNet, DenseNet introduced the idea of **concatenating** the previous layers 
 output and as well the inputs to the next layers.
     
@@ -175,6 +179,7 @@ transition layer for controlling channels meaning dimensions (recall 1x1 Conv).
 <details>
 <summary>🔥 Squeeze And Excitation Network</summary>
 <p>
+  
 A typical convolution network has kernels running through image channels and combining
 the feature maps generated per channel. For each channel, we'll have separate kernel which
 learns the weights through backpropagation.
@@ -206,7 +211,8 @@ ResNet or Inception V1 etc.
 <details>
 <summary>🔥 MLP-Mixer</summary>
   <p>
-    This particular network doesn't come under convolutional networks as the key idea is to use simple MLP architecture.
+    
+This particular network doesn't come under convolutional networks as the key idea is to use simple MLP architecture.
 
 MLP-Mixer is a multi-layer perceptron based model, it uses common techniques like non-linearites, matrix multiplication,
 normalization, skip connections etc. This paper is very interesting to the fact that when MLP was introduced, it was 
