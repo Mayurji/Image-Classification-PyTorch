@@ -292,4 +292,4 @@ Best tutorial to learn about einops: https://github.com/arogozhnikov/einops/blob
 <p>
   TBC
 </p>
-<details>
+</details>
