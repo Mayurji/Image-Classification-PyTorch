@@ -6,7 +6,7 @@
 
 <details>
   <summary> Convolutional Neural Networks</summary>
-  
+<br>
 <details>
   <summary>🔥 AlexNet</summary>
 <p>
