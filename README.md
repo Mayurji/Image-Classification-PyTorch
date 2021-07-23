@@ -24,10 +24,11 @@
       <br>
       🔥 Squeeze and Excitation Network
       <br>
+      🔥 MLPMixer Network
+      <br>
       🚀 MobileNet Network
       <br>
-      🚀 MLPMixer Network
-      <br>
+      
 </details>
 
 ### Create Environment
