@@ -213,3 +213,5 @@ Best tutorial to learn about einops: https://github.com/arogozhnikov/einops/blob
 
   </p>
 </details>
+
+![MLP-Mixer Block](Images/mlpmixer.png)
