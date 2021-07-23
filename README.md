@@ -77,9 +77,10 @@ across GPUs these days.
   Note:
     Instead of using ImageNet, I am using MNIST and resizing the image to 224 x 224 dimension to make it justify with the AlexNet architecture.
 </p>
+![AlexNet Block](Images/alexnet.png)
 </details>
 
-![AlexNet Block](Images/alexnet.png)
+
 
 <details>
   <summary>🔥 VGGNet</summary>
