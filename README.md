@@ -149,11 +149,34 @@ to a feature.
 
   - ResNet Architecture has huge influence in current DNN architectures. It introduces the idea of **skip connection**, a concept of **adding** an unfiltered input to the conv layers.
 
-**🔥 DenseNet**
+<details>
+<summmary>🔥 DenseNet</summary>
+  <p>
+Building upon ResNet, DenseNet introduced the idea of **concatenating** the previous layers 
+output and as well the inputs to the next layers.
+    
+In ResNet, we see how the skip connection added as identity function from the inputs
+to interact with the Conv layers. But in DenseNet, we see instead of adding skip 
+connection to Conv layers, we can append or concat the output of identity function
+with output of Conv layers.
 
-  ![DenseNet Block](Images/Densenet.png)
+In ResNet, it is little tedious to make the dimensions to match for adding the skip
+connection and Conv Layers, but it is much simpler in DenseNet, as we concat the 
+both the X and Conv's output.
 
-  - Building upon ResNet, DenseNet introduced the idea of **concatenating** the previous layers output and as well the inputs to the next layers.
+The key idea or the reason its called DenseNet is because the next layers not only get
+the input from previous layer but also preceeding layers before the previous layer. So 
+the next layer becomes dense as it loaded with output from previous layers.
+
+Check Figure 7.7.2 from https://d2l.ai/chapter_convolutional-modern/densenet.html for 
+why DenseNet is Dense?
+
+Two blocks comprise DenseNet, one is DenseBlock for concat operation and other is 
+transition layer for controlling channels meaning dimensions (recall 1x1 Conv).
+  </p>
+</details>
+
+![DenseNet Block](Images/Densenet.png)
 
 <details>
 <summary>🔥 Squeeze And Excitation Network</summary>
