@@ -266,13 +266,15 @@ MLP-Mixer is a multi-layer perceptron based model, it uses common techniques lik
 normalization, skip connections etc. This paper is very interesting to the fact that when MLP was introduced, it was 
 particular made upfront that the MLP architectures cannot capture translation invariance in an image. 
 
-Let's see how things have changed. The Network uses a block of MLP Block with two linear layers and 1 activation function
-GELU unit. Along with MLPBlock, there are two simple small block called as token mixer and channel mixer.
+Let's see how things have changed. The Network uses a block of MLP Block with two linear layers and one activation function
+GELU unit. Along with MLPBlock, there are two simple small block called as token mixer and channel mixer. Normalization is 
+done throughout the network using Layer Normalization.
 
 * First, the image is converted into patches
 * These patches are also called as tokens.
-* In Token Mixer, we mix these tokens using MLP.
-* In Channel Mixer, we mix the channels using MLP.
+* MLP is a Feedforward network.
+* In Token Mixer, we mix these tokens using MLP, it learns spatial locations.
+* In Channel Mixer, we mix the channels using MLP, it learns channel dependencies.
 * The we combine of channel mixer and token mixer.
 * It passed into Global Average Pooling and then 
 into Fully connected layer.
@@ -284,3 +286,10 @@ Best tutorial to learn about einops: https://github.com/arogozhnikov/einops/blob
 </details>
 
 ![MLP-Mixer Block](Images/mlpmixer.png)
+
+<details>
+<summary>🔥 MobileNet</summary>
+<p>
+  TBC
+</p>
+<details>
