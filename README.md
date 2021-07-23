@@ -130,27 +130,73 @@ to a feature.
 </details>
   
 ![NIN Block](Images/nin.png)
+<details>
+<summary>🔥 GoogLeNet</summary>
+<p>
+It combined ideas from NIN and VGG network introducing InceptionV1 also known as GoogLeNet. 
 
-**🔥 GoogLeNet**
+  In AlexNet, we've used 11x11 Conv, in NIN, we used 1x1 Conv. And in this paper, we identify
+among different kernel, which sized convolutional kernels are best. It is the version 1 of Inception
+model. 
 
-  ![GoogLeNet Block](Images/googlenet.png)
+GoogLeNet introduces the concept of parallel concatenation of networks. We bulid Inception block and 
+which is repeated in the architecture.
 
-  - It combined ideas from NIN and VGG network introducing InceptionV1 also known as GoogLeNet. 
+Some intution on the architecture, since the various different sized filters are at work, different spatial
+relations are extracted by different filters efficiently. It also allocates different amt of parameters
+across different filters.
 
+* 1×1 convolutions reduce channel dimensionality on a per-pixel level. Maximum pooling reduces the resolution.
+* If you're wondering how these dimensions were decided, it is based on trial and error & based on ImageNet 
+Dataset.
+  
+</p>
+</details>
+
+![GoogLeNet Block](Images/googlenet.png)
+  
 **🔥 BatchNorm + ConvNet**
 
   ![BatchNorm Block](Images/batchnorm.png)
 
   - BatchNorm was introduced as a concept to **normalize the mini-batches traversing through the layer** and had an impactful results having **regularization** effect. But why BatchNorm is effective is quite unclear? the author suggests that BatchNorm reduce internal variant shift but other researchers  pointed out that the effects which batchNorm is effective against is not related to covariant shift. It is still widely discussed topic in DL.
 
-**🔥 ResNet**
+<details>
+<summary>🔥 ResNet</summary>
+<p>
+  ResNet Architecture has huge influence in current DNN architectures. It introduces the idea of **skip connection**, a concept of **adding** an unfiltered input to the conv layers.
+  
+Why ResNet?
 
-  ![ResNet Block](Images/resnet.png)
+To understand the network as we add more layers, does it becomes more expressive of the
+task in hand or otherwise.
 
-  - ResNet Architecture has huge influence in current DNN architectures. It introduces the idea of **skip connection**, a concept of **adding** an unfiltered input to the conv layers.
+Key idea of ResNet is adding more layers which acts as a Identity function, i.e. if our
+underlying mapping function which the network is trying to learn is F(x) = x, then instead
+of trying to learn F(x) with Conv layers between them, we can directly add an skip connection
+to tend the weight and biases of F(x) to zero. This is part of the explanation from D2L.
+Adding new layer led to ResNet Block in the ResNet Architecture.
+
+In ResNet block, in addition to typical Conv layers the authors introduce a parallel identity 
+mapping skipping the conv layers to directly connect the input with output of conv layers.
+A such connection is termed as Skip Connection or Residual connection.
+
+Things to note while adding the skip connection to output conv block is the dimensions.Important
+to note, as mentioned earlier in NIN network, we can use 1x1 Conv to increase and decrease the 
+dimension.
+
+In the code block, we have built ResNet18 architecture:
+
+There are 4 convolutional layers in each module (excluding the 1×1 convolutional layer). 
+Together with the first 7×7 convolutional layer and the final fully-connected layer, there are 
+18 layers in total. Therefore, this model is commonly known as ResNet-18.
+</p>
+</details>
+
+![ResNet Block](Images/resnet.png)
 
 <details>
-<summmary>🔥 DenseNet</summary>
+<summary>🔥 DenseNet</summary>
   <p>
 Building upon ResNet, DenseNet introduced the idea of **concatenating** the previous layers 
 output and as well the inputs to the next layers.
