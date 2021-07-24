@@ -268,7 +268,28 @@ The above parameters helps in trade-off between latency (speed of inference) and
 MobileNet is 28 layers neural net represented by both the depthwise convolution and pointwise convolution.</p>
 </details>
 
+<details>
+  <summary>🚀 Xception</summary>
 </details>
+<details>
+  <summary>🚀 ResNeXt</summary>
+</details>
+<details>
+  <summary>🚀 MobileNetV2</summary>
+  </details>
+<details>
+  <summary>🚀 Inception-v3</summary>
+</details>
+<details>
+  <summary>🚀 SqueezeNet</summary>
+</details>
+<details>
+  <summary>🚀 EfficientNet</summary>
+</details>
+
+🔥 - Up and Running
+🚀 - Inprogress
+
 <!--##########################################################################################-->
 
 ### Create Environment
