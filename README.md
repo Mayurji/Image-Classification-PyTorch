@@ -296,13 +296,13 @@ the performance.
     - By using 3×1 and 1×3 filters, number of parameters = 3×1+1×3=6
     - Number of parameters is reduced by 33%
 
-* If we looking into InceptionV1 i.e. GoogLeNet, we have inception block which uses 5x5 kernel and 3x3 
-kernel, this technique can reduce the number of parameters.
+* If we look into InceptionV1 i.e. GoogLeNet, we have inception block which uses 5x5 kernel and 3x3 
+kernel, factorizing technique can reduce the number of parameters in the networks.
 
 Other Changes:
 
 From InceptionV1, we bring in Auxillary classifier which acts as regularizer. We also see, efficient
-grid size reduction using factorization instead of standard pooling which expensive and greedy operation.
+grid size reduction using factorization instead of standard pooling which is expensive and greedy operation.
 Label smoothing, to prevent a particular label from dominating all other class.
 </p>
 <img src="Images/inceptionv3.png" alt="InceptionV3">
