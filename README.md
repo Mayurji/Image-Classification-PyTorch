@@ -276,7 +276,7 @@ MobileNet is 28 layers neural net represented by both the depthwise convolution 
 </details>
 <details>
   <summary>🚀 MobileNetV2</summary>
-  </details>
+</details>
 <details>
   <summary>🚀 Inception-v3</summary>
 </details>
@@ -286,7 +286,7 @@ MobileNet is 28 layers neural net represented by both the depthwise convolution 
 <details>
   <summary>🚀 EfficientNet</summary>
 </details>
-
+</details>
 🔥 - Up and Running
 🚀 - Inprogress
 
