@@ -2,6 +2,11 @@
 
 **Learning and Building Convolutional Neural Networks using PyTorch.**
 
+### What is covered?
+* Learn basics of CNN.
+* Understanding different CNN architectures.
+* Difference between architectures and its evolution.
+
 ### Content
 
 <details>
@@ -345,4 +350,4 @@ pip install -r requirements.txt
 python main.py --model=resnet
 ```
 
-**Note** Parameters can be changed in YAML file.
+**Note:** Parameters can be changed in YAML file. The module supports only two datasets, MNIST and CIFAR-10, but you can modify the dataset file and include any other datasets.
