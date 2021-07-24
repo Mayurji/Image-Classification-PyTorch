@@ -65,7 +65,7 @@ Why VGG is slower than AlexNet?
 stride of 1) which makes it slower to move over the image and overall the parameters are 3 times the AlexNet.
 This architecture is VGG-11.
   </p>
-<img src="Images/vgg.png" alt="VGGNet">
+<img src="Images/vggnet.png" alt="VGGNet">
 </details>
 <details>
   <summary>🔥 NIN</summary>
