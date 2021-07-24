@@ -270,9 +270,43 @@ MobileNet is 28 layers neural net represented by both the depthwise convolution 
  - Depthwise convolution is the channel-wise n×n spatial convolution. 
  Suppose in the figure above, we have 5 channels, then we will have 5 n×n spatial convolution.
 
- - Pointwise convolution actually is the 1×1 convolution to change the dimension.</p>
+ - Pointwise convolution actually is the 1×1 convolution to change the dimension.
+</p>
+<img src="Images/mobilenetv1.png" alt="MobileNetV1">
 </details>
+<details>
+  <summary>🚀 Inception-v3</summary>
+  <p>
+      
+"The Inception deep convolutional architecture was introduced as GoogLeNet, here named Inception-v1. 
+Later the Inception architecture was refined in various ways, first by the introduction of batch 
+normalization (Inception-v2). Later by additional factorization ideas in the third iteration 
+which is referred as Inception-v3.”
 
+Factorizing Convolution: Idea is to decrease the number of connections/parameters without reducing
+the performance.
+
+* Factorizing large kernel into two similar smaller kernels
+    - Using 1 5x5 kernel, number of parameters is 5x5=25
+    - Using 2 3x3 kernel instead of one 5x5, gives 3x3 + 3x3 = 18 parameters.
+    - Number of parameter is reduced by 28%.
+
+* Factorizing large kernel into two assimilar smaller kernels
+    - By using 3×3 filter, number of parameters = 3×3=9
+    - By using 3×1 and 1×3 filters, number of parameters = 3×1+1×3=6
+    - Number of parameters is reduced by 33%
+
+* If we looking into InceptionV1 i.e. GoogLeNet, we have inception block which uses 5x5 kernel and 3x3 
+kernel, this technique can reduce the number of parameters.
+
+Other Changes:
+
+From InceptionV1, we bring in Auxillary classifier which acts as regularizer. We also see, efficient
+grid size reduction using factorization instead of standard pooling which expensive and greedy operation.
+Label smoothing, to prevent a particular label from dominating all other class.
+</p>
+<img src="Images/inceptionv3.png" alt="InceptionV3">
+</details>
 <details>
   <summary>🚀 Xception</summary>
 </details>
@@ -281,9 +315,6 @@ MobileNet is 28 layers neural net represented by both the depthwise convolution 
 </details>
 <details>
   <summary>🚀 MobileNetV2</summary>
-</details>
-<details>
-  <summary>🚀 Inception-v3</summary>
 </details>
 <details>
   <summary>🚀 SqueezeNet</summary>
