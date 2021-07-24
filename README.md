@@ -2,11 +2,6 @@
 
 **Learning and Building Convolutional Neural Networks using PyTorch.**
 
-### What is covered?
-* Learn basics of CNN.
-* Understanding different CNN architectures.
-* Difference between architectures and its evolution.
-
 ### Content
 
 <details>
