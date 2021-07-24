@@ -238,7 +238,7 @@ Best tutorial to learn about einops: https://github.com/arogozhnikov/einops/blob
 <details>
 <summary>🔥 MobileNet</summary>
 <p>
-
+  
 A convolutional neural network with large number of layers is expensive, both interms of memory and the 
 hardware requirement for inference and thus deploying such models in mobile devices is not feasible.
 
@@ -254,18 +254,23 @@ Width muliplier (denoted by α) is a global hyperparameter that is used to const
 computionally expensive models.Its value lies between 0 and 1.For a given layer and value of α, the 
 number of input channels 'M' becomes α * M and the number of output channels 'N' becomes α * N hence 
 reducing the cost of computation and size of the model at the cost of performance.The computation cost 
-and number of parameters decrease roughly by a factor of α**2.Some commonly used values of α are 1,0.75,0.5,0.25.
+and number of parameters decrease roughly by a factor of α2.Some commonly used values of α are 1,0.75,0.5,0.25.
 
 * Resolution Multiplier
 
 The second parameter introduced in MobileNets is called resolution multiplier and is denoted by ρ.This 
 hyperparameter is used to decrease the resolution of the input image and this subsequently reduces the 
 input to every layer by the same factor. For a given value of ρ the resolution of the input image becomes 
-224 * ρ. This reduces the computational cost by a factor of ρ**2.
+224 * ρ. This reduces the computational cost by a factor of ρ2.
 
 The above parameters helps in trade-off between latency (speed of inference) and accuracy.
 
-MobileNet is 28 layers neural net represented by both the depthwise convolution and pointwise convolution.</p>
+MobileNet is 28 layers neural net represented by both the depthwise convolution and pointwise convolution.
+
+ - Depthwise convolution is the channel-wise n×n spatial convolution. 
+ Suppose in the figure above, we have 5 channels, then we will have 5 n×n spatial convolution.
+
+ - Pointwise convolution actually is the 1×1 convolution to change the dimension.</p>
 </details>
 
 <details>
