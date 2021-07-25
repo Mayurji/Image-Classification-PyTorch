@@ -2,6 +2,8 @@
 
 **Learning and Building Convolutional Neural Networks using PyTorch.**
 
+![Convolutional Neural Network](Images/cnn.png)
+
 ### Content
 
 <details>
@@ -33,7 +35,7 @@ across GPUs these days.
     Instead of using ImageNet, I am using MNIST and resizing the image to 224 x 224 dimension to make it justify with the AlexNet architecture.
 </p>
   
- <img src="Images/alexnet.png" alt="AlexNet"> 
+ <img src="Images/alexnet.png" alt="AlexNet">
 </details>
 
 <details>
