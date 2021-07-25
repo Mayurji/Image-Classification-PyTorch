@@ -1,6 +1,6 @@
 # Convolutional Neural Networks
 
-**Learning and Building Convolutional Neural Networks using PyTorch.**
+<center><strong>Learning and Building Convolutional Neural Networks using PyTorch.</strong></center>
 
 ![Convolutional Neural Network](Images/cnn.jpg)
 
