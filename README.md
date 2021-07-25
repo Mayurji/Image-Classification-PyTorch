@@ -275,7 +275,7 @@ MobileNet is 28 layers neural net represented by both the depthwise convolution 
 <img src="Images/mobilenetv1.png" alt="MobileNetV1">
 </details>
 <details>
-  <summary>🚀 Inception-v3</summary>
+  <summary>🔥 InceptionV3</summary>
   <p>
       
 "The Inception deep convolutional architecture was introduced as GoogLeNet, here named Inception-v1. 
@@ -308,7 +308,7 @@ Label smoothing, to prevent a particular label from dominating all other class.
 <img src="Images/inceptionv3.png" alt="InceptionV3">
 </details>
 <details>
-  <summary>🚀 Xception</summary>
+  <summary>🔥 Xception</summary>
   <p>
     
 The network uses a modified version of Depthwise Seperable Convolution. It combines
