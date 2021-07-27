@@ -355,7 +355,7 @@
     We can think of cardinality as the set of separate conv block representing same complexity as 
     when those blocks are combined together to make a single block.
 
-Blog: https://towardsdatascience.com/review-resnext-1st-runner-up-of-ilsvrc-2016-image-classification-15d7f17b42ac
+<img src="https://towardsdatascience.com/review-resnext-1st-runner-up-of-ilsvrc-2016-image-classification-15d7f17b42ac" alt='RexNeXt Blog'>
 
 </p>  
   <img src="Images/resnext.png" alt="ResNeXt">
