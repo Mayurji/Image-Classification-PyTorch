@@ -362,6 +362,9 @@
   
 </details>
 <details>
+  <summary>🚀 ViT</summary>
+</details>
+<details>
   <summary>🚀 MobileNetV2</summary>
 </details>
 <details>
