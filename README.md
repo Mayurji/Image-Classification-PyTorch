@@ -326,6 +326,23 @@ connections impacts the performs of Xception widely.
   </details>
 <details>
   <summary>🚀 ResNeXt</summary>
+  <p>
+
+    ResNeXt is a simple, highly modularized network architecture for image classification. The
+ network is constructed by repeating a building block that aggregates a set of transformations 
+ with the same topology. The simple design results in a homogeneous, multi-branch architecture 
+ that has only a few hyper-parameters to set. This strategy exposes a new dimension, which is 
+ referred as “cardinality” (the size of the set of transformations), as an essential factor in 
+ addition to the dimensions of depth and width.
+
+ We can think of cardinality as the set of separate conv block representing same complexity as 
+ when those blocks are combined together to make a single block.
+
+# Blog: https://towardsdatascience.com/review-resnext-1st-runner-up-of-ilsvrc-2016-image-classification-15d7f17b42ac
+  </p>
+  
+  <img src="Images/resnext.png" alt="ResNeXt">
+  
 </details>
 <details>
   <summary>🚀 MobileNetV2</summary>
