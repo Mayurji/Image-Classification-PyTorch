@@ -7,7 +7,7 @@
 ### Content
 
 <details>
-  <summary> Convolutional Neural Networks</summary>
+  <summary>Convolutional Neural Networks</summary>
 <br>
 <details>
   <summary>🔥 AlexNet</summary>
@@ -370,10 +370,12 @@
 <details>
   <summary>🚀 EfficientNet</summary>
 </details>
-</details>
+
 🔥 - Up and Running
 
-🚀 - Inprogress
+🚀 - Inprogress  
+
+</details>
 
 <!--##########################################################################################-->
 
