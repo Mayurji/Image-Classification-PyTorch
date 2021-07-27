@@ -342,7 +342,7 @@
   <img src="Images/Xception.png" alt="Xception">
   </details>
 <details>
-  <summary>🚀 ResNeXt</summary>
+  <summary>🔥 ResNeXt</summary>
   <p>
 
     ResNeXt is a simple, highly modularized network architecture for image classification. The
