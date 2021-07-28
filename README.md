@@ -386,7 +386,7 @@
 ```python
 python -m venv CNNs 
 source CNNs/bin/activate 
-git clone https://github.com/Mayurji/CNNWithPyTorch.git
+git clone https://github.com/Mayurji/CNNs-PyTorch.git
 ```
 
 ### Installation
