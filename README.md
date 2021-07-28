@@ -364,11 +364,13 @@
 <details>
   <summary>🔥 ViT</summary>
   <p>
-     
-    Transformers are the backbone architecture for many of the NLP architectures like BERT etc. Though, it
-    started with focus on NLP tasks, the transformer is used in computer vision space.
 
     Vision Transformer aka ViT
+    
+    Transformers are the backbone architecture for many of the NLP architectures like BERT etc. Though, it
+    started with focus on NLP tasks, the transformer is used in computer vision space. In Transformer, there
+    is an encoder and a decoder block. In ViT, we use transformer's encoder block and use MLP head for 
+    prediction.
 
     We'll discuss about Transformer architecture separately except the notion on data, we'll see how the 
     image is processed in transformer, which was primarily built for sentence tokens. There are series of 
@@ -386,8 +388,8 @@
     Note: ViT was trained on large image dataset with 14M images, and the pretrained model is fine tuned to 
     work with our custom dataset.
     
-    <p><strong>I strongly recommend going through code blocks, where I've mentioned the flow of an Image through
-      ViT architecture<strong></p>
+<p><strong>I strongly recommend going through code blocks, where I've mentioned the flow of an Image through
+ViT architecture with all dimensional changes.<strong></p>
   
     <img src="https://github.com/lucidrains/vit-pytorch/tree/main/vit_pytorch" alt='Citation'>
     
