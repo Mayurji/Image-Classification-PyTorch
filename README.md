@@ -400,10 +400,19 @@ ViT architecture with all dimensional changes.<strong></p>
   <summary>🚀 MobileNetV2</summary>
 </details>
 <details>
+  <summary>🚀 Darknet-53</summary>
+</details>
+<details>
   <summary>🚀 SqueezeNet</summary>
 </details>
 <details>
+  <summary>🚀 ShuffleNet</summary>
+</details>
+<details>
   <summary>🚀 EfficientNet</summary>
+</details>
+<details>
+  <summary>🚀 CycleMLP</summary>
 </details>
 
 🔥 - Up and Running
