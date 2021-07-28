@@ -1,4 +1,4 @@
-# Convolutional Neural Networks
+# Image Classification Using Deep Learning
 
 **Learning and Building Convolutional Neural Networks using PyTorch.**
 
