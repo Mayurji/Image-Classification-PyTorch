@@ -389,7 +389,7 @@
     <img src="https://github.com/lucidrains/vit-pytorch/tree/main/vit_pytorch" alt='Citation'>
     
   </p>
-  <img src="https://media.giphy.com/media/ATsWtUsuuFRfq8OhZ7/giphy.gif" alt="ViT">
+  <img src="https://media.giphy.com/media/ATsWtUsuuFRfq8OhZ7/giphy.gif"; width=80%; alt="ViT">
 </details>
 <details>
   <summary>🚀 MobileNetV2</summary>
