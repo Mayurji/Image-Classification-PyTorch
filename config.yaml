@@ -1,6 +1,7 @@
-num_epochs: 5
-learning_rate: 0.05
-batch_size: 128
+num_epochs: 20
+learning_rate: 0.001
+batch_size: 16
 image_resolution: 224
-grayscale: True
-optimizer: sgd
+MNIST: False
+n_classes: 10
+optimizer: adam
