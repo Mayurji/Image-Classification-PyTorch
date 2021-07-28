@@ -362,7 +362,34 @@
   
 </details>
 <details>
-  <summary>🚀 ViT</summary>
+  <summary>🔥 ViT</summary>
+  <p>
+     
+    Transformers are the backbone architecture for many of the NLP architectures like BERT etc. Though, it
+    started with focus on NLP tasks, the transformer is used in computer vision space.
+
+    Vision Transformer aka ViT
+
+    We'll discuss about Transformer architecture separately except the notion on data, we'll see how the 
+    image is processed in transformer, which was primarily built for sentence tokens. There are series of 
+    steps followed to convert image into sequence of token and passed into transformer encoder with MLP.
+
+    * Convert Image into Patches of fixed size.
+    * Flatten those patches into sequence of embedding
+    * Add positional embeddings
+    * Feed the sequence into transformer encoder
+    * And predict using MLP block at last.
+
+    I've omitted few notions from transformer architecture like residual connections, multi-head attention
+    etc. Each of these concept requires separate blog post.
+
+    Note: ViT was trained on large image dataset with 14M images, and the pretrained model is fine tuned to 
+    work with our custom dataset.
+
+    <img src="https://github.com/lucidrains/vit-pytorch/tree/main/vit_pytorch" alt='Citation'>
+    
+  </p>
+  <img src="https://media.giphy.com/media/ATsWtUsuuFRfq8OhZ7/giphy.gif" alt="ViT">
 </details>
 <details>
   <summary>🚀 MobileNetV2</summary>
