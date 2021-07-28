@@ -2,12 +2,12 @@
 
 **Learning and Building Convolutional Neural Networks using PyTorch.**
 
-![Convolutional Neural Network](Images/cnn.jpg)
+![Image Classification Using Deep Learning](Images/cnn.jpg)
 
 ### Content
 
 <details>
-  <summary>Convolutional Neural Networks</summary>
+  <summary>Models include CNN architecture, MLP based classifiers, transformer based model and many more to come.</summary>
 <br>
 <details>
   <summary>🔥 AlexNet</summary>
