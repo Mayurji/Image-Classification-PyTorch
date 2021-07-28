@@ -385,7 +385,10 @@
 
     Note: ViT was trained on large image dataset with 14M images, and the pretrained model is fine tuned to 
     work with our custom dataset.
-
+    
+    <strong>I strongly recommend going through code blocks, where I've mentioned the flow of an Image through
+      ViT architecture<strong>
+  
     <img src="https://github.com/lucidrains/vit-pytorch/tree/main/vit_pytorch" alt='Citation'>
     
   </p>
