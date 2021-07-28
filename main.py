@@ -1,3 +1,4 @@
+from ViT import ViT
 import argparse
 
 import torch
@@ -11,9 +12,15 @@ from ResNet import ResNet
 from SENet import SENet
 from VGG import VGG11
 from NiN import NIN
+from MLPMixer import MLPMixer
+from MobileNet import MobileNetV1
+from InceptionV3 import InceptionV3
+from Xception import Xception
+from ResNext import ResNeXt29_2x64d
+from ViT import ViT
 
 from dataset import initialize_dataset
-from train_test import testing, training
+from train_test import training
 
 try:
     stream = open("config.yaml", 'r')
@@ -31,18 +38,16 @@ args = model_parser.parse_args()
 
 """Dataset Initialization"""
 data_initialization = initialize_dataset(image_resolution=config['image_resolution'], batch_size=config['batch_size'], 
-                      grayscale=config['grayscale'])
+                      MNIST=config['MNIST'])
 train_dataloader, test_dataloader = data_initialization.load_dataset()
 
-if config['grayscale']:
-    input_channel = 1
-else:
-    input_channel = 3
+input_channel = next(iter(train_dataloader))[0].shape[1]
+#n_classes = len(torch.unique(next(iter(train_dataloader))[1]))
+n_classes = config['n_classes']
 
 """Model Initialization"""
 if args.model == 'vgg':
-    conv_arch = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))
-    model = VGG11(VGGArchitecture=conv_arch, input_channel=input_channel, 
+    model = VGG11(input_channel=input_channel, 
             image_resolution=config['image_resolution']).to(device)
 elif args.model == 'alexnet':
     model = AlexNet(input_channel=input_channel).to(device)
@@ -58,12 +63,23 @@ elif args.model == 'nin':
     model = NIN(input_channel=input_channel).to(device)
 elif args.model == 'cnn':
     model = CNN(input_channel=input_channel).to(device)
+elif args.model == 'mlpmixer':
+    model = MLPMixer(image_size = config['image_resolution'], in_channels = input_channel,
+    patch_size = 16, dim = 512, depth = 12, num_classes = n_classes, token_dim=128, channel_dim=1024).to(device)
+elif args.model == 'mobilenetv1':
+    model = MobileNetV1(input_channel=input_channel, n_classes=n_classes).to(device)
+elif args.model == 'inceptionv3':
+    model = InceptionV3(input_channel=input_channel, n_classes=n_classes).to(device)
+elif args.model == 'xception':
+    model = Xception(input_channel=input_channel, n_classes=n_classes).to(device)
+elif args.model == 'resnext':
+    model = ResNeXt29_2x64d(input_channel=input_channel, n_classes=n_classes).to(device)
+elif args.model == 'vit':
+    model = ViT(image_size=config['image_resolution'], patch_size=32, dim=1024, depth=6, heads=16, 
+            input_channel=input_channel, n_classes=n_classes,  mlp_dim=2048, dropout=0.1, emb_dropout=0.1).to(device)
 
-
+print(model)
 print(f'Total Number of Parameters of {args.model.capitalize()} is {round((sum(p.numel() for p in model.parameters()))/1000000, 2)}M')
-
-trainer = training(model=model, optimizer='sgd', learning_rate=config['learning_rate'],train_dataloader=train_dataloader, num_epochs=config['num_epochs'])
+trainer = training(model=model, optimizer=config['optimizer'], learning_rate=config['learning_rate'],train_dataloader=train_dataloader, 
+          num_epochs=config['num_epochs'],test_dataloader=test_dataloader)
 trainer.train()
-
-evaluating = testing(model=model, test_dataloader=test_dataloader)
-evaluating.test()
