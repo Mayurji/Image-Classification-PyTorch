@@ -425,6 +425,15 @@ ViT architecture with all dimensional changes.<strong></p>
 </details>
 <details>
   <summary>🚀 Darknet-53</summary>
+  <p>
+
+    Darknet-53 is the backbone architecture of the YOLOV3, an Object detection model. Similar to
+    Darknet-53, there is Darknet-19, which is the backbone for YOLOV2 model. Darknet has it roots
+    in VGG network with most of the conv layers begin 3x3. In addition to VGGNet, Darknet-53 includes
+    residual connection as in ResNet model.
+
+  </p>
+  <img src="Images/darknet.jpeg" alt="Darknet-53">
 </details>
 <details>
   <summary>🚀 SqueezeNet</summary>
