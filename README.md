@@ -397,7 +397,7 @@ ViT architecture with all dimensional changes.<strong></p>
   [Citation Details](https://github.com/lucidrains/vit-pytorch/tree/main/vit_pytorch")
 </details>
 <details>
-  <summary>🚀 MobileNetV2</summary>
+  <summary>🔥 MobileNetV2</summary>
   <p>
     
     MobileNetV2
