@@ -433,7 +433,7 @@ ViT architecture with all dimensional changes.<strong></p>
     residual connection as in ResNet model.
 
   </p>
-  <img src="Images/darknet.JPEG" alt="Darknet-53">
+  <img src="Images/darknet.JPEG"; width=80%; alt="Darknet-53">
 </details>
 <details>
   <summary>🚀 SqueezeNet</summary>
