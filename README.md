@@ -424,7 +424,7 @@ ViT architecture with all dimensional changes.<strong></p>
   <img src="Images/mobilenetv2.png" alt="MobileNetV2">
 </details>
 <details>
-  <summary>🚀 Darknet-53</summary>
+  <summary🔥 Darknet-53</summary>
   <p>
 
     Darknet-53 is the backbone architecture of the YOLOV3, an Object detection model. Similar to
