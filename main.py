@@ -18,6 +18,7 @@ from InceptionV3 import InceptionV3
 from Xception import Xception
 from ResNext import ResNeXt29_2x64d
 from ViT import ViT
+from MobileNetV2 import MobileNetV2
 
 from dataset import initialize_dataset
 from train_test import training
@@ -77,6 +78,8 @@ elif args.model == 'resnext':
 elif args.model == 'vit':
     model = ViT(image_size=config['image_resolution'], patch_size=32, dim=1024, depth=6, heads=16, 
             input_channel=input_channel, n_classes=n_classes,  mlp_dim=2048, dropout=0.1, emb_dropout=0.1).to(device)
+elif args.model == 'mobilenetv2':
+    model = MobileNetV2(input_channel=input_channel, n_classes=n_classes).to(device)
 
 print(model)
 print(f'Total Number of Parameters of {args.model.capitalize()} is {round((sum(p.numel() for p in model.parameters()))/1000000, 2)}M')
