@@ -1,4 +1,3 @@
-from ViT import ViT
 import argparse
 
 import torch
@@ -19,6 +18,7 @@ from Xception import Xception
 from ResNext import ResNeXt29_2x64d
 from ViT import ViT
 from MobileNetV2 import MobileNetV2
+from Darknet_53 import Darknet53
 
 from dataset import initialize_dataset
 from train_test import training
@@ -80,6 +80,9 @@ elif args.model == 'vit':
             input_channel=input_channel, n_classes=n_classes,  mlp_dim=2048, dropout=0.1, emb_dropout=0.1).to(device)
 elif args.model == 'mobilenetv2':
     model = MobileNetV2(input_channel=input_channel, n_classes=n_classes).to(device)
+elif args.model == 'darknet':
+    model = Darknet53(input_channel=input_channel, n_classes=n_classes).to(device)
+
 
 print(model)
 print(f'Total Number of Parameters of {args.model.capitalize()} is {round((sum(p.numel() for p in model.parameters()))/1000000, 2)}M')
