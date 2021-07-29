@@ -436,7 +436,33 @@ ViT architecture with all dimensional changes.<strong></p>
   <img src="Images/darknet.JPEG"; width=80%; alt="Darknet-53">
 </details>
 <details>
-  <summary>🚀 SqueezeNet</summary>
+  <summary🔥 SqueezeNet</summary>
+  <p>
+
+    SqueezeNet
+
+    This network is known for providing AlexNet-Level accuracy at 50 times fewer parameters.
+    This small architecture offers three major advantages, first, it requires less bandwidth
+    for exporting the model and then it requires less communication between server during 
+    distributed training and more feasible to deploy on FPGAs.
+
+    Archiecture creates Fire module containing a squeeze convolution layer (which has only 
+    1×1 filters), feeding into an expand layer that has a mix of 1×1 and 3×3 convolution filters.
+
+    To reduce the parameters the architecture follows design strategies
+
+    1. Using Conv1x1 over Conv3x3
+    2. Decreasing number of channels using Squeeze Layers
+    3. Downsample late in the network, such that convolution
+    layers have large activation maps.
+
+    1 and 2 helps in reducing the parameters, and 3 helps in higher classification accuracy
+    because of large activation maps.
+
+Reference: https://towardsdatascience.com/review-squeezenet-image-classification-e7414825581a
+
+  </p>
+  <img src="Images/squeezenet.png"; alt="SqueezeNet">
 </details>
 <details>
   <summary>🚀 ShuffleNet</summary>
