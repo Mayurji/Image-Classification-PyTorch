@@ -8,7 +8,7 @@ Image Classification is a fundamental computer vision task with huge scope in va
 
 ### 🗒 Papers With Implementation
 
-| CNN      |
+| CNN Based     |
 | :---        |
 | [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")      |
 | [VGGNet](https://arxiv.org/abs/1409.1556)   |
@@ -26,11 +26,9 @@ Image Classification is a fundamental computer vision task with huge scope in va
 | [SqueezeNet](https://arxiv.org/abs/1602.07360v4)   |
 | [ShuffleNet](https://arxiv.org/abs/1707.01083)   |
 | [EfficientNet](https://arxiv.org/abs/1905.11946)   |
-| Transformer |
-| :---        |
+| Transformer Based |
 | [ViT](https://arxiv.org/abs/2010.11929)   |
-| MLP |
-| :---        |
+| MLP Based |
 | [MLP-Mixer](https://arxiv.org/abs/2105.01601)   |
 | [ResMLP](https://arxiv.org/abs/2105.03404)   |
 
