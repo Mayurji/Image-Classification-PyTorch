@@ -465,8 +465,8 @@ Reference: https://towardsdatascience.com/review-squeezenet-image-classification
   <img src="Images/squeezenet.png"; alt="SqueezeNet">
 </details>
 <details>
-  <summary>🚀 ShuffleNet</summary>
-  <img src="Images/shuffleenet.png"; alt="ShuffleNet">
+  <summary>🔥 ShuffleNet</summary>
+  
   <p>
 
     ShuffleNet is a convolutional neural network designed specially for mobile devices 
@@ -497,7 +497,7 @@ Reference: https://towardsdatascience.com/review-squeezenet-image-classification
     
 Reference: https://paperswithcode.com/method/channel-shuffle#
   </p>
-  
+  <img src="Images/shufflenet.png"; alt="ShuffleNet">
   <img src="Images/channelshuffle.png"; alt="Channel Shuffle">
   
 </details>
