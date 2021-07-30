@@ -6,7 +6,7 @@
 
 Image Classification is a fundamental computer vision task with huge scope in various applications like self driving cars, medical imaging, video frame prediction etc. Each model is either a new idea or built upon exisiting idea. Key idea behind this repository is to capture each of these idea and experiment with it.
 
-### 🗒 Papers
+### 🗒 Papers With Implementation
 
 [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")
 
@@ -15,20 +15,35 @@ Image Classification is a fundamental computer vision task with huge scope in va
 [Network In Network](https://arxiv.org/abs/1312.4400)
 
 [ResNet](https://arxiv.org/abs/1512.03385)
+
 [DenseNet](https://arxiv.org/abs/1608.06993)
+
 [MobileNetV1](https://arxiv.org/abs/1704.04861)
+
 [MobileNetV2](https://arxiv.org/abs/1801.04381)
+
 [GoogLeNet](https://arxiv.org/abs/1409.4842)
+
 [InceptionV3](https://arxiv.org/abs/1512.00567)
+
 [Darknet-53](https://arxiv.org/pdf/1804.02767.pdf)
+
 [Xception](https://arxiv.org/abs/1610.02357)
+
 [ResNeXt](https://arxiv.org/abs/1611.05431)
+
 [SENet](https://arxiv.org/abs/1709.01507)
+
 [SqueezeNet](https://arxiv.org/abs/1602.07360v4)
+
 [ShuffleNet](https://arxiv.org/abs/1707.01083)
+
 [ViT](https://arxiv.org/abs/2010.11929)
+
 [EfficientNet](https://arxiv.org/abs/1905.11946)
+
 [MLP-Mixer](https://arxiv.org/abs/2105.01601)
+
 [ResMLP](https://arxiv.org/abs/2105.03404)
 
 ### Content
