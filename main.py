@@ -15,7 +15,7 @@ from MLPMixer import MLPMixer
 from MobileNetV1 import MobileNetV1
 from InceptionV3 import InceptionV3
 from Xception import Xception
-from ResNext import ResNeXt29_2x64d
+from ResNeXt import ResNeXt29_2x64d
 from ViT import ViT
 from MobileNetV2 import MobileNetV2
 from Darknet_53 import Darknet53
