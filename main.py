@@ -18,7 +18,7 @@ from Xception import Xception
 from ResNeXt import ResNeXt29_2x64d
 from ViT import ViT
 from MobileNetV2 import MobileNetV2
-from Darknet_53 import Darknet53
+from Darknet53 import Darknet53
 from SqueezeNet import SqueezeNet
 from ShuffleNet import ShuffleNet
 from EfficientNet import EfficientNet
