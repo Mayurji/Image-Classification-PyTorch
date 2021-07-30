@@ -537,7 +537,43 @@ python main.py --model=resnet
 
 <details>
   <summary>Paper</summary>
+
+<img src="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html"; alt="AlexNet">
   
-<img src="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html"; alt="AlexNet">  
 <img src='https://arxiv.org/abs/1409.1556'; alt='VGGNet'>
+  
+<img src='https://arxiv.org/abs/1512.03385' alt='ResNet'>
+  
+<img src='https://arxiv.org/abs/1512.03385' alt='DenseNet'>
+  
+<img src='https://arxiv.org/abs/1512.03385' alt='MobileNetV1'>
+
+<img src='https://arxiv.org/abs/1512.03385' alt='NIN'>
+  
+<img src='https://arxiv.org/abs/1512.03385' alt='MobileNetV2'>
+  
+<img src='https://arxiv.org/abs/1512.03385' alt='GoogLeNet'>
+  
+<img src='https://arxiv.org/abs/1512.03385' alt='InceptionV3'>
+
+<img src='https://arxiv.org/abs/1512.03385' alt='Darknet-53'>
+  
+<img src='https://arxiv.org/abs/1512.03385' alt='Xception'>
+
+<img src='https://arxiv.org/abs/1512.03385' alt='ResNeXt'>
+
+<img src='https://arxiv.org/abs/1512.03385' alt='SENet'>
+
+<img src='https://arxiv.org/abs/1512.03385' alt='SqueezeNet'>
+
+<img src='https://arxiv.org/abs/1512.03385' alt='ShuffleNet'>
+
+<img src='https://arxiv.org/abs/1512.03385' alt='ViT'>
+  
+<img src='https://arxiv.org/abs/1512.03385' alt='EfficientNet'>
+
+<img src='https://arxiv.org/abs/1512.03385' alt='MLP-Mixer'>
+  
+<img src='https://arxiv.org/abs/1512.03385' alt='ResMLP'>
+
 </details>
