@@ -21,6 +21,8 @@ from MobileNetV2 import MobileNetV2
 from Darknet_53 import Darknet53
 from SqueezeNet import SqueezeNet
 from ShuffleNet import ShuffleNet
+from EfficientNet import EfficientNet
+from ResMLP import ResMLP
 
 from dataset import initialize_dataset
 from train_test import training
@@ -89,6 +91,18 @@ elif args.model == 'squeezenet':
 elif args.model == 'shufflenet':
     cfg = {'out': [200,400,800], 'n_blocks': [4,8,4], 'groups': 2}
     model = ShuffleNet(cfg=cfg, input_channel=input_channel, n_classes=n_classes).to(device)
+elif args.model == 'efficientnetb0':
+    param = {
+        # 'efficientnet type': (width_coef, depth_coef, resolution, dropout_rate)
+        'efficientnetb0': (1.0, 1.0, 224, 0.2), 'efficientnetb1': (1.0, 1.1, 240, 0.2),
+        'efficientnetb2': (1.1, 1.2, 260, 0.3), 'efficientnetb3': (1.2, 1.4, 300, 0.3),
+        'efficientnetb4': (1.4, 1.8, 380, 0.4), 'efficientnetb5': (1.6, 2.2, 456, 0.4),
+        'efficientnetb6': (1.8, 2.6, 528, 0.5), 'efficientnetb7': (2.0, 3.1, 600, 0.5)
+    }
+    model = EfficientNet(input_channels=input_channel, param=param[args.model], n_classes=n_classes).to(device)
+elif args.model == 'resmlp':
+    model = ResMLP(in_channels=input_channel, image_size=config['image_resolution'], patch_size=16, n_classes=n_classes,
+                     dim=384, depth=12, mlp_dim=384*4).to(device)
 
 print(model)
 print(f'Total Number of Parameters of {args.model.capitalize()} is {round((sum(p.numel() for p in model.parameters()))/1000000, 2)}M')
