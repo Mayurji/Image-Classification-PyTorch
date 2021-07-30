@@ -38,7 +38,6 @@
 <details>
   <summary>🔥 AlexNet</summary>
 <p>
-<img src="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html"; alt="AlexNet"><br>
   
     Before AlexNet, SIFT(scale-invariant feature transform), SURF or HOG were some of the hand tuned 
     feature extractors for Computer Vision.
