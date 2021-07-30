@@ -12,13 +12,7 @@ Image Classification is a fundamental computer vision task with huge scope in va
 
 |CNN Based    | Accuracy | Parameters     | Config |
 | :---        |    :----:   | :----:       | ---: |
-| [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")      | |57.04M |num_epochs: 10
-learning_rate: 0.001
-batch_size: 128
-image_resolution: 224
-MNIST: False
-n_classes: 10
-optimizer: adam|
+| [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")      | |57.04M |{ num_epochs: 10, learning_rate: 0.001, batch_size: 128, image_resolution: 224, optimizer: adam }|
 | [VGGNet](https://arxiv.org/abs/1409.1556)   |  | 57.04M |
 | [Network In Network](https://arxiv.org/abs/1312.4400)   |
 | [ResNet](https://arxiv.org/abs/1512.03385)  |
