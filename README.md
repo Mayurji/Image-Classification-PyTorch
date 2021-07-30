@@ -4,7 +4,7 @@
 
 <!-- ![Image Classification Using Deep Learning](Images/cnn.jpg) -->
 
-Image Classification is a fundamental computer vision task with huge scope in various applications like self driving cars, medical imaging, video frame prediction etc. Each model is either a new idea or built upon exisiting idea. Key idea behind this repository is to capture each of these idea and experiment with it.
+Image Classification is a fundamental computer vision task with huge scope in various applications like self driving cars, medical imaging, video frame prediction etc. Each model is either a new idea or built upon exisiting idea. We'll capture each of these idea and experiment and benchmark on predefined criteria.
 
 ### 🗒 Papers With Implementation
 
