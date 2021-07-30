@@ -1,6 +1,6 @@
-num_epochs: 20
+num_epochs: 10
 learning_rate: 0.001
-batch_size: 16
+batch_size: 128
 image_resolution: 224
 MNIST: False
 n_classes: 10
