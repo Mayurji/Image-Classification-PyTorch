@@ -8,15 +8,17 @@ Image Classification is a fundamental computer vision task with huge scope in va
 
 ### 🗒 Papers With Implementation
 
-| CNN      | Transformer | MLP    |
-| :---        |    :----:   |          ---: |
-| [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")      | Title       | Here's this   |
-| Paragraph   | Text        | And more      |
+| CNN      |
+| :---        |
+| [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")      |
+| [VGGNet](https://arxiv.org/abs/1409.1556)   |
+ Transformer |
+| :---        |
 
 
 [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")
 
-[VGGNet](https://arxiv.org/abs/1409.1556)
+
 
 [Network In Network](https://arxiv.org/abs/1312.4400)
 
