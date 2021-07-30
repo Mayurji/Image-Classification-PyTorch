@@ -12,7 +12,7 @@ from SENet import SENet
 from VGG import VGG11
 from NiN import NIN
 from MLPMixer import MLPMixer
-from MobileNet import MobileNetV1
+from MobileNetV1 import MobileNetV1
 from InceptionV3 import InceptionV3
 from Xception import Xception
 from ResNext import ResNeXt29_2x64d
