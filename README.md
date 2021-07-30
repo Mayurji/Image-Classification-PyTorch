@@ -502,16 +502,82 @@ Reference: https://paperswithcode.com/method/channel-shuffle#
   
 </details>
 <details>
-  <summary>🚀 EfficientNet</summary>
+  <summary>🔥 EfficientNet</summary>
+  <p>
+
+    CNN models improves its ability to classify images by either increasing the depth of the network or 
+    by increasing the resolution of the images to capture finer details of the image or by increasing
+    width of the network by increasing the number of channels. For instance, ResNet-18 to ResNet-152 has 
+    been built around these ideas.
+
+    Now there is limit to each of these factors mentioned above and with increasing requirement of computational 
+    power. To overcome these challenges, researchers introducted the concept of compound scaling, which scales
+    all the three factors moderately leading us to build EfficientNet.
+
+    EfficientNet scales all the three factors i.e. depth, width and resolution but how to scale it? we can 
+    scale each factor equally but this wouldn't work if our task requires fine grained estimation and which 
+    requries more depth. 
+
+    Complex CNN architectures are built using multiple conv blocks and each block needs to be consistent with 
+    previous and next block, thus each layers in the block are scaled evenly.
+
+    EfficientNet-B0 Architecture
+
+    * Basic ConvNet Block (AlexNet)
+    * Inverted Residual (MobileNetV2)
+    * Squeeze and Excitation Block (Squeeze and Excitation Network)
+
+    EfficientNet is a convolutional neural network architecture and scaling method that uniformly scales all 
+    dimensions of depth/width/resolution using a compound coefficient. Unlike conventional practice that arbitrary 
+    scales these factors, the EfficientNet scaling method uniformly scales network width, depth, and resolution 
+    with a set of fixed scaling coefficients. For example, if we want to use 2^N times more computational resources, 
+    then we can simply increase the network depth by alpha^N, width by beta^N, and image size by gamma^N, where 
+    alpha, beta and gamma, are constant coefficients determined by a small grid search on the original small model. 
+    EfficientNet uses a compound coefficient phi to uniformly scales network width, depth, and resolution in a 
+    principled way.
+
+    The compound scaling method is justified by the intuition that if the input image is bigger, then the network 
+    needs more layers to increase the receptive field and more channels to capture more fine-grained patterns on 
+    the bigger image.
+
+    The base EfficientNet-B0 network is based on the inverted bottleneck residual blocks of MobileNetV2, in addition 
+    to squeeze-and-excitation blocks.
+
+    EfficientNets also transfer well and achieve state-of-the-art accuracy on CIFAR-100 (91.7%), Flowers (98.8%), 
+    and 3 other transfer learning datasets, with an order of magnitude fewer parameters.
+
+    Interesting Stuff:
+
+    Now, the most interesting part of EfficientNet-B0 is that the baseline architecture is designed by Neural 
+    Architecture Search(NAS). NAS is a wide topic and is not feasible to be discussed here. We can simply 
+    consider it as searching through the architecture space for underlying base architecture like ResNet or 
+    any other architecture for that matter. And on top of that, we can use grid search for finding the scale 
+    factor for Depth, Width and Resolution. Combining NAS and with compound scaling leads us to the SOTA on 
+    ImageNet. Model is evaluated by comparing accuracy over the # of FLOPS(Floating point operations per second).
+
+Recommended Reading for NAS: https://lilianweng.github.io/lil-log/2020/08/06/neural-architecture-search.html
+  </p>
+<img src="Images/efficientnet.png"; alt="EfficientNet">
 </details>
 <details>
-  <summary>🚀 ResMLP</summary>
+  <summary>🔥 ResMLP</summary>
+  <p>
+
+    ResMLP: Feedforward networks for image classification with data-efficient training 
+
+    ResMLP, an architecture built entirely upon multi-layer perceptrons for image classification. 
+    It is a simple residual network that alternates (i) a linear layer in which image patches interact, 
+    independently and identically across channels, and (ii) a two-layer feed-forward network in which 
+    channels interact independently per patch. When trained with a modern training strategy using heavy 
+    data-augmentation and optionally distillation, it attains surprisingly good accuracy/complexity 
+    trade-offs on ImageNet. 
+
+    We can also train ResMLP models in a self-supervised setup, to further remove priors from employing a 
+    labelled dataset. Finally, by adapting our model to machine translation we achieve surprisingly good results.
+
+  </p>
+<img src="Images/resmlp.png"; alt="ResMLP">
 </details>
-
-🔥 - Up and Running
-
-🚀 - Inprogress  
-
 </details>
 
 <!--##########################################################################################-->
