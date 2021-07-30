@@ -466,6 +466,40 @@ Reference: https://towardsdatascience.com/review-squeezenet-image-classification
 </details>
 <details>
   <summary>🚀 ShuffleNet</summary>
+  <img src="Images/shuffleenet.png"; alt="ShuffleNet">
+  <p>
+
+    ShuffleNet is a convolutional neural network designed specially for mobile devices 
+    with very limited computing power. 
+
+    The architecture utilizes two new operations, pointwise group convolution and channel 
+    shuffle, to reduce computation cost while maintaining accuracy. ShuffleNet uses wider 
+    feature maps as smaller networks has lesser number of channels.
+
+    Channel Shuffle:
+
+    It is an operation to help information flow across feature channels in 
+    CNN.
+
+    If we allow a group convolution to obtain input data from different groups, the input 
+    and output channels will be fully related. Specifically, for the feature map generated 
+    from the previous group layer, we can first divide the channels in each group into 
+    several subgroups, then feed each group in the next layer with different subgroups.
+
+    The above can be efficiently and elegantly implemented by a channel shuffle operation:
+
+    suppose a convolutional layer with g groups whose output has (g x n) channels; we first 
+    reshape the output channel dimension into (g, n), transposing and then flattening it back 
+    as the input of next layer. Channel shuffle is also differentiable, which means it can be 
+    embedded into network structures for end-to-end training.
+
+    ShuffleNet achieves 13x speedup over AlexNet with comparable accuracy.
+    
+Reference: https://paperswithcode.com/method/channel-shuffle#
+  </p>
+  
+  <img src="Images/channelshuffle.png"; alt="Channel Shuffle">
+  
 </details>
 <details>
   <summary>🚀 EfficientNet</summary>
