@@ -542,38 +542,38 @@ python main.py --model=resnet
   
 <img src='https://arxiv.org/abs/1409.1556'; alt='VGGNet'>
   
-<img src='https://arxiv.org/abs/1312.4400' alt='NIN'>
+<img src='https://arxiv.org/abs/1312.4400'; alt='NIN'>
   
-<img src='https://arxiv.org/abs/1512.03385' alt='ResNet'>
+<img src='https://arxiv.org/abs/1512.03385'; alt='ResNet'>
   
-<img src='https://arxiv.org/abs/1608.06993' alt='DenseNet'>
+<img src='https://arxiv.org/abs/1608.06993'; alt='DenseNet'>
   
-<img src='https://arxiv.org/abs/1704.04861' alt='MobileNetV1'>
+<img src='https://arxiv.org/abs/1704.04861'; alt='MobileNetV1'>
   
-<img src='https://arxiv.org/abs/1801.04381' alt='MobileNetV2'>
+<img src='https://arxiv.org/abs/1801.04381'; alt='MobileNetV2'>
   
-<img src='https://arxiv.org/abs/1409.4842' alt='GoogLeNet'>
+<img src='https://arxiv.org/abs/1409.4842'; alt='GoogLeNet'>
   
-<img src='https://arxiv.org/abs/1512.00567' alt='InceptionV3'>
+<img src='https://arxiv.org/abs/1512.00567'; alt='InceptionV3'>
 
-<img src='https://arxiv.org/pdf/1804.02767.pdf' alt='Darknet-53'>
+<img src='https://arxiv.org/pdf/1804.02767.pdf'; alt='Darknet-53'>
   
-<img src='https://arxiv.org/abs/1610.02357' alt='Xception'>
+<img src='https://arxiv.org/abs/1610.02357'; alt='Xception'>
 
-<img src='https://arxiv.org/abs/1611.05431' alt='ResNeXt'>
+<img src='https://arxiv.org/abs/1611.05431'; alt='ResNeXt'>
 
-<img src='https://arxiv.org/abs/1709.01507' alt='SENet'>
+<img src='https://arxiv.org/abs/1709.01507'; alt='SENet'>
 
-<img src='https://arxiv.org/abs/1602.07360v4' alt='SqueezeNet'>
+<img src='https://arxiv.org/abs/1602.07360v4'; alt='SqueezeNet'>
 
-<img src='https://arxiv.org/abs/1707.01083' alt='ShuffleNet'>
+<img src='https://arxiv.org/abs/1707.01083'; alt='ShuffleNet'>
 
-<img src='https://arxiv.org/abs/2010.11929' alt='ViT'>
+<img src='https://arxiv.org/abs/2010.11929'; alt='ViT'>
   
-<img src='https://arxiv.org/abs/1905.11946' alt='EfficientNet'>
+<img src='https://arxiv.org/abs/1905.11946'; alt='EfficientNet'>
 
-<img src='https://arxiv.org/abs/2105.01601' alt='MLP-Mixer'>
+<img src='https://arxiv.org/abs/2105.01601'; alt='MLP-Mixer'>
   
-<img src='https://arxiv.org/abs/2105.03404' alt='ResMLP'>
+<img src='https://arxiv.org/abs/2105.03404'; alt='ResMLP'>
 
 </details>
