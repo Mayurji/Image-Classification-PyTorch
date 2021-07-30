@@ -7,10 +7,8 @@ require following steps
 * Pooling for spatial downsampling
 
 Note: I don't recommend running this until you have GPU, the number of parameters is increased by huge number compared
-to AlexNet.
-Changes made for faster convergence and which deviates from VGG Net is learning rate is changed to 0.05 and reduce the
-number channels by
-1/4th.
+to AlexNet. Changes made for faster convergence and which deviates from VGG Net is learning rate is changed to 0.05 and 
+reduce the number channels by 1/4th.
 
 Check out the loss with these changes, since lr is high compared to typical values, the loss moves drastically and then
 converges.
@@ -27,7 +25,7 @@ This architecture is VGG-11.
 import torch.nn as nn
 
 class VGG11(nn.Module):
-	def __init__(self, VGGArchitecture, input_channel, image_resolution):
+	def __init__(self, input_channel, image_resolution, VGGArchitecture = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))):
 		super().__init__()
 		self.input_channel = input_channel
 
