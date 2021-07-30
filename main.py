@@ -1,5 +1,3 @@
-from Darknet_53 import Darknet53
-from ViT import ViT
 import argparse
 
 import torch
@@ -22,6 +20,7 @@ from ViT import ViT
 from MobileNetV2 import MobileNetV2
 from Darknet_53 import Darknet53
 from SqueezeNet import SqueezeNet
+from ShuffleNet import ShuffleNet
 
 from dataset import initialize_dataset
 from train_test import training
@@ -87,7 +86,9 @@ elif args.model == 'darknet':
     model = Darknet53(input_channel=input_channel, n_classes=n_classes).to(device)
 elif args.model == 'squeezenet':
     model = SqueezeNet(input_channel=input_channel, n_classes=n_classes).to(device)
-
+elif args.model == 'shufflenet':
+    cfg = {'out': [200,400,800], 'n_blocks': [4,8,4], 'groups': 2}
+    model = ShuffleNet(cfg=cfg, input_channel=input_channel, n_classes=n_classes).to(device)
 
 print(model)
 print(f'Total Number of Parameters of {args.model.capitalize()} is {round((sum(p.numel() for p in model.parameters()))/1000000, 2)}M')
