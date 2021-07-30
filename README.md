@@ -6,6 +6,8 @@
 
 Image Classification is a fundamental computer vision task with huge scope in various applications like self driving cars, medical imaging, video frame prediction etc. Each model is either a new idea or built upon exisiting idea. We'll capture each of these idea and experiment and benchmark on predefined criteria.
 
+### [Check out in Google Colab](https://colab.research.google.com/drive/1tVjUG0dn4D0XqTSsCZ6AKom7G_hg0Xnv#scrollTo=JNXO2yZWYzPq)
+
 ### 🗒 Papers With Implementation
 
 |CNN Based    | Accuracy | FLOPS     |
