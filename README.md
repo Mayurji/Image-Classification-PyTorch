@@ -537,7 +537,7 @@ python main.py --model=resnet
 
 <details>
   <summary>Paper</summary>
-
+<p>
 <img src="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html"; alt="AlexNet">
   
 <img src='https://arxiv.org/abs/1409.1556'; alt='VGGNet'>
@@ -575,5 +575,5 @@ python main.py --model=resnet
 <img src='https://arxiv.org/abs/2105.01601'; alt='MLP-Mixer'>
   
 <img src='https://arxiv.org/abs/2105.03404'; alt='ResMLP'>
-
+</p>
 </details>
