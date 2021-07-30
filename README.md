@@ -4,6 +4,33 @@
 
 <!-- ![Image Classification Using Deep Learning](Images/cnn.jpg) -->
 
+<details>
+  <summary>🗒 Papers</summary>
+<p>
+  
+<img src="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html"; alt="AlexNet"><br>
+<img src='https://arxiv.org/abs/1409.1556'; alt='VGGNet'><br>
+<img src='https://arxiv.org/abs/1312.4400'; alt='NIN'><br>
+<img src='https://arxiv.org/abs/1512.03385'; alt='ResNet'><br>
+<img src='https://arxiv.org/abs/1608.06993'; alt='DenseNet'><br>
+<img src='https://arxiv.org/abs/1704.04861'; alt='MobileNetV1'><br>
+<img src='https://arxiv.org/abs/1801.04381'; alt='MobileNetV2'><br>
+<img src='https://arxiv.org/abs/1409.4842'; alt='GoogLeNet'><br>
+<img src='https://arxiv.org/abs/1512.00567'; alt='InceptionV3'><br>
+<img src='https://arxiv.org/pdf/1804.02767.pdf'; alt='Darknet-53'><br>
+<img src='https://arxiv.org/abs/1610.02357'; alt='Xception'><br>
+<img src='https://arxiv.org/abs/1611.05431'; alt='ResNeXt'><br>
+<img src='https://arxiv.org/abs/1709.01507'; alt='SENet'><br>
+<img src='https://arxiv.org/abs/1602.07360v4'; alt='SqueezeNet'><br>
+<img src='https://arxiv.org/abs/1707.01083'; alt='ShuffleNet'><br>
+<img src='https://arxiv.org/abs/2010.11929'; alt='ViT'><br>
+<img src='https://arxiv.org/abs/1905.11946'; alt='EfficientNet'><br>
+<img src='https://arxiv.org/abs/2105.01601'; alt='MLP-Mixer'><br>
+<img src='https://arxiv.org/abs/2105.03404'; alt='ResMLP'>
+</p>
+</details>
+
+
 ### Content
 
 <details>
@@ -600,28 +627,3 @@ python main.py --model=resnet
 ```
 
 **Note:** Parameters can be changed in YAML file. The module supports only two datasets, MNIST and CIFAR-10, but you can modify the dataset file and include any other datasets.
-
-<details>
-  <summary>Paper</summary>
-<p>
-<img src="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html"; alt="AlexNet"><br>
-<img src='https://arxiv.org/abs/1409.1556'; alt='VGGNet'><br>
-<img src='https://arxiv.org/abs/1312.4400'; alt='NIN'><br>
-<img src='https://arxiv.org/abs/1512.03385'; alt='ResNet'><br>
-<img src='https://arxiv.org/abs/1608.06993'; alt='DenseNet'><br>
-<img src='https://arxiv.org/abs/1704.04861'; alt='MobileNetV1'><br>
-<img src='https://arxiv.org/abs/1801.04381'; alt='MobileNetV2'><br>
-<img src='https://arxiv.org/abs/1409.4842'; alt='GoogLeNet'><br>
-<img src='https://arxiv.org/abs/1512.00567'; alt='InceptionV3'><br>
-<img src='https://arxiv.org/pdf/1804.02767.pdf'; alt='Darknet-53'><br>
-<img src='https://arxiv.org/abs/1610.02357'; alt='Xception'><br>
-<img src='https://arxiv.org/abs/1611.05431'; alt='ResNeXt'><br>
-<img src='https://arxiv.org/abs/1709.01507'; alt='SENet'><br>
-<img src='https://arxiv.org/abs/1602.07360v4'; alt='SqueezeNet'><br>
-<img src='https://arxiv.org/abs/1707.01083'; alt='ShuffleNet'><br>
-<img src='https://arxiv.org/abs/2010.11929'; alt='ViT'><br>
-<img src='https://arxiv.org/abs/1905.11946'; alt='EfficientNet'><br>
-<img src='https://arxiv.org/abs/2105.01601'; alt='MLP-Mixer'><br>
-<img src='https://arxiv.org/abs/2105.03404'; alt='ResMLP'>
-</p>
-</details>
