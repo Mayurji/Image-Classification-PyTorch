@@ -7,7 +7,6 @@
 <details>
   <summary>🗒 Papers</summary>
 <p>
-  
 <img src="https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html"; alt="AlexNet"><br>
 <img src='https://arxiv.org/abs/1409.1556'; alt='VGGNet'><br>
 <img src='https://arxiv.org/abs/1312.4400'; alt='NIN'><br>
