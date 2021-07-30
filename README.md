@@ -505,7 +505,7 @@ Reference: https://paperswithcode.com/method/channel-shuffle#
   <summary>🚀 EfficientNet</summary>
 </details>
 <details>
-  <summary>🚀 CycleMLP</summary>
+  <summary>🚀 ResMLP</summary>
 </details>
 
 🔥 - Up and Running
