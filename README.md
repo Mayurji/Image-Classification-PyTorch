@@ -534,3 +534,9 @@ python main.py --model=resnet
 ```
 
 **Note:** Parameters can be changed in YAML file. The module supports only two datasets, MNIST and CIFAR-10, but you can modify the dataset file and include any other datasets.
+
+<details>
+  <summary>Paper</summary>
+[AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html)
+
+<details>
