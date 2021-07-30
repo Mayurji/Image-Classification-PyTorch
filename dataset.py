@@ -3,16 +3,20 @@ import torchvision
 import torchvision.transforms as transforms
 
 class initialize_dataset:
-    def __init__(self, image_resolution=224, batch_size=128, grayscale=True):
+    def __init__(self, image_resolution=224, batch_size=128, MNIST=True):
         self.image_resolution= image_resolution
         self.batch_size=batch_size
-        self.grayscale=grayscale
-        
-    def load_dataset(self):
-        transform = transforms.Compose([transforms.ToTensor(), transforms.Resize((self.image_resolution, self.image_resolution))])
-        path = "/home/mayur/Desktop/Pytorch/data"
+        self.MNIST = MNIST
+        self.transform = transforms.Compose([transforms.ToTensor(), transforms.Resize((self.image_resolution, self.image_resolution))])
 
-        if self.grayscale:
+    def load_dataset(self, transforms=None):
+        path = "/home/mayur/Desktop/Pytorch/data"
+        if transforms:
+            transform = transforms
+        else:
+            transform = self.transform
+
+        if self.MNIST:
             train_dataset = torchvision.datasets.MNIST(root=path, train=True,
                                                         transform = transform,
                                                         download=True)
