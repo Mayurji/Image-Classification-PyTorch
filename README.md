@@ -10,7 +10,7 @@ Image Classification is a fundamental computer vision task with huge scope in va
 
 ### 🗒 Papers With Implementation
 
-Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim: adam}. Some architecture like SqueezeNet, ShuffleNet, InceptionV3, EfficientNet, Darknet53 and others at base config, but by reducing the batch size the architecture was executed in Google Colab and Kaggle. Noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in worst case scenario, I've reduced the batch size in accordance to fit the Kaggle GPU. Just to mention, I use RTX2070 with 8 GB.
+Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim: adam}. Some architecture like SqueezeNet, ShuffleNet, InceptionV3, EfficientNet, Darknet53 and others didn't work at base config because of increased complexity of the architecture, thus by reducing the batch size the architecture was executed in Google Colab and Kaggle. Noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in worst case scenario, I've reduced the batch size in accordance to fit the Kaggle GPU. Just to mention, I use RTX2070 with 8 GB.
 
 |CNN Based    | Accuracy | Parameters     | Configuration |
 | :---        |    :----:   | :----:       | ---: |
