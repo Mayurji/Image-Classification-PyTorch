@@ -63,7 +63,7 @@ elif args.model == 'senet':
     model = SENet(input_channel=input_channel, n_classes=n_classes).to(device)
 
 elif args.model == 'resnet':
-    model = ResNet(input_channel=input_channel).to(device)
+    model = ResNet(input_channel=input_channel, n_classes=n_classes).to(device)
 
 elif args.model == 'densenet':
     model = DenseNet(input_channel=input_channel).to(device)
