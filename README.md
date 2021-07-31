@@ -12,13 +12,13 @@ Image Classification is a fundamental computer vision task with huge scope in va
 
 Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim: adam}. Some architecture like SqueezeNet, ShuffleNet, InceptionV3, EfficientNet, Darknet53 and others didn't work at base config because of increased complexity of the architecture, thus by reducing the batch size the architecture was executed in Google Colab and Kaggle. Noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in worst case scenario, I've reduced the batch size in accordance to fit the Kaggle GPU. Just to mention, I use RTX2070 8GB.
 
-|CNN Based    | Accuracy | Parameters     | Configuration |
-| :---        |    :----:   | :----:       | ---: |
-| [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")| 71.27 | 58.32M ||
-| [VGGNet](https://arxiv.org/abs/1409.1556)   | 75.21 | 128.81M ||
-| [Network In Network](https://arxiv.org/abs/1312.4400)   ||||
-| [ResNet](https://arxiv.org/abs/1512.03385)  | 80.51 | 11.18M ||
-| [DenseNet](https://arxiv.org/abs/1608.06993)   | - | ||
+|CNN Based    | Accuracy | Parameters     | Configuration | Working |
+| :---        |    :----:   | :----:       | :----:       | ---: |
+| [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")| 71.27 | 58.32M || Yes |
+| [VGGNet](https://arxiv.org/abs/1409.1556)   | 75.21 | 128.81M || Yes |
+| [Network In Network](https://arxiv.org/abs/1312.4400) | | 2.02M || Yes |
+| [ResNet](https://arxiv.org/abs/1512.03385)  | 80.51 | 11.18M || Yes |
+| [DenseNet](https://arxiv.org/abs/1608.06993)   | - | - | - | No |
 | [MobileNetV1](https://arxiv.org/abs/1704.04861)   | 81.35 | 3.22M ||
 | [MobileNetV2](https://arxiv.org/abs/1801.04381)   | 80.74 | 2.24M ||
 | [GoogLeNet](https://arxiv.org/abs/1409.4842)   | 73.62 | 5.98M ||
@@ -26,7 +26,7 @@ Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim
 | [Darknet-53](https://arxiv.org/pdf/1804.02767.pdf)   | - | | |
 | [Xception](https://arxiv.org/abs/1610.02357)   | - | | |
 | [ResNeXt](https://arxiv.org/abs/1611.05431)   | - |
-| [SENet](https://arxiv.org/abs/1709.01507)   | 83.55 | 11.23M | |
+| [SENet](https://arxiv.org/abs/1709.01507)   | 83.55 | 11.23M | | Yes |
 | [SqueezeNet](https://arxiv.org/abs/1602.07360v4)   | - | 0.73M ||
 | [ShuffleNet](https://arxiv.org/abs/1707.01083)   | - |
 | [EfficientNet](https://arxiv.org/abs/1905.11946)   | - |4.02M||

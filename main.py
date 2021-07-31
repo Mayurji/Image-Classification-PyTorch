@@ -66,13 +66,14 @@ elif args.model == 'resnet':
     model = ResNet(input_channel=input_channel, n_classes=n_classes).to(device)
 
 elif args.model == 'densenet':
-    model = DenseNet(input_channel=input_channel).to(device)
+    model = DenseNet(input_channel=input_channel, n_classes=n_classes, growthRate=12, depth=100, reduction=0.5,
+                            bottleneck=True).to(device)
+
+elif args.model == 'nin':
+    model = NIN(input_channel=input_channel, n_classes=n_classes).to(device)
 
 elif args.model == 'googlenet':
     model = GoogLeNet(input_channel=input_channel).to(device)
-
-elif args.model == 'nin':
-    model = NIN(input_channel=input_channel).to(device)
 
 elif args.model == 'cnn':
     model = CNN(input_channel=input_channel).to(device)

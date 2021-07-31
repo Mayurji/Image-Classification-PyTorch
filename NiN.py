@@ -16,7 +16,7 @@ Smaller batch size results in better performance even though it is slow.
 import torch.nn as nn
 
 class NIN(nn.Module):
-	def __init__(self, input_channel):
+	def __init__(self, input_channel, n_classes):
 		super().__init__()
 
 		def NINBlock(input_channel, out_channel, kernel_size, strides, padding):
@@ -35,7 +35,7 @@ class NIN(nn.Module):
 			nn.MaxPool2d(3, stride=2),
 			NINBlock(256, 384, kernel_size=3, strides=1, padding=1),
 			nn.MaxPool2d(3, stride=2),nn.Dropout(0.5),
-			NINBlock(384, 10, kernel_size=3, strides=1, padding=1),
+			NINBlock(384, n_classes, kernel_size=3, strides=1, padding=1),
 			nn.AdaptiveAvgPool2d((1,1)),nn.Flatten())
 		self.layers.apply(self.init_weights)
 
