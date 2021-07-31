@@ -27,10 +27,8 @@ ResNet or Inception V1 etc.
 
 Reference: https://amaarora.github.io/2020/07/24/SeNet.html
 """
-import torch
 import torch.nn as nn
-from ResNet import Residual, residualBlock
-from torch.nn.modules.activation import Sigmoid
+from ResNet import residualBlock
 
 class SEBlock(nn.Module):
     def __init__(self, C, r=16):
