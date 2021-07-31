@@ -25,7 +25,6 @@ import torch.nn as nn
 from functools import partial
 from einops.layers.torch import Rearrange, Reduce
 from einops import rearrange
-import torchvision
 
 class FeedForward(nn.Module):
     def __init__(self, dim, hidden_dim, dropout = 0.):
@@ -65,14 +64,14 @@ class MixerBlock(nn.Module):
         return cx
         
 class MLPMixer(nn.Module):
-    def __init__(self, in_channels, dim, num_classes, patch_size, image_size, depth, token_dim, channel_dim):
+    def __init__(self, input_channels, dim, n_classes, patch_size, image_size, depth, token_dim, channel_dim):
         
         super().__init__()
         assert image_size % patch_size == 0, 'Image dimensions must be divisible by the patch size.'
         self.num_patch =  (image_size// patch_size) ** 2
         
         self.to_patch_embedding = nn.Sequential(
-            nn.Conv2d(in_channels, dim, patch_size, patch_size), #Creating a patches of the images
+            nn.Conv2d(input_channels, dim, patch_size, patch_size), #Creating a patches of the images
             Rearrange('b c h w -> b (h w) c'), #combining the patches, we get patches*channel(p x c)
         )
 
@@ -84,7 +83,7 @@ class MLPMixer(nn.Module):
         
         self.layer_norm = nn.LayerNorm(dim)
 
-        self.mlp_head = nn.Sequential(nn.Linear(dim, num_classes))
+        self.mlp_head = nn.Sequential(nn.Linear(dim, n_classes))
 
     def forward(self, x):
         x = self.to_patch_embedding(x)

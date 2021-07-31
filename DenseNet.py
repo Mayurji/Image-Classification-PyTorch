@@ -53,11 +53,11 @@ def transitionBlock(in_channel, out_channel):
     )
 
 class DenseNet(nn.Module):
-    def __init__(self, in_channel, out_channel, growth_rate, numConvDenseBlock):
+    def __init__(self, input_channel, out_channel, growth_rate, numConvDenseBlock, n_classes):
         super().__init__()
         b2 = []
         self.b1 = nn.Sequential(
-            nn.Conv2d(in_channel, out_channel, kernel_size=7, stride=2, padding=3),
+            nn.Conv2d(input_channel, out_channel, kernel_size=7, stride=2, padding=3),
             nn.BatchNorm2d(out_channel), nn.ReLU(),
             nn.MaxPool2d(kernel_size=3, stride=2, padding=1))
 
@@ -72,7 +72,7 @@ class DenseNet(nn.Module):
 
         self.finalLayer = nn.Sequential(*b2, nn.BatchNorm2d(out_channel),
                         nn.ReLU(), nn.AdaptiveAvgPool2d((1,1)),nn.Flatten(),
-                        nn.Linear(out_channel, 10)
+                        nn.Linear(out_channel, n_classes)
                         )
         self.b1.apply(self.init_weights)
         self.finalLayer.apply(self.init_weights)

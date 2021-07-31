@@ -49,10 +49,10 @@ class SEBlock(nn.Module):
         return x * e.expand_as(x)
 
 class SENet(nn.Module):
-    def __init__(self, in_channel):
+    def __init__(self, input_channel, n_classes):
         super().__init__()
         self.b1 = nn.Sequential(
-            nn.Conv2d(in_channel, 64, kernel_size=7, stride=2, padding=3),
+            nn.Conv2d(input_channel, 64, kernel_size=7, stride=2, padding=3),
             nn.BatchNorm2d(64),nn.ReLU(),
             nn.MaxPool2d(kernel_size=3, stride=2, padding=1))
         self.b2 = nn.Sequential(*[SEBlock(C=64)])
@@ -67,7 +67,7 @@ class SENet(nn.Module):
         self.finalLayer = nn.Sequential(
             nn.AdaptiveAvgPool2d((1,1)),
             nn.Flatten(),
-            nn.Linear(512, 10))
+            nn.Linear(512, n_classes))
 
         self.b1.apply(self.init_weights)
         self.b2.apply(self.init_weights)

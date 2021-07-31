@@ -51,46 +51,65 @@ input_channel = next(iter(train_dataloader))[0].shape[1]
 n_classes = config['n_classes']
 
 """Model Initialization"""
+
 if args.model == 'vgg':
     model = VGG11(input_channel=input_channel, 
             image_resolution=config['image_resolution']).to(device)
+
 elif args.model == 'alexnet':
     model = AlexNet(input_channel=input_channel).to(device)
+
 elif args.model == 'senet':
     model = SENet(in_channel=input_channel).to(device)
+
 elif args.model == 'resnet':
     model = ResNet(input_channel=input_channel).to(device)
+
 elif args.model == 'densenet':
     model = DenseNet(input_channel=input_channel).to(device)
+
 elif args.model == 'googlenet':
     model = GoogLeNet(input_channel=input_channel).to(device)
+
 elif args.model == 'nin':
     model = NIN(input_channel=input_channel).to(device)
+
 elif args.model == 'cnn':
     model = CNN(input_channel=input_channel).to(device)
+
 elif args.model == 'mlpmixer':
     model = MLPMixer(image_size = config['image_resolution'], in_channels = input_channel,
     patch_size = 16, dim = 512, depth = 12, num_classes = n_classes, token_dim=128, channel_dim=1024).to(device)
+
 elif args.model == 'mobilenetv1':
     model = MobileNetV1(input_channel=input_channel, n_classes=n_classes).to(device)
+
 elif args.model == 'inceptionv3':
     model = InceptionV3(input_channel=input_channel, n_classes=n_classes).to(device)
+
 elif args.model == 'xception':
     model = Xception(input_channel=input_channel, n_classes=n_classes).to(device)
+
 elif args.model == 'resnext':
     model = ResNeXt29_2x64d(input_channel=input_channel, n_classes=n_classes).to(device)
+
 elif args.model == 'vit':
     model = ViT(image_size=config['image_resolution'], patch_size=32, dim=1024, depth=6, heads=16, 
             input_channel=input_channel, n_classes=n_classes,  mlp_dim=2048, dropout=0.1, emb_dropout=0.1).to(device)
+
 elif args.model == 'mobilenetv2':
     model = MobileNetV2(input_channel=input_channel, n_classes=n_classes).to(device)
+
 elif args.model == 'darknet':
     model = Darknet53(input_channel=input_channel, n_classes=n_classes).to(device)
+
 elif args.model == 'squeezenet':
     model = SqueezeNet(input_channel=input_channel, n_classes=n_classes).to(device)
+
 elif args.model == 'shufflenet':
     cfg = {'out': [200,400,800], 'n_blocks': [4,8,4], 'groups': 2}
     model = ShuffleNet(cfg=cfg, input_channel=input_channel, n_classes=n_classes).to(device)
+
 elif args.model == 'efficientnetb0':
     param = {
         # 'efficientnet type': (width_coef, depth_coef, resolution, dropout_rate)
@@ -100,6 +119,7 @@ elif args.model == 'efficientnetb0':
         'efficientnetb6': (1.8, 2.6, 528, 0.5), 'efficientnetb7': (2.0, 3.1, 600, 0.5)
     }
     model = EfficientNet(input_channels=input_channel, param=param[args.model], n_classes=n_classes).to(device)
+
 elif args.model == 'resmlp':
     model = ResMLP(in_channels=input_channel, image_size=config['image_resolution'], patch_size=16, n_classes=n_classes,
                      dim=384, depth=12, mlp_dim=384*4).to(device)
