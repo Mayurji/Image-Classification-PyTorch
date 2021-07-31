@@ -10,7 +10,7 @@ Image Classification is a fundamental computer vision task with huge scope in va
 
 ### 🗒 Papers With Implementation
 
-Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim: adam}. Some architecture like SqueezeNet, ShuffleNet, InceptionV3, EfficientNet, Darknet53 and others at base config, but by reducing the batch size the architecture was executed in Google Colab and Kaggle.
+Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim: adam}. Some architecture like SqueezeNet, ShuffleNet, InceptionV3, EfficientNet, Darknet53 and others at base config, but by reducing the batch size the architecture was executed in Google Colab and Kaggle. Noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in worst case scenario, I've reduced the batch size in accordance to fit the Kaggle GPU. Just to mention, I use RTX2070 with 8 GB.
 
 |CNN Based    | Accuracy | Parameters     | Configuration |
 | :---        |    :----:   | :----:       | ---: |
@@ -20,7 +20,7 @@ Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim
 | [ResNet](https://arxiv.org/abs/1512.03385)  | 80.51 | 11.18M ||
 | [DenseNet](https://arxiv.org/abs/1608.06993)   | | ||
 | [MobileNetV1](https://arxiv.org/abs/1704.04861)   | 81.35 | 3.22M ||
-| [MobileNetV2](https://arxiv.org/abs/1801.04381)   | | 2.24M ||
+| [MobileNetV2](https://arxiv.org/abs/1801.04381)   | 80.74 | 2.24M ||
 | [GoogLeNet](https://arxiv.org/abs/1409.4842)   | 73.62 | 5.98M ||
 | [InceptionV3](https://arxiv.org/abs/1512.00567)   | | ||
 | [Darknet-53](https://arxiv.org/pdf/1804.02767.pdf)   | | | |
@@ -29,11 +29,11 @@ Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim
 | [SENet](https://arxiv.org/abs/1709.01507)   | 83.55 | 11.23M | |
 | [SqueezeNet](https://arxiv.org/abs/1602.07360v4)   |||Batch_size = 64|
 | [ShuffleNet](https://arxiv.org/abs/1707.01083)   |
-| [EfficientNet](https://arxiv.org/abs/1905.11946)   |
+| [EfficientNet](https://arxiv.org/abs/1905.11946)   ||4.02M|Batch_size=96|
 | Transformer Based |
 | [ViT](https://arxiv.org/abs/2010.11929)   | 29.71 | 53.59M ||
 | MLP Based |
-| [MLP-Mixer](https://arxiv.org/abs/2105.01601) |  | 13.63M | |
+| [MLP-Mixer](https://arxiv.org/abs/2105.01601) | 64.98 | 13.63M | |
 | [ResMLP](https://arxiv.org/abs/2105.03404)| 70.17 | 14.97M |
 
 ### Content
@@ -632,3 +632,5 @@ python main.py --model=resnet
 ```
 
 **Note:** Parameters can be changed in YAML file. The module supports only two datasets, MNIST and CIFAR-10, but you can modify the dataset file and include any other datasets.
+
+### Thanks To Google Colab and Kaggle, for availing free compute for running all experiments.
