@@ -10,9 +10,9 @@ Image Classification is a fundamental computer vision task with huge scope in va
 
 ### 🗒 Papers With Implementation
 
-Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim: adam }
+Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim: adam}. Some architecture like SqueezeNet, ShuffleNet, InceptionV3, EfficientNet, Darknet53 and others at base config, but by reducing the batch size the architecture was executed in Google Colab and Kaggle.
 
-|CNN Based    | Accuracy | Parameters     | Config: |
+|CNN Based    | Accuracy | Parameters     | Configuration |
 | :---        |    :----:   | :----:       | ---: |
 | [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")| 71.07 | 57.04M ||
 | [VGGNet](https://arxiv.org/abs/1409.1556)   | 75.21 | 128.81M ||
