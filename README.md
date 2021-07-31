@@ -33,7 +33,7 @@ Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim
 | Transformer Based |
 | [ViT](https://arxiv.org/abs/2010.11929)   | 29.71 | 53.59M ||
 | MLP Based |
-| [MLP-Mixer](https://arxiv.org/abs/2105.01601) | |13.63M | |
+| [MLP-Mixer](https://arxiv.org/abs/2105.01601) | 70.17 | 13.63M | |
 | [ResMLP](https://arxiv.org/abs/2105.03404)| | 14.97M |
 
 ### Content
