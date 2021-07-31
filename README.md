@@ -27,11 +27,11 @@ Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim
 | [Xception](https://arxiv.org/abs/1610.02357)   | | | |
 | [ResNeXt](https://arxiv.org/abs/1611.05431)   |
 | [SENet](https://arxiv.org/abs/1709.01507)   | 83.55 | 11.23M | |
-| [SqueezeNet](https://arxiv.org/abs/1602.07360v4)   |||Batch_size = 64|
+| [SqueezeNet](https://arxiv.org/abs/1602.07360v4)   | - | 0.73M |Batch_size = 64|
 | [ShuffleNet](https://arxiv.org/abs/1707.01083)   |
-| [EfficientNet](https://arxiv.org/abs/1905.11946)   ||4.02M|Batch_size=96|
+| [EfficientNet](https://arxiv.org/abs/1905.11946)   | - |4.02M|Batch_size=96|
 | Transformer Based |
-| [ViT](https://arxiv.org/abs/2010.11929)   | 29.71 | 53.59M ||
+| [ViT](https://arxiv.org/abs/2010.11929)   | - | - ||
 | MLP Based |
 | [MLP-Mixer](https://arxiv.org/abs/2105.01601) | 64.98 | 13.63M | |
 | [ResMLP](https://arxiv.org/abs/2105.03404)| 70.17 | 14.97M |
