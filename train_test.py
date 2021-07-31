@@ -1,8 +1,6 @@
 import torch
 import torch.nn as nn
 import numpy as np
-from plot import tensorboard
-
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
