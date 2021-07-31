@@ -14,7 +14,7 @@ Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim
 
 |CNN Based    | Accuracy | Parameters     | Configuration |
 | :---        |    :----:   | :----:       | ---: |
-| [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")| 71.07 | 57.04M ||
+| [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")| 71.27 | 58.32M ||
 | [VGGNet](https://arxiv.org/abs/1409.1556)   | 75.21 | 128.81M ||
 | [Network In Network](https://arxiv.org/abs/1312.4400)   ||||
 | [ResNet](https://arxiv.org/abs/1512.03385)  | 80.51 | 11.18M ||

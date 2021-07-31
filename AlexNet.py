@@ -25,27 +25,27 @@ Instead of using ImageNet, I am using MNIST and resizing the image to 224 x 224 
 import torch.nn as nn
 
 class AlexNet(nn.Module):
-	def __init__(self, input_channel):
+	def __init__(self, input_channel, n_classes):
 		super().__init__()
 		self.conv1 = nn.Sequential(
 			# transforming (bsize x 1 x 224 x 224) to (bsize x 96 x 54 x 54) 
 			#From floor((n_h - k_s + p + s)/s), floor((224 - 11 + 1 + 4) / 4) => floor(218/4) => floor(54.5) => 54
-			nn.Conv2d(input_channel, 64, kernel_size=11, stride=4, padding=2), #(batch_size * 96 * 54 * 54)
-			nn.ReLU(inplace=True), #(batch_size * 96 * 54 * 54)
-			nn.MaxPool2d(kernel_size=3, stride=2)) #(batch_size * 96 * 26 * 26)
+			nn.Conv2d(input_channel, 96, kernel_size=11, stride=4, padding=3), #(batch_size * 96 * 54 * 54)
+			nn.ReLU(inplace=True), #(batch_size * 96 * 55 * 55)
+			nn.MaxPool2d(kernel_size=3, stride=2)) #(batch_size * 96 * 27 * 27)
 		self.conv2 = nn.Sequential(
-			nn.Conv2d(64, 192, kernel_size=5, padding=2), #(batch_size * 256 * 26 * 26)
+			nn.Conv2d(96, 256, kernel_size=5, padding=2), #(batch_size * 256 * 27 * 27)
 			nn.ReLU(inplace=True),
-			nn.MaxPool2d(kernel_size=3, stride=2)) #(batch_size * 256 * 12 * 12)
+			nn.MaxPool2d(kernel_size=3, stride=2)) #(batch_size * 256 * 13 * 13)
 		self.conv3 = nn.Sequential(
-			nn.Conv2d(192, 384, kernel_size=3, padding=1), #(batch_size * 384 * 12 * 12)
+			nn.Conv2d(256, 384, kernel_size=3, padding=1), #(batch_size * 384 * 13 * 13)
 			nn.ReLU(inplace=True),
-			nn.Conv2d(384, 256, kernel_size=3, padding=1), #(batch_size * 384 * 12 * 12)
+			nn.Conv2d(384, 384, kernel_size=3, padding=1), #(batch_size * 384 * 13 * 13)
 			nn.ReLU(inplace=True),
-			nn.Conv2d(256, 256, kernel_size=3, padding=1), #(batch_size * 256 * 12 * 12)
+			nn.Conv2d(384, 256, kernel_size=3, padding=1), #(batch_size * 256 * 13 * 13)
 			nn.ReLU(inplace=True),
-			nn.MaxPool2d(kernel_size=3, stride=2), #(batch_size * 256 * 5 * 5)
-			nn.Flatten()) #(batch_size * 6400)
+			nn.MaxPool2d(kernel_size=3, stride=2), #(batch_size * 256 * 6 * 6)
+			nn.Flatten()) #(batch_size * 9216)
 		self.fc = nn.Sequential(
 			nn.Linear(256 * 6 * 6, 4096), #(batch_size * 4096)
 			nn.ReLU(inplace=True),
@@ -53,7 +53,7 @@ class AlexNet(nn.Module):
 			nn.Linear(4096, 4096), #(batch_size * 4096)
 			nn.ReLU(inplace=True),
 			nn.Dropout(p=0.5),
-			nn.Linear(4096, 10)) #(batch_size * 10)
+			nn.Linear(4096, n_classes)) #(batch_size * 10)
 	
 		self.conv1.apply(self.init_weights)
 		self.conv2.apply(self.init_weights)

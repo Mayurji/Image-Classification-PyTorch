@@ -57,7 +57,7 @@ if args.model == 'vgg':
             image_resolution=config['image_resolution']).to(device)
 
 elif args.model == 'alexnet':
-    model = AlexNet(input_channel=input_channel).to(device)
+    model = AlexNet(input_channel=input_channel, n_classes=n_classes).to(device)
 
 elif args.model == 'senet':
     model = SENet(in_channel=input_channel).to(device)
