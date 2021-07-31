@@ -129,11 +129,11 @@ elif args.model == 'resmlp':
 print(model)
 print(f'Total Number of Parameters of {args.model.capitalize()} is {round((sum(p.numel() for p in model.parameters()))/1000000, 2)}M')
 
-# trainer = training(model=model, optimizer=config['optimizer'], learning_rate=config['learning_rate'],train_dataloader=train_dataloader, 
-#           num_epochs=config['num_epochs'],test_dataloader=test_dataloader)
-# trainer.train()
+trainer = training(model=model, optimizer=config['optimizer'], learning_rate=config['learning_rate'],train_dataloader=train_dataloader, 
+          num_epochs=config['num_epochs'],test_dataloader=test_dataloader)
+trainer.train()
 
 # Calculate FLops and Memory Usage.
-model.to('cpu')
-dummy_input = (input_channel, config["image_resolution"], config["image_resolution"])
-print(stat(model, dummy_input))
+# model.to('cpu')
+# dummy_input = (input_channel, config["image_resolution"], config["image_resolution"])
+# print(stat(model, dummy_input))
