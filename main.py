@@ -67,8 +67,8 @@ elif args.model == 'resnet':
     model = ResNet(input_channel=input_channel, n_classes=n_classes).to(device)
 
 elif args.model == 'densenet':
-    model = DenseNet(input_channel=input_channel, n_classes=n_classes, growthRate=12, depth=100, reduction=0.5,
-                            bottleneck=True).to(device)
+    model = DenseNet(input_channel=input_channel, n_classes=n_classes, 
+            growthRate=12, depth=100, reduction=0.5, bottleneck=True).to(device)
 
 elif args.model == 'nin':
     model = NIN(input_channel=input_channel, n_classes=n_classes).to(device)
@@ -119,8 +119,8 @@ elif args.model == 'efficientnetb0':
     model = EfficientNet(input_channels=input_channel, param=param[args.model], n_classes=n_classes).to(device)
 
 elif args.model == 'mlpmixer':
-    model = MLPMixer(image_size = config['image_resolution'], in_channels = input_channel,
-    patch_size = 16, dim = 512, depth = 12, num_classes = n_classes, token_dim=128, channel_dim=1024).to(device)
+    model = MLPMixer(image_size = config['image_resolution'], input_channels = input_channel,
+    patch_size = 16, dim = 512, depth = 12, n_classes = n_classes, token_dim=128, channel_dim=1024).to(device)
 
 elif args.model == 'resmlp':
     model = ResMLP(in_channels=input_channel, image_size=config['image_resolution'], patch_size=16, n_classes=n_classes,
@@ -129,11 +129,11 @@ elif args.model == 'resmlp':
 print(model)
 print(f'Total Number of Parameters of {args.model.capitalize()} is {round((sum(p.numel() for p in model.parameters()))/1000000, 2)}M')
 
-trainer = training(model=model, optimizer=config['optimizer'], learning_rate=config['learning_rate'],train_dataloader=train_dataloader, 
-          num_epochs=config['num_epochs'],test_dataloader=test_dataloader)
-trainer.train()
+# trainer = training(model=model, optimizer=config['optimizer'], learning_rate=config['learning_rate'],train_dataloader=train_dataloader, 
+#           num_epochs=config['num_epochs'],test_dataloader=test_dataloader)
+# trainer.train()
 
 # Calculate FLops and Memory Usage.
-# model.to('cpu')
-# dummy_input = (input_channel, config["image_resolution"], config["image_resolution"])
-# print(stat(model, dummy_input))
+model.to('cpu')
+dummy_input = (input_channel, config["image_resolution"], config["image_resolution"])
+print(stat(model, dummy_input))
