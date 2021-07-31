@@ -16,7 +16,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 import math
 
-
 class SeparableConv(nn.Module):
     def __init__(self, input_channel, output_channel, kernel_size=1, stride=1, padding=0, dilation=1, bias=False):
         super().__init__()

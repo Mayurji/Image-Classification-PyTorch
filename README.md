@@ -20,17 +20,17 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 | [VGGNet](https://arxiv.org/abs/1409.1556)   | 75.21 | 128.81M || Yes |
 | [Network In Network](https://arxiv.org/abs/1312.4400) | 63.46 | 2.02M || Yes |
 | [ResNet](https://arxiv.org/abs/1512.03385)  | 80.51 | 11.18M || Yes |
-| [DenseNet](https://arxiv.org/abs/1608.06993)   | - | - | - | No |
-| [MobileNetV1](https://arxiv.org/abs/1704.04861)   | 81.35 | 3.22M ||
+| [DenseNet](https://arxiv.org/abs/1608.06993)   | - | - | High Compute Req. | - |
+| [MobileNetV1](https://arxiv.org/abs/1704.04861)   | 81.35 | 3.22M || Yes |
 | [MobileNetV2](https://arxiv.org/abs/1801.04381)   | 80.74 | 2.24M ||
-| [GoogLeNet](https://arxiv.org/abs/1409.4842)   | 73.62 | 5.98M ||
-| [InceptionV3](https://arxiv.org/abs/1512.00567)   | - | ||
-| [Darknet-53](https://arxiv.org/pdf/1804.02767.pdf)   | - | | |
-| [Xception](https://arxiv.org/abs/1610.02357)   | - | | |
+| [GoogLeNet](https://arxiv.org/abs/1409.4842)   | 73.62 | 5.98M || Yes |
+| [InceptionV3](https://arxiv.org/abs/1512.00567)   | - | - | High Compute Req. | - |
+| [Darknet-53](https://arxiv.org/pdf/1804.02767.pdf)   | - | - | High Compute Req. | - |
+| [Xception](https://arxiv.org/abs/1610.02357)   | 85.9 | 20.83M | Batch_Size = 96 | Yes |
 | [ResNeXt](https://arxiv.org/abs/1611.05431)   | - |
 | [SENet](https://arxiv.org/abs/1709.01507)   | 83.55 | 11.23M | | Yes |
 | [SqueezeNet](https://arxiv.org/abs/1602.07360v4)   | - | 0.73M ||
-| [ShuffleNet](https://arxiv.org/abs/1707.01083)   | - |
+| [ShuffleNet](https://arxiv.org/abs/1707.01083)   | | | Batch_Size = 32 | Yes |
 | [EfficientNet](https://arxiv.org/abs/1905.11946)   | - |4.02M||
 | Transformer Based |
 | [ViT](https://arxiv.org/abs/2010.11929)   | - | - ||

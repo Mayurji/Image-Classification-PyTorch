@@ -92,7 +92,7 @@ class ShuffleNet(nn.Module):
         self.layer2 = self.make_layer(output_channels[1], n_blocks[1], groups)
         self.layer3 = self.make_layer(output_channels[2], n_blocks[2], groups)
         self.linear = nn.Linear(output_channels[2], n_classes)
-        self.pool = nn.AvgPool2d(7)
+        self.pool = nn.AdaptiveAvgPool2d(1)
     def make_layer(self, out_channel, n_blocks, groups):
         layers = []
         for i in range(n_blocks):
@@ -111,5 +111,4 @@ class ShuffleNet(nn.Module):
         out = self.pool(out)
         out = out.view(out.size(0), -1)
         out = self.linear(out)
-        
         return out

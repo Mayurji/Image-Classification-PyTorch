@@ -28,7 +28,6 @@ The above parameters helps in trade-off between latency (speed of inference) and
 MobileNet is 28 layers neural net represented by both the depthwise convolution and pointwise convolution.
 
 """
-import torch
 import torch.nn as nn
 
 class MobileNetV1(nn.Module):
@@ -70,7 +69,7 @@ class MobileNetV1(nn.Module):
             conv_dw(512, 512, 1),
             conv_dw(512, 1024, 2),
             conv_dw(1024, 1024, 1),
-            nn.AdaptiveAvgPool2d(1)
+            nn.AvgPool2d(7)
         )
         self.fc = nn.Linear(1024, n_classes)
 

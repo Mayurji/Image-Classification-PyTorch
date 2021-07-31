@@ -46,7 +46,7 @@ class Inception(nn.Module):
 	    # output.
 
 class GoogLeNet(nn.Module):
-	def __init__(self, input_channel):
+	def __init__(self, input_channel, n_classes):
 		super().__init__()
 		self.b1 = nn.Sequential(
 				nn.Conv2d(input_channel, 64, kernel_size=7, stride=2, padding=3),
@@ -108,7 +108,7 @@ class GoogLeNet(nn.Module):
                 Inception(832, 384, (192, 384), (48, 128), 128),
                 nn.AdaptiveAvgPool2d((1, 1)), nn.Flatten())
 
-		self.fc = nn.Linear(1024, 10)
+		self.fc = nn.Linear(1024, n_classes)
 
 		self.b1.apply(self.init_weights)
 		self.b2.apply(self.init_weights)
