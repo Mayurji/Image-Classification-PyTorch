@@ -19,7 +19,7 @@ Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim
 | [Network In Network](https://arxiv.org/abs/1312.4400)   ||||
 | [ResNet](https://arxiv.org/abs/1512.03385)  | 80.51 | 11.18M ||
 | [DenseNet](https://arxiv.org/abs/1608.06993)   | | ||
-| [MobileNetV1](https://arxiv.org/abs/1704.04861)   | | 3.22M ||
+| [MobileNetV1](https://arxiv.org/abs/1704.04861)   | 81.35 | 3.22M ||
 | [MobileNetV2](https://arxiv.org/abs/1801.04381)   | | ||
 | [GoogLeNet](https://arxiv.org/abs/1409.4842)   | 73.62 | 5.98M ||
 | [InceptionV3](https://arxiv.org/abs/1512.00567)   | | ||
