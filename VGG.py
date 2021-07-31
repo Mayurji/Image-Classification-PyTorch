@@ -25,14 +25,14 @@ This architecture is VGG-11.
 import torch.nn as nn
 
 class VGG11(nn.Module):
-	def __init__(self, input_channel, image_resolution, VGGArchitecture = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))):
+	def __init__(self, input_channel, n_classes, image_resolution, VGGArchitecture = ((1, 64), (1, 128), (2, 256), (2, 512), (2, 512))):
 		super().__init__()
 		self.input_channel = input_channel
 
 		def VGGBlock(num_convs, input_channel, output_channel):
 			layers = []
 			for _ in range(num_convs):
-				layers.append(nn.Conv2d(input_channel, output_channel, kernel_size=3, padding=1))				
+				layers.append(nn.Conv2d(input_channel, output_channel, kernel_size=3, padding=1))
 				layers.append(nn.ReLU())
 				input_channel = output_channel
 
@@ -51,7 +51,7 @@ class VGG11(nn.Module):
 			nn.ReLU(), nn.Dropout(0.5),
 			nn.Linear(4096, 4096),
 			nn.ReLU(), nn.Dropout(0.5),
-			nn.Linear(4096, 10))
+			nn.Linear(4096, n_classes))
 
 		self.layers.apply(self.init_weights)
 

@@ -52,8 +52,8 @@ n_classes = config['n_classes']
 
 """Model Initialization"""
 
-if args.model == 'vgg':
-    model = VGG11(input_channel=input_channel, 
+if args.model == 'vggnet':
+    model = VGG11(input_channel=input_channel, n_classes=n_classes,
             image_resolution=config['image_resolution']).to(device)
 
 elif args.model == 'alexnet':
