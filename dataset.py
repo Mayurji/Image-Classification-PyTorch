@@ -7,14 +7,18 @@ class initialize_dataset:
         self.image_resolution= image_resolution
         self.batch_size=batch_size
         self.MNIST = MNIST
-        self.transform = transforms.Compose([transforms.ToTensor(), transforms.Resize((self.image_resolution, self.image_resolution))])
 
-    def load_dataset(self, transforms=None):
+    def load_dataset(self, transform=None):
         path = "/home/mayur/Desktop/Pytorch/data"
-        if transforms:
-            transform = transforms
+        #path = './data'
+        if transform:
+            transform = transform
+        elif self.MNIST:
+            transform = transforms.Compose([transforms.ToTensor(), transforms.Resize((self.image_resolution, self.image_resolution)),
+                                            transforms.Normalize((0.1307,), (0.3081,))])
         else:
-            transform = self.transform
+            transform = transforms.Compose([transforms.ToTensor(), transforms.Resize((self.image_resolution, self.image_resolution)),
+                        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
 
         if self.MNIST:
             train_dataset = torchvision.datasets.MNIST(root=path, train=True,

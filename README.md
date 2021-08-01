@@ -29,17 +29,17 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 | [Xception](https://arxiv.org/abs/1610.02357)   | 85.9 | 20.83M | 4.63GFlops | Batch_Size = 96 | Yes |
 | [ResNeXt](https://arxiv.org/abs/1611.05431)   | - | | 69.41GFlops | High Compute Req. | |
 | [SENet](https://arxiv.org/abs/1709.01507)   | 83.55 | 11.23M | 1.82GFlops | | Yes |
-| [SqueezeNet](https://arxiv.org/abs/1602.07360v4)   | - | 0.73M | 2.64GFlops | Batch_Size = 64 |
+| [SqueezeNet](https://arxiv.org/abs/1602.07360v4)   | 62.2 | 0.73M | 2.64GFlops | Batch_Size = 64 |
 | [ShuffleNet](https://arxiv.org/abs/1707.01083)   | | | 2.03GFlops | Batch_Size = 32 | Yes |
 | [EfficientNet-B0](https://arxiv.org/abs/1905.11946)   | - |4.02M| 0.4GFlops| | |
 | Transformer Based |
-| [ViT](https://arxiv.org/abs/2010.11929)   | - | - ||||
+| [ViT](https://arxiv.org/abs/2010.11929)   | 34.27 | 53.59 ||||
 | MLP Based |
 | [MLP-Mixer](https://arxiv.org/abs/2105.01601) | 64.98 | 13.63M | - | | |
 | [ResMLP](https://arxiv.org/abs/2105.03404)| 70.17 | 14.97M | - | | |
 
 Note: Marked few cells as high compute required because even with batch_size = 8, the kaggle compute was not enough, 
-if you have any work around or else if something is missing, please do share inputs in issues. Thanks.
+if you have any work around or else if something is missing, please do share your inputs in issues. Thanks.
 
 ### Content
 
