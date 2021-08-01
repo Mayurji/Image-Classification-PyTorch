@@ -28,34 +28,35 @@ from ResMLP import ResMLP
 from dataset import initialize_dataset
 from train_test import training
 
+"""Device Selection"""
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+
+""" Initialize model based on command line argument """
+model_parser = argparse.ArgumentParser(description='Image Classification Using PyTorch', usage='[option] model_name')
+model_parser.add_argument('--model', type=str, required=True)
+args = model_parser.parse_args()
+
+"""Loading Config File"""
 try:
     stream = open("config.yaml", 'r')
     config = yaml.safe_load(stream)
 except FileNotFoundError:
     print("Config file missing")
 
-"""Device Selection"""
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-""" Initialize model based on command line argument """
-model_parser = argparse.ArgumentParser(description='Select the Model or Models', usage='[option] model_name')
-model_parser.add_argument('--model', type=str, required=True)
-args = model_parser.parse_args()
-
 """Dataset Initialization"""
-data_initialization = initialize_dataset(image_resolution=config['image_resolution'], batch_size=config['batch_size'], 
-                      MNIST=config['MNIST'])
+data_initialization = initialize_dataset(image_resolution=config['parameters']['image_resolution'], batch_size=config['parameters']['batch_size'], 
+                      MNIST=config['parameters']['MNIST'])
 train_dataloader, test_dataloader = data_initialization.load_dataset()
 
 input_channel = next(iter(train_dataloader))[0].shape[1]
 #n_classes = len(torch.unique(next(iter(train_dataloader))[1]))
-n_classes = config['n_classes']
+n_classes = config['parameters']['n_classes']
 
 """Model Initialization"""
 
 if args.model == 'vggnet':
     model = VGG11(input_channel=input_channel, n_classes=n_classes,
-            image_resolution=config['image_resolution']).to(device)
+            image_resolution=config['parameters']['image_resolution']).to(device)
 
 elif args.model == 'alexnet':
     model = AlexNet(input_channel=input_channel, n_classes=n_classes).to(device)
@@ -92,7 +93,7 @@ elif args.model == 'resnext':
     model = ResNeXt29_2x64d(input_channel=input_channel, n_classes=n_classes).to(device)
 
 elif args.model == 'vit':
-    model = ViT(image_size=config['image_resolution'], patch_size=32, dim=1024, depth=6, heads=16, 
+    model = ViT(image_size=config['parameters']['image_resolution'], patch_size=32, dim=1024, depth=6, heads=16, 
             input_channel=input_channel, n_classes=n_classes,  mlp_dim=2048, dropout=0.1, emb_dropout=0.1).to(device)
 
 elif args.model == 'mobilenetv2':
@@ -108,7 +109,8 @@ elif args.model == 'shufflenet':
     cfg = {'out': [200,400,800], 'n_blocks': [4,8,4], 'groups': 2}
     model = ShuffleNet(cfg=cfg, input_channel=input_channel, n_classes=n_classes).to(device)
 
-elif args.model == 'efficientnetb0':
+elif args.model in ['efficientnetb0', 'efficientnetb1', 'efficientnetb2', 'efficientnetb3', 
+                    'efficientnetb4', 'efficientnetb5', 'efficientnetb6', 'efficientnetb7']:
     param = {
         # 'efficientnet type': (width_coef, depth_coef, resolution, dropout_rate)
         'efficientnetb0': (1.0, 1.0, 224, 0.2), 'efficientnetb1': (1.0, 1.1, 240, 0.2),
@@ -119,21 +121,23 @@ elif args.model == 'efficientnetb0':
     model = EfficientNet(input_channels=input_channel, param=param[args.model], n_classes=n_classes).to(device)
 
 elif args.model == 'mlpmixer':
-    model = MLPMixer(image_size = config['image_resolution'], input_channels = input_channel,
+    model = MLPMixer(image_size = config['parameters']['image_resolution'], input_channels = input_channel,
     patch_size = 16, dim = 512, depth = 12, n_classes = n_classes, token_dim=128, channel_dim=1024).to(device)
 
 elif args.model == 'resmlp':
-    model = ResMLP(in_channels=input_channel, image_size=config['image_resolution'], patch_size=16, n_classes=n_classes,
-                     dim=384, depth=12, mlp_dim=384*4).to(device)
+    model = ResMLP(in_channels=input_channel, image_size=config['parameters']['image_resolution'], patch_size=16, 
+            n_classes=n_classes, dim=384, depth=12, mlp_dim=384*4).to(device)
 
-print(model)
+#print(model)
+
 print(f'Total Number of Parameters of {args.model.capitalize()} is {round((sum(p.numel() for p in model.parameters()))/1000000, 2)}M')
 
-trainer = training(model=model, optimizer=config['optimizer'], learning_rate=config['learning_rate'],train_dataloader=train_dataloader, 
-          num_epochs=config['num_epochs'],test_dataloader=test_dataloader)
+    
+trainer = training(model=model, optimizer=config['parameters']['optimizer'], learning_rate=config['parameters']['learning_rate'], 
+            train_dataloader=train_dataloader, num_epochs=config['parameters']['num_epochs'],test_dataloader=test_dataloader)
 trainer.train()
-
+    
 # Calculate FLops and Memory Usage.
 # model.to('cpu')
-# dummy_input = (input_channel, config["image_resolution"], config["image_resolution"])
+# dummy_input = (input_channel, config['parameters']["image_resolution"], config['parameters']["image_resolution"])
 # print(stat(model, dummy_input))

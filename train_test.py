@@ -15,7 +15,7 @@ class training:
         self.num_epochs = num_epochs
         self.eval = eval
 
-    def train(self, visualization=False):
+    def train(self):
         
         criterion = nn.CrossEntropyLoss()
         if self.optimizer == 'sgd':
@@ -27,8 +27,8 @@ class training:
         
         # Train the model
         total_step = len(self.train_dataloader)
-        Loss  = []
         for epoch in range(self.num_epochs):
+            closs = 0
             for i, (images, labels) in enumerate(self.train_dataloader):
                 images = images.to(device)
                 labels = labels.to(device)
@@ -36,19 +36,20 @@ class training:
                 # Forward pass
                 outputs = self.model(images)
                 loss = criterion(outputs, labels)
-                Loss.append(loss.item())
 
                 # Backward and optimize
                 optimizer.zero_grad()
                 loss.backward()
+                closs = closs + loss
                 optimizer.step()
-                
+
                 if (i+1) % 100 == 0:
                     print ('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}' 
                         .format(epoch+1, self.num_epochs, i+1, total_step, loss.item()))
                     # Loss.append(loss.cpu().detach().numpy())
                     # visual.plot_loss(np.mean(Loss), i)
                     # Loss.clear()
+            
 
         if self.eval:
             self.model.eval()
