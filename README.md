@@ -41,6 +41,8 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 Note: Marked few cells as high compute required because even with batch_size = 8, the kaggle compute was not enough, 
 if you have any work around or else if something is missing, please do share your inputs in issues. Thanks.
 
+### [Google Colab Notebook to tune hyperparameters with Weights and Biases Visualizations](https://colab.research.google.com/drive/1tIyEAbXcbRf4mKqXp2rqqQ6bOpTaPZKz?usp=sharing)
+
 ### Content
 
 <details>

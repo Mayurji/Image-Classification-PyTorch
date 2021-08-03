@@ -22,6 +22,30 @@ import math
 import torch
 import torch.nn as nn
 from torch.nn import functional as F
+"""
+In ResNet, we see how the skip connection added as identity function from the inputs
+to interact with the Conv layers. But in DenseNet, we see instead of adding skip 
+connection to Conv layers, we can append or concat the output of identity function
+with output of Conv layers.
+
+In ResNet, it is little tedious to make the dimensions to match for adding the skip
+connection and Conv Layers, but it is much simpler in DenseNet, as we concat the 
+both the X and Conv's output.
+
+The key idea or the reason its called DenseNet is because the next layers not only get
+the input from previous layer but also preceeding layers before the previous layer. So 
+the next layer becomes dense as it loaded with output from previous layers.
+
+Check Figure 7.7.2 from https://d2l.ai/chapter_convolutional-modern/densenet.html for 
+why DenseNet is Dense?
+
+Two blocks comprise DenseNet, one is DenseBlock for concat operation and other is 
+transition layer for controlling channels meaning dimensions (recall 1x1 Conv).
+"""
+import math
+import torch
+import torch.nn as nn
+from torch.nn import functional as F
 
 class Bottleneck(nn.Module):
     def __init__(self, nChannels, growthRate):
@@ -119,7 +143,8 @@ class DenseNet(nn.Module):
         out = self.trans1(self.dense1(out))
         out = self.trans2(self.dense2(out))
         out = self.dense3(out)
-        out = torch.squeeze(F.avg_pool2d(F.relu(self.bn1(out)), 8))
-      
+        out = F.relu(self.bn1(out))
+        out = torch.squeeze(F.adaptive_avg_pool2d(out, 1))
         out = F.log_softmax(self.fc(out))
+        out = out.view(-1).unsqueeze(0)
         return out

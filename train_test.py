@@ -24,11 +24,11 @@ class training:
             optimizer = torch.optim.Adam(self.model.parameters(), lr=self.learning_rate)
         else:
             pass
-        
+
         # Train the model
         total_step = len(self.train_dataloader)
         for epoch in range(self.num_epochs):
-            closs = 0
+            
             for i, (images, labels) in enumerate(self.train_dataloader):
                 images = images.to(device)
                 labels = labels.to(device)
@@ -40,7 +40,6 @@ class training:
                 # Backward and optimize
                 optimizer.zero_grad()
                 loss.backward()
-                closs = closs + loss
                 optimizer.step()
 
                 if (i+1) % 100 == 0:
