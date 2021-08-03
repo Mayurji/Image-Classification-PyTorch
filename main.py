@@ -69,7 +69,7 @@ elif args.model == 'resnet':
 
 elif args.model == 'densenet':
     model = DenseNet(input_channel=input_channel, n_classes=n_classes, 
-            growthRate=12, depth=100, reduction=0.5, bottleneck=True).to(device)
+            growthRate=12, depth=40, reduction=0.5, bottleneck=True).to(device)
 
 elif args.model == 'nin':
     model = NIN(input_channel=input_channel, n_classes=n_classes).to(device)
@@ -128,11 +128,9 @@ elif args.model == 'resmlp':
     model = ResMLP(in_channels=input_channel, image_size=config['parameters']['image_resolution'], patch_size=16, 
             n_classes=n_classes, dim=384, depth=12, mlp_dim=384*4).to(device)
 
-#print(model)
+print(model)
 
 print(f'Total Number of Parameters of {args.model.capitalize()} is {round((sum(p.numel() for p in model.parameters()))/1000000, 2)}M')
-
-    
 trainer = training(model=model, optimizer=config['parameters']['optimizer'], learning_rate=config['parameters']['learning_rate'], 
             train_dataloader=train_dataloader, num_epochs=config['parameters']['num_epochs'],test_dataloader=test_dataloader)
 trainer.train()

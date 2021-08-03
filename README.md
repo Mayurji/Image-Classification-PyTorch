@@ -20,7 +20,7 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 | [VGGNet](https://arxiv.org/abs/1409.1556)   | 75.21 | 128.81M | 7.63GFlops| - | Yes | 75.93 |
 | [Network In Network](https://arxiv.org/abs/1312.4400) | 63.46 | 2.02M | 0.833GFlops | - | Yes | 71.03 |
 | [ResNet](https://arxiv.org/abs/1512.03385)  | 80.51 | 11.18M | 1.82GFlops | - | Yes | 83.39 |
-| [DenseNet](https://arxiv.org/abs/1608.06993)   | - | - | - | High Compute Req. | - |
+| [DenseNet-Depth40](https://arxiv.org/abs/1608.06993)   | - | 0.18M | - | Batch_Size = 8 | Yes | 68.25 |
 | [MobileNetV1](https://arxiv.org/abs/1704.04861)   | 81.35 | 3.22M | 0.582GFlops | - | Yes | 81.72 |
 | [MobileNetV2](https://arxiv.org/abs/1801.04381)   | 80.74 | 2.24M | 0.318GFlops | - | Yes | 83.99 |
 | [GoogLeNet](https://arxiv.org/abs/1409.4842)   | 73.62 | 5.98M | 1.59GFlops | - | Yes | 80.28 |

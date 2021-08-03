@@ -90,7 +90,7 @@ class Transition(nn.Module):
 
 
 class DenseNet(nn.Module):
-    def __init__(self, input_channel, n_classes, growthRate, depth, reduction, bottleneck):
+    def __init__(self, input_channel, growthRate, depth, reduction, n_classes, bottleneck):
         super(DenseNet, self).__init__()
 
         nDenseBlocks = (depth-4) // 3
@@ -142,9 +142,10 @@ class DenseNet(nn.Module):
         out = self.conv1(x)
         out = self.trans1(self.dense1(out))
         out = self.trans2(self.dense2(out))
-        out = self.dense3(out)
+        out = self.trans3(self.dense3(out))
+        out = self.dense4(out)
         out = F.relu(self.bn1(out))
         out = torch.squeeze(F.adaptive_avg_pool2d(out, 1))
         out = F.log_softmax(self.fc(out))
-        out = out.view(-1).unsqueeze(0)
+
         return out
