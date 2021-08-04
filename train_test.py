@@ -23,7 +23,7 @@ class training:
     def runner(self):
         
         criterion = nn.CrossEntropyLoss()
-        if self.model_name in ['resnet', 'vggnet', 'alexnet']:
+        if self.model_name in ['resnet', 'alexnet']:
             optimizer, scheduler = optim(model_name=self.model_name, model=self.model, lr=self.learning_rate)
 
         elif self.optimizer == 'sgd':
