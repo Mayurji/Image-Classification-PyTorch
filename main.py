@@ -132,8 +132,9 @@ print(model)
 
 print(f'Total Number of Parameters of {args.model.capitalize()} is {round((sum(p.numel() for p in model.parameters()))/1000000, 2)}M')
 trainer = training(model=model, optimizer=config['parameters']['optimizer'], learning_rate=config['parameters']['learning_rate'], 
-            train_dataloader=train_dataloader, num_epochs=config['parameters']['num_epochs'],test_dataloader=test_dataloader)
-trainer.train()
+            train_dataloader=train_dataloader, num_epochs=config['parameters']['num_epochs'],test_dataloader=test_dataloader,
+            model_name=args.model.capitalize())
+trainer.runner()
     
 # Calculate FLops and Memory Usage.
 # model.to('cpu')
