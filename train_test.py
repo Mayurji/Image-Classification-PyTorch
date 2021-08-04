@@ -2,6 +2,7 @@ from pathlib import Path
 import torch
 import torch.nn as nn
 import numpy as np
+from optimizer import optim 
 import matplotlib.pyplot as plt
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -22,7 +23,10 @@ class training:
     def runner(self):
         
         criterion = nn.CrossEntropyLoss()
-        if self.optimizer == 'sgd':
+        if self.model_name in ['resnet']:
+            optimizer, scheduler = optim(model_name=self.model_name, model=self.model, lr=self.learning_rate)
+
+        elif self.optimizer == 'sgd':
             optimizer = torch.optim.SGD(self.model.parameters(), lr=self.learning_rate)
         elif self.optimizer == 'adam':
             optimizer = torch.optim.Adam(self.model.parameters(), lr=self.learning_rate)
@@ -80,13 +84,16 @@ class training:
                         correct += (predicted == labels).sum().item()
                         test_loss=running_loss/len(self.test_dataloader)
                         test_accuracy = (correct*100)/total
-
                     print('Epoch: %.0f | Test Loss: %.3f | Accuracy: %.3f'%(epoch+1, test_loss, test_accuracy)) 
+
+            if self.model_name in ['resnet']:
+                scheduler.step()
 
             train_accu.append(train_accuracy)
             train_losses.append(train_loss)
             test_losses.append(test_loss)
             test_accu.append(test_accuracy)
+
 
         if self.plot:
             Path('plot/').mkdir(parents=True, exist_ok=True)

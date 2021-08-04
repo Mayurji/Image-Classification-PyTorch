@@ -22,7 +22,7 @@ Below is a ResNet18 architecture:
 
 There are 4 convolutional layers in each module (excluding the 1×1 convolutional layer). 
 Together with the first 7×7 convolutional layer and the final fully-connected layer, there are 
-18 layers in total. Therefore, this model is commonly known as ResNet-18.
+18 layers in total. Therefore, this model is a ResNet-18.
 """
 import torch.nn as nn
 from torch.nn import functional as F
@@ -82,8 +82,14 @@ class ResNet(nn.Module):
         self.finalLayer.apply(self.init_weights)
 
     def init_weights(self, layer):
-        if type(layer) == nn.Linear or type(layer) == nn.Conv2d:
-            nn.init.xavier_uniform_(layer.weight)
+        if type(layer) == nn.Conv2d:
+            nn.init.kaiming_normal_(layer.weight, mode='fan_out')
+        if type(layer) == nn.Linear:
+            nn.init.normal_(layer.weight, std=1e-3)
+        if type(layer) == nn.BatchNorm2d:
+            nn.init.constant_(layer.weight, 1)
+            nn.init.constant_(layer.bias, 0)
+        
 
 
     def forward(self, X):
