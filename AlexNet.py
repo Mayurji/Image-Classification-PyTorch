@@ -29,13 +29,15 @@ class AlexNet(nn.Module):
 		super().__init__()
 		self.conv1 = nn.Sequential(
 			# transforming (bsize x 1 x 224 x 224) to (bsize x 96 x 54 x 54) 
-			#From floor((n_h - k_s + p + s)/s), floor((224 - 11 + 1 + 4) / 4) => floor(218/4) => floor(54.5) => 54
-			nn.Conv2d(input_channel, 96, kernel_size=11, stride=4, padding=3), #(batch_size * 96 * 54 * 54)
+			#From floor((n_h - k_s + p + s)/s), floor((224 - 11 + 3 + 4) / 4) => floor(219/4) => floor(55.5) => 55
+			nn.Conv2d(input_channel, 96, kernel_size=11, stride=4, padding=3), #(batch_size * 96 * 55 * 55)
 			nn.ReLU(inplace=True), #(batch_size * 96 * 55 * 55)
+			#nn.LocalResponseNorm(size=5, alpha=0.0001, beta=0.75, k=2),
 			nn.MaxPool2d(kernel_size=3, stride=2)) #(batch_size * 96 * 27 * 27)
 		self.conv2 = nn.Sequential(
 			nn.Conv2d(96, 256, kernel_size=5, padding=2), #(batch_size * 256 * 27 * 27)
 			nn.ReLU(inplace=True),
+			#nn.LocalResponseNorm(size=5, alpha=0.0001, beta=0.75, k=2),
 			nn.MaxPool2d(kernel_size=3, stride=2)) #(batch_size * 256 * 13 * 13)
 		self.conv3 = nn.Sequential(
 			nn.Conv2d(256, 384, kernel_size=3, padding=1), #(batch_size * 384 * 13 * 13)

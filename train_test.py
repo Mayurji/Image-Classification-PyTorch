@@ -1,9 +1,9 @@
-from pathlib import Path
+from os import TMP_MAX
 import torch
 import torch.nn as nn
 import numpy as np
 from optimizer import optim 
-import matplotlib.pyplot as plt
+from plot import trainTestPlot
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -28,11 +28,13 @@ class training:
 
         elif self.optimizer == 'sgd':
             optimizer = torch.optim.SGD(self.model.parameters(), lr=self.learning_rate)
+            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200)
         elif self.optimizer == 'adam':
             optimizer = torch.optim.Adam(self.model.parameters(), lr=self.learning_rate)
+            scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.1)
         else:
             pass
-
+        
         train_losses = []
         train_accu = []
         test_losses = []
@@ -86,31 +88,12 @@ class training:
                         test_accuracy = (correct*100)/total
                     print('Epoch: %.0f | Test Loss: %.3f | Accuracy: %.3f'%(epoch+1, test_loss, test_accuracy)) 
 
-            if self.model_name in ['resnet']:
-                scheduler.step()
+            
+            scheduler.step()
 
             train_accu.append(train_accuracy)
             train_losses.append(train_loss)
             test_losses.append(test_loss)
             test_accu.append(test_accuracy)
-
-
-        if self.plot:
-            Path('plot/').mkdir(parents=True, exist_ok=True)
-            plot1 = plt.figure(1)
-            plt.plot(train_accu, '-o')
-            plt.plot(test_accu, '-o')
-            plt.xlabel('epoch')
-            plt.ylabel('accuracy')
-            plt.legend(['Train','Test'])
-            plt.title('Train vs Test Accuracy')            
-            plt.savefig('plot/'+self.model_name+'_train_test_acc.png')
-
-            plot2 = plt.figure(2)
-            plt.plot(train_losses,'-o')
-            plt.plot(test_losses,'-o')
-            plt.xlabel('epoch')
-            plt.ylabel('losses')
-            plt.legend(['Train','Test'])
-            plt.title('Train vs Test Losses')
-            plt.savefig('plot/'+self.model_name+'_train_test_loss.png')
+    
+        trainTestPlot(self.plot, train_accu, test_accu, train_losses, test_losses, self.model_name)

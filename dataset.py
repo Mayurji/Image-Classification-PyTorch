@@ -18,7 +18,7 @@ class initialize_dataset:
                                             transforms.Normalize((0.1307,), (0.3081,))])
         else:
             transform = transforms.Compose([transforms.ToTensor(), transforms.Resize((self.image_resolution, self.image_resolution)),
-                        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
+                        transforms.RandomHorizontalFlip(), transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
 
         if self.MNIST:
             train_dataset = torchvision.datasets.MNIST(root=path, train=True,

@@ -43,6 +43,10 @@ if you have any work around or else if something is missing, please do share you
 
 ### [Google Colab Notebook to tune hyperparameters with Weights and Biases Visualizations](https://colab.research.google.com/drive/1tIyEAbXcbRf4mKqXp2rqqQ6bOpTaPZKz?usp=sharing)
 
+### Plotting
+
+By default, the plots between train & test accuracy, train & test loss is stored in plot folder for each model. 
+
 ### Content
 
 <details>
