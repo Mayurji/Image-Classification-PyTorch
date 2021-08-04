@@ -1,3 +1,4 @@
+from pathlib import Path
 import torch
 import torch.nn as nn
 import numpy as np
@@ -88,7 +89,7 @@ class training:
             test_accu.append(test_accuracy)
 
         if self.plot:
-            
+            Path('plot/').mkdir(parents=True, exist_ok=True)
             plot1 = plt.figure(1)
             plt.plot(train_accu, '-o')
             plt.plot(test_accu, '-o')
@@ -96,7 +97,7 @@ class training:
             plt.ylabel('accuracy')
             plt.legend(['Train','Test'])
             plt.title('Train vs Test Accuracy')            
-            plt.savefig(self.model_name+'_train_test_acc.png')
+            plt.savefig('plot/'+self.model_name+'_train_test_acc.png')
 
             plot2 = plt.figure(2)
             plt.plot(train_losses,'-o')
@@ -105,5 +106,4 @@ class training:
             plt.ylabel('losses')
             plt.legend(['Train','Test'])
             plt.title('Train vs Test Losses')
-            plt.savefig(self.model_name+'_train_test_loss.png')
-  
+            plt.savefig('plot/'+self.model_name+'_train_test_loss.png')
