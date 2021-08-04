@@ -57,7 +57,7 @@ class VGG11(nn.Module):
 
 	def init_weights(self, layer):
 		if type(layer) == nn.Linear or type(layer) == nn.Conv2d:
-			nn.init.xavier_uniform_(layer.weight)
+			nn.init.normal_(layer.weight)
 
 	def forward(self, x):		
 		out = self.layers(x)

@@ -23,7 +23,7 @@ class training:
     def runner(self):
         
         criterion = nn.CrossEntropyLoss()
-        if self.model_name in ['resnet']:
+        if self.model_name in ['resnet', 'vggnet', 'alexnet']:
             optimizer, scheduler = optim(model_name=self.model_name, model=self.model, lr=self.learning_rate)
 
         elif self.optimizer == 'sgd':
@@ -31,7 +31,6 @@ class training:
             scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200)
         elif self.optimizer == 'adam':
             optimizer = torch.optim.Adam(self.model.parameters(), lr=self.learning_rate)
-            scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, gamma=0.1)
         else:
             pass
         

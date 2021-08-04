@@ -1,6 +1,6 @@
 parameters:
   num_epochs: 10
-  learning_rate: 0.001
+  learning_rate: 0.1
   batch_size: 128
   image_resolution: 224
   MNIST: False
