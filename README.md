@@ -14,7 +14,7 @@ Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim
 
 I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in worst case scenario, I've reduced the batch size in accordance to fit the Kaggle GPU. Just to mention, I use RTX2070 8GB.
 
-|CNN Based    | Accuracy | Parameters     | FLOPS | Configuration | Scheduler(LR) |
+|CNN Based    | Accuracy | Parameters     | FLOPS | Configuration | LR-Scheduler(Accuracy) |
 | :---        |    :----:   | :----:       | :----:       | :----:       | ---: |
 | [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")| 71.27 | 58.32M | 1.13GFlops | - | CyclicLR(79.56) |
 | [VGGNet](https://arxiv.org/abs/1409.1556)   | 75.93 | 128.81M | 7.63GFlops| - | - |
