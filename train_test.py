@@ -28,9 +28,10 @@ class training:
 
         elif self.optimizer == 'sgd':
             optimizer = torch.optim.SGD(self.model.parameters(), lr=self.learning_rate)
-            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200)
+            
         elif self.optimizer == 'adam':
             optimizer = torch.optim.Adam(self.model.parameters(), lr=self.learning_rate)
+            
         else:
             pass
         
@@ -41,6 +42,7 @@ class training:
         # Train the model
         total_step = len(self.train_dataloader)
         for epoch in range(self.num_epochs):
+            
             running_loss = 0
             correct = 0
             total = 0
@@ -87,8 +89,8 @@ class training:
                         test_accuracy = (correct*100)/total
                     print('Epoch: %.0f | Test Loss: %.3f | Accuracy: %.3f'%(epoch+1, test_loss, test_accuracy)) 
 
-            
-            scheduler.step()
+            if self.model_name in ['resnet', 'alexnet']:
+                scheduler.step()
 
             train_accu.append(train_accuracy)
             train_losses.append(train_loss)
