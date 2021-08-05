@@ -1,5 +1,5 @@
 parameters:
-  num_epochs: 20
+  num_epochs: 10
   learning_rate: 0.1
   batch_size: 96
   image_resolution: 224
