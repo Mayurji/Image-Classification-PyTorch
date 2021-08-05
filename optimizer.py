@@ -1,5 +1,6 @@
 import torch
 from torch.optim.lr_scheduler import CosineAnnealingLR, StepLR, CyclicLR, OneCycleLR, CosineAnnealingWarmRestarts, LambdaLR
+from torch_optimizer import Lamb
 import math
 
 """
@@ -85,5 +86,20 @@ def optim(model_name, model, lr):
                                 lr=lr,
                                 momentum=0.9,
                                 weight_decay=0.1)
+        scheduler = WarmupCosineSchedule(optimizer, warmup_steps=500, t_total=10000)
+        return optimizer, scheduler
+
+    if model_name == 'mlpmixer':
+        optimizer = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=0)
+        scheduler = WarmupLinearSchedule(optimizer, warmup_steps=100, t_total=10000)
+        return optimizer, scheduler
+
+    if model_name == 'resmlp':
+        optimizer = Lamb(model.parameters(), lr=lr, weight_decay=0.2)
+        scheduler = WarmupLinearSchedule(optimizer, warmup_steps=100, t_total=10000)
+        return optimizer, scheduler
+    
+    if model_name == 'squeezenet':
+        optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=0.9, weight_decay=5e-4)
         scheduler = WarmupCosineSchedule(optimizer, warmup_steps=500, t_total=10000)
         return optimizer, scheduler

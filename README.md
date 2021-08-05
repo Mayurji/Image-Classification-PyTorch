@@ -22,23 +22,26 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 | [VGGNet](https://arxiv.org/abs/1409.1556)   | 75.93 | 128.81M | 7.63GFlops| - | - |
 | [Network In Network](https://arxiv.org/abs/1312.4400) | 71.03 | 2.02M | 0.833GFlops | - | - |
 | [ResNet](https://arxiv.org/abs/1512.03385)  | 83.39 | 11.18M | 1.82GFlops | - | - |
-| [DenseNet-Depth40](https://arxiv.org/abs/1608.06993)   | 68.25 | 0.18M | - | Batch_Size = 8 | - |
+| [DenseNet-Depth40](https://arxiv.org/abs/1608.06993)   | 68.25 | 0.18M | - | B_S = 8 | - |
 | [MobileNetV1](https://arxiv.org/abs/1704.04861)   | 81.72 | 3.22M | 0.582GFlops | - | - |
 | [MobileNetV2](https://arxiv.org/abs/1801.04381)   | 83.99 | 2.24M | 0.318GFlops | - | - |
 | [GoogLeNet](https://arxiv.org/abs/1409.4842)   | 80.28 | 5.98M | 1.59GFlops | - | - |
-| [InceptionV3](https://arxiv.org/abs/1512.00567)   | - | - | 209.45GFlops | High Compute Req. |
-| [Darknet-53](https://arxiv.org/pdf/1804.02767.pdf)   | - | - | 7.14GFlops | High Compute Req. |
-| [Xception](https://arxiv.org/abs/1610.02357)   | 85.9 | 20.83M | 4.63GFlops | Batch_Size = 96 | - |
-| [ResNeXt](https://arxiv.org/abs/1611.05431)   | - | | 69.41GFlops | High Compute Req. | |
+| [InceptionV3](https://arxiv.org/abs/1512.00567)   | - | - | 209.45GFlops | H_C_R |
+| [Darknet-53](https://arxiv.org/pdf/1804.02767.pdf)   | - | - | 7.14GFlops | H_C_R |
+| [Xception](https://arxiv.org/abs/1610.02357)   | 85.9 | 20.83M | 4.63GFlops | B_S = 96 | - |
+| [ResNeXt](https://arxiv.org/abs/1611.05431)   | - | | 69.41GFlops | H_C_R | |
 | [SENet](https://arxiv.org/abs/1709.01507)   | 83.39 | 11.23M | 1.82GFlops | - | - |
-| [SqueezeNet](https://arxiv.org/abs/1602.07360v4)   | 62.2 | 0.73M | 2.64GFlops | Batch_Size = 64 |
-| [ShuffleNet](https://arxiv.org/abs/1707.01083)   | | | 2.03GFlops | Batch_Size = 32 | - |
+| [SqueezeNet](https://arxiv.org/abs/1602.07360v4)   | 62.2 | 0.73M | 2.64GFlops | B_S = 64 |
+| [ShuffleNet](https://arxiv.org/abs/1707.01083)   | | | 2.03GFlops | B_S = 32 | - |
 | [EfficientNet-B0](https://arxiv.org/abs/1905.11946)   | - |4.02M| 0.4GFlops| | |
 | Transformer Based |
 | [ViT](https://arxiv.org/abs/2010.11929)   | - | 53.59M | - | - | WarmupCosineSchedule(55.34) |
 | MLP Based |
-| [MLP-Mixer](https://arxiv.org/abs/2105.01601) | 68.52 | 13.63M | - | - | - |
+| [MLP-Mixer](https://arxiv.org/abs/2105.01601) | 68.52 | 13.63M | - | - | WarmupLinearSchedule(69.5) |
 | [ResMLP](https://arxiv.org/abs/2105.03404)| 65.5 | 14.97M | - | - | - |
+
+    B_S - Batch Size
+    H_C_R - High Compute Required
 
 #### Note: Marked few cells as high compute required because even with batch_size = 8, the kaggle compute was not enough. The performance of the model especially with regards to accuracy is less because the model runs only for 10 epochs, with more epochs the model converges further.
 

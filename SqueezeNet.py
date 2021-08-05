@@ -107,6 +107,7 @@ class SqueezeNet(nn.Module):
         x = self.Fire8(x)
         x = self.maxpool3(x)
         x = self.Fire9(x)
+        x = F.dropout(x, 0.5)
         x = self.conv2(x)
         x = self.avg_pool(x)
         x = self.softmax(x)
