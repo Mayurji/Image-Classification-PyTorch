@@ -23,7 +23,7 @@ class training:
     def runner(self):
         
         criterion = nn.CrossEntropyLoss()
-        if self.model_name in ['resnet', 'alexnet']:
+        if self.model_name in ['resnet', 'alexnet', 'vit']:
             optimizer, scheduler = optim(model_name=self.model_name, model=self.model, lr=self.learning_rate)
 
         elif self.optimizer == 'sgd':
@@ -89,7 +89,7 @@ class training:
                         test_accuracy = (correct*100)/total
                     print('Epoch: %.0f | Test Loss: %.3f | Accuracy: %.3f'%(epoch+1, test_loss, test_accuracy)) 
 
-            if self.model_name in ['resnet', 'alexnet']:
+            if self.model_name in ['resnet', 'alexnet', 'vit']:
                 scheduler.step()
 
             train_accu.append(train_accuracy)

@@ -35,13 +35,12 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 | [ShuffleNet](https://arxiv.org/abs/1707.01083)   | | | 2.03GFlops | Batch_Size = 32 | - |
 | [EfficientNet-B0](https://arxiv.org/abs/1905.11946)   | - |4.02M| 0.4GFlops| | |
 | Transformer Based |
-| [ViT](https://arxiv.org/abs/2010.11929)   | - | - | - | - | - |
+| [ViT](https://arxiv.org/abs/2010.11929)   | - | 53.59M | - | - | WarmupCosineSchedule(55.34) |
 | MLP Based |
 | [MLP-Mixer](https://arxiv.org/abs/2105.01601) | 68.52 | 13.63M | - | - | - |
 | [ResMLP](https://arxiv.org/abs/2105.03404)| 65.5 | 14.97M | - | - | - |
 
-Note: Marked few cells as high compute required because even with batch_size = 8, the kaggle compute was not enough, 
-if you have any work around or else if something is missing, please do share your inputs in issues. Thanks.
+#### Note: Marked few cells as high compute required because even with batch_size = 8, the kaggle compute was not enough. The performance of the model especially with regards to accuracy is less because the model runs only for 10 epochs, with more epochs the model converges further.
 
 ### [Google Colab Notebook to tune hyperparameters with Weights and Biases Visualizations](https://colab.research.google.com/drive/1tIyEAbXcbRf4mKqXp2rqqQ6bOpTaPZKz?usp=sharing)
 
