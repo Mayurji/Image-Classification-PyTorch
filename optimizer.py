@@ -95,8 +95,8 @@ def optim(model_name, model, lr):
         return optimizer, scheduler
 
     if model_name == 'resmlp':
-        optimizer = Lamb(model.parameters(), lr=lr, weight_decay=0.2)
-        scheduler = WarmupLinearSchedule(optimizer, warmup_steps=100, t_total=10000)
+        optimizer = Lamb(model.parameters(), lr=5e-3, weight_decay=0.4)
+        scheduler = CosineAnnealingLR(optimizer, T_max=200)
         return optimizer, scheduler
     
     if model_name == 'squeezenet':

@@ -51,6 +51,16 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 
 By default, the plots between train & test accuracy, train & test loss is stored in plot folder for each model. 
 
+| Model | Train vs Test Accuracy | Train vs Test Loss |
+| :---        |    :----:   | ---: |
+| AlexNet | ![AlexNet Accuracy Curve](alexnet_train_test_acc.png) | ![AlexNet Loss Curve](alexnet_train_test_loss.png) |
+| ResNet | ![ResNet Accuracy Curve](resnet_train_test_acc.png) | ![ResNet Loss Curve](resnet_train_test_loss.png) |
+| ViT | ![ViT Accuracy Curve](vit_train_test_acc.png) | ![ViT Loss Curve](vit_train_test_loss.png) |
+| MLP-Mixer | ![MLP-Mixer Accuracy Curve](mlpmixer_train_test_acc.png) | ![MLP-Mixer Loss Curve](mlpmixer_train_test_loss.png) |
+| ResMLP | ![ResMLP Accuracy Curve](resmlp_train_test_acc.png) | ![ResMLP Loss Curve](resmlp_train_test_loss.png) |
+
+
+
 ### Content
 
 <details>
