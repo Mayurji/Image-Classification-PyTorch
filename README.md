@@ -17,7 +17,7 @@ Optimizer script: Includes the approx setup of the optimizer used in the origina
 I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in worst case scenario, I've reduced the batch size in accordance to fit the Kaggle GPU. Just to mention, I use RTX2070 8GB.
 
 |CNN Based    | Accuracy | Parameters     | FLOPS | Configuration | LR-Scheduler(Accuracy) |
-| :---        | :----:       | :----:       | :----:       | :----:       | ---:       |
+| :---        | :----:       | :----:       | :----:       | :----:       | :---:       |
 | [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")| 71.27 | 58.32M | 1.13GFlops | - | CyclicLR(79.56) |
 | [VGGNet](https://arxiv.org/abs/1409.1556)   | 75.93 | 128.81M | 7.63GFlops| - | - |
 | [Network In Network](https://arxiv.org/abs/1312.4400) | 71.03 | 2.02M | 0.833GFlops | - | - |
@@ -52,7 +52,7 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 By default, the plots between train & test accuracy, train & test loss is stored in plot folder for each model. 
 
 | Model | Train vs Test Accuracy | Train vs Test Loss |
-| :---        | :----:       | ---:       |
+| :---:        | :----:       | :---:       |
 | AlexNet | ![AlexNet Accuracy Curve](plot/alexnet_train_test_acc.png) | ![AlexNet Loss Curve](plot/alexnet_train_test_loss.png) |
 | ResNet | ![ResNet Accuracy Curve](plot/resnet_train_test_acc.png) | ![ResNet Loss Curve](plot/resnet_train_test_loss.png) |
 | ViT | ![ViT Accuracy Curve](plot/vit_train_test_acc.png) | ![ViT Loss Curve](plot/vit_train_test_loss.png) |
