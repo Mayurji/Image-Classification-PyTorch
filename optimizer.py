@@ -101,5 +101,5 @@ def optim(model_name, model, lr):
     
     if model_name == 'squeezenet':
         optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=0.9, weight_decay=5e-4)
-        scheduler = WarmupCosineSchedule(optimizer, warmup_steps=500, t_total=10000)
+        scheduler = WarmupLinearSchedule(optimizer, warmup_steps=500, t_total=10000)
         return optimizer, scheduler
