@@ -80,8 +80,14 @@ class SENet(nn.Module):
         self.finalLayer.apply(self.init_weights)
 
     def init_weights(self, layer):
-        if type(layer) == nn.Linear or type(layer) == nn.Conv2d:
-            nn.init.xavier_uniform_(layer.weight)
+        if type(layer) == nn.Conv2d:
+            nn.init.kaiming_normal_(layer.weight, mode='fan_out')
+        if type(layer) == nn.Linear:
+            nn.init.normal_(layer.weight, std=1e-3)
+        if type(layer) == nn.BatchNorm2d:
+            nn.init.constant_(layer.weight, 1)
+            nn.init.constant_(layer.bias, 0)
+    
 
     def forward(self, X):
         out = self.b1(X)

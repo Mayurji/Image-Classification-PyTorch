@@ -1,12 +1,12 @@
 import torch
-from torch.optim.lr_scheduler import CosineAnnealingLR, CyclicLR, LambdaLR
+from torch.optim.lr_scheduler import CosineAnnealingLR, CyclicLR, LambdaLR, ReduceLROnPlateau
 from torch_optimizer import Lamb
 import math
 
 """
-https://github.com/jeonsworld/ViT-pytorch:
-
-    - warmupLinearSchedule
+References for Optimizer:
+    - https://github.com/jeonsworld/ViT-pytorch
+    - https://www.kaggle.com/isbhargav/guide-to-pytorch-learning-rate-scheduling
 
 """
 class ConstantLRSchedule(LambdaLR):
@@ -100,6 +100,11 @@ def optim(model_name, model, lr):
         return optimizer, scheduler
     
     if model_name == 'squeezenet':
-        optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=0.9, weight_decay=5e-4)
-        scheduler = WarmupLinearSchedule(optimizer, warmup_steps=500, t_total=10000)
+        optimizer = torch.optim.SGD(model.parameters(), lr=lr, momentum=0.9)
+        scheduler = CyclicLR(optimizer, base_lr=1e-06, max_lr=0.1, step_size_up=200, mode='triangular')
+        return optimizer, scheduler
+
+    if model_name == 'senet':
+        optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+        scheduler = CyclicLR(optimizer, base_lr=1e-6, max_lr=0.1, step_size_up=100, mode="exp_range")
         return optimizer, scheduler

@@ -23,7 +23,7 @@ class training:
     def runner(self):
         
         criterion = nn.CrossEntropyLoss()
-        if self.model_name in ['resnet', 'alexnet', 'vit', 'mlpmixer', 'resmlp', 'squeezenet']:
+        if self.model_name in ['resnet', 'alexnet', 'vit', 'mlpmixer', 'resmlp', 'squeezenet', 'senet']:
             optimizer, scheduler = optim(model_name=self.model_name, model=self.model, lr=self.learning_rate)
 
         elif self.optimizer == 'sgd':
@@ -88,9 +88,14 @@ class training:
                         test_loss=running_loss/len(self.test_dataloader)
                         test_accuracy = (correct*100)/total
                     print('Epoch: %.0f | Test Loss: %.3f | Accuracy: %.3f'%(epoch+1, test_loss, test_accuracy)) 
+            
+            for p in optimizer.param_groups:
+                    print(f"Epoch {epoch+1} Learning Rate: {p['lr']}")
 
-            if self.model_name in ['resnet', 'alexnet', 'vit', 'mlpmixer', 'resmlp', 'squeezenet']:
+            if self.model_name in ['resnet', 'alexnet', 'vit', 'mlpmixer', 'resmlp', 'squeezenet', 'senet']:
+                
                 scheduler.step()
+                
 
             train_accu.append(train_accuracy)
             train_losses.append(train_loss)
