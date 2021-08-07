@@ -10,7 +10,9 @@ Image Classification is a fundamental computer vision task with huge scope in va
 
 ### 🗒 Papers With Implementation
 
-Base Config: {epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim: adam}. Some architecture like SqueezeNet, ShuffleNet, InceptionV3, EfficientNet, Darknet53 and others didn't work at base config because of increased complexity of the architecture, thus by reducing the batch size the architecture was executed in Google Colab and Kaggle.
+Base Config: **{ epochs: 10, lr: 0.001, batch_size: 128, img_resolution: 224, optim: adam }**. 
+
+Some architecture like SqueezeNet, ShuffleNet, InceptionV3, EfficientNet, Darknet53 and others didn't work at base config because of increased complexity of the architecture, thus by reducing the batch size the architecture was executed in Google Colab and Kaggle.
 
 Optimizer script: Includes the approx setup of the optimizer used in the original paper. Few setup led to Nan loss and were tweaked to make it work.
 
@@ -21,7 +23,7 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 | [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")| 71.27 | 58.32M | 1.13GFlops | - | CyclicLR(79.56) |
 | [VGGNet](https://arxiv.org/abs/1409.1556)   | 75.93 | 128.81M | 7.63GFlops| - | - |
 | [Network In Network](https://arxiv.org/abs/1312.4400) | 71.03 | 2.02M | 0.833GFlops | - | - |
-| [ResNet](https://arxiv.org/abs/1512.03385)  | 83.39 | 11.18M | 1.82GFlops | - | - |
+| [ResNet](https://arxiv.org/abs/1512.03385)  | 83.39 | 11.18M | 1.82GFlops | - | CyclicLR(74.9) |
 | [DenseNet-Depth40](https://arxiv.org/abs/1608.06993)   | 68.25 | 0.18M | - | B_S = 8 | - |
 | [MobileNetV1](https://arxiv.org/abs/1704.04861)   | 81.72 | 3.22M | 0.582GFlops | - | - |
 | [MobileNetV2](https://arxiv.org/abs/1801.04381)   | 83.99 | 2.24M | 0.318GFlops | - | - |
@@ -40,7 +42,7 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 | [MLP-Mixer](https://arxiv.org/abs/2105.01601) | 68.52 | 13.63M | - | - | WarmupLinearSchedule(69.5) |
 | [ResMLP](https://arxiv.org/abs/2105.03404)| 65.5 | 14.97M | - | - | - |
 
-  B_S - Batch Size
+  B_S - Batch Size \ 
   H_C_R - High Compute Required
 
 ### Note: Marked few cells as high compute required because even with batch_size = 8, the kaggle compute was not enough. The performance of the model especially with regards to accuracy is less because the model runs only for 10 epochs, with more epochs the model converges further. Learning rate scheduler is underestimated, try out various learning rate scheduler to get the maximum out of the network.
@@ -60,7 +62,36 @@ By default, the plots between train & test accuracy, train & test loss is stored
 | ResMLP | ![ResMLP Accuracy Curve](plot/resmlp_train_test_acc.png) | ![ResMLP Loss Curve](plot/resmlp_train_test_loss.png) |
 | SENet | ![SENet Accuracy Curve](plot/senet_train_test_acc.png) | ![SENet Loss Curve](plot/senet_train_test_loss.png) |
 
+<!--##########################################################################################-->
 
+### Create Environment
+```python
+python -m venv CNNs 
+source CNNs/bin/activate 
+git clone https://github.com/Mayurji/CNNs-PyTorch.git
+```
+
+### Installation
+```python
+pip install -r requirements.txt
+```
+
+### Run
+```python
+python main.py --model=resnet
+```
+### To Save Model
+```python
+python main.py --model=resnet --model_save=True
+```
+### To create checkpoint
+```python
+python main.py --model=resnet --checkpoint=True
+```
+
+**Note:** Parameters can be changed in YAML file. The module supports only two datasets, MNIST and CIFAR-10, but you can modify the dataset file and include any other datasets.
+
+<!--##########################################################################################-->
 
 ### Content
 
@@ -637,26 +668,5 @@ Recommended Reading for NAS: https://lilianweng.github.io/lil-log/2020/08/06/neu
 <img src="Images/resmlp.png"; alt="ResMLP">
 </details>
 </details>
-
-<!--##########################################################################################-->
-
-### Create Environment
-```python
-python -m venv CNNs 
-source CNNs/bin/activate 
-git clone https://github.com/Mayurji/CNNs-PyTorch.git
-```
-
-### Installation
-```python
-pip install -r requirements.txt
-```
-
-### Run
-```python
-python main.py --model=resnet
-```
-
-**Note:** Parameters can be changed in YAML file. The module supports only two datasets, MNIST and CIFAR-10, but you can modify the dataset file and include any other datasets.
 
 ### Thanks To Google Colab and Kaggle, for availing free compute for running all experiments.

@@ -34,6 +34,8 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 """ Initialize model based on command line argument """
 model_parser = argparse.ArgumentParser(description='Image Classification Using PyTorch', usage='[option] model_name')
 model_parser.add_argument('--model', type=str, required=True)
+model_parser.add_argument('--model_save', type=bool, required=False)
+model_parser.add_argument('--checkpoint', type=bool, required=False)
 args = model_parser.parse_args()
 
 """Loading Config File"""
@@ -134,7 +136,7 @@ elif args.model == 'resmlp':
 print(f'Total Number of Parameters of {args.model.capitalize()} is {round((sum(p.numel() for p in model.parameters()))/1000000, 2)}M')
 trainer = training(model=model, optimizer=config['parameters']['optimizer'], learning_rate=config['parameters']['learning_rate'], 
             train_dataloader=train_dataloader, num_epochs=config['parameters']['num_epochs'],test_dataloader=test_dataloader,
-            model_name=args.model)
+            model_name=args.model, model_save=args.model_save, checkpoint=args.checkpoint)
 trainer.runner()
     
 # Calculate FLops and Memory Usage.

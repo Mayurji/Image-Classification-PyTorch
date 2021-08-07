@@ -73,6 +73,18 @@ class MobileNetV1(nn.Module):
         )
         self.fc = nn.Linear(1024, n_classes)
 
+        self.model.apply(self.init_weights)
+        self.fc.apply(self.init_weights)
+
+    def init_weights(self, layer):
+        if type(layer) == nn.Conv2d:
+            nn.init.kaiming_normal_(layer.weight, mode='fan_out')
+        if type(layer) == nn.Linear:
+            nn.init.normal_(layer.weight, std=1e-3)
+        if type(layer) == nn.BatchNorm2d:
+            nn.init.constant_(layer.weight, 1)
+            nn.init.constant_(layer.bias, 0)
+
     def forward(self, x):
         x = self.model(x)
         x = x.view(-1, 1024)

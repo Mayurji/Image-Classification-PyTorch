@@ -1,5 +1,5 @@
 import torch
-from torch.optim.lr_scheduler import CosineAnnealingLR, CyclicLR, LambdaLR, ReduceLROnPlateau
+from torch.optim.lr_scheduler import CosineAnnealingLR, CyclicLR, LambdaLR, ReduceLROnPlateau, StepLR
 from torch_optimizer import Lamb
 import math
 
@@ -70,7 +70,7 @@ def optim(model_name, model, lr):
     """
     if model_name == 'resnet':
         optimizer = torch.optim.SGD(model.parameters(), lr=lr, weight_decay=0.0001, momentum=0.9)
-        scheduler = CosineAnnealingLR(optimizer, T_max=200)
+        scheduler = CyclicLR(optimizer, base_lr=1e-06, max_lr=0.1, step_size_up=100, mode='triangular2') #CosineAnnealingLR(optimizer, T_max=200)
         return optimizer, scheduler
     if model_name == 'alexnet':
         optimizer = torch.optim.SGD(model.parameters(), lr=lr, weight_decay=0.0005, momentum=0.9)
@@ -107,4 +107,9 @@ def optim(model_name, model, lr):
     if model_name == 'senet':
         optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
         scheduler = CyclicLR(optimizer, base_lr=1e-6, max_lr=0.1, step_size_up=100, mode="exp_range")
+        return optimizer, scheduler
+
+    if model_name == 'mobilenetv1':
+        optimizer = torch.optim.RMSprop(model.parameters(), weight_decay=0.9)
+        scheduler = CosineAnnealingLR(optimizer, T_max=200)
         return optimizer, scheduler
