@@ -460,8 +460,8 @@ Find all the basic and necessary details about the different architecture below.
     
     Transformers are the backbone architecture for many of the NLP architectures like BERT etc. Though, it
     started with focus on NLP tasks, the transformer is used in computer vision space. In Transformer, there
-    is an encoder and a decoder block. In ViT, we use transformer's encoder block and use MLP head for 
-    prediction.
+    is an encoder and a decoder block. In ViT, it uses the transformer's encoder block followed by MLP head 
+    for prediction.
 
     We'll discuss about Transformer architecture separately except the notion on data, we'll see how the 
     image is processed in transformer, which was primarily built for sentence tokens. There are series of 
