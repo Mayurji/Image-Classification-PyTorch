@@ -84,7 +84,7 @@ python main.py --model=resnet
 ```python
 python main.py --model=resnet --model_save=True
 ```
-### To create checkpoint
+### To Create Checkpoint
 ```python
 python main.py --model=resnet --checkpoint=True
 ```
@@ -95,9 +95,8 @@ python main.py --model=resnet --checkpoint=True
 
 ### Content
 
-<details>
-  <summary>Models include CNN architecture, MLP based classifiers, transformer based model and many more to come.</summary>
-<br>
+Find all the basic and necessary details about the different architecture below.
+
 <details>
   <summary>🔥 AlexNet</summary>
 <p>
@@ -666,7 +665,6 @@ Recommended Reading for NAS: https://lilianweng.github.io/lil-log/2020/08/06/neu
 
   </p>
 <img src="Images/resmlp.png"; alt="ResMLP">
-</details>
 </details>
 
 ### Thanks To Google Colab and Kaggle, for availing free compute for running all experiments.
