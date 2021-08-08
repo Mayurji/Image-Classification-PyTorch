@@ -42,25 +42,12 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 | [MLP-Mixer](https://arxiv.org/abs/2105.01601) | 68.52 | 13.63M | - | - | WarmupLinearSchedule(69.5) |
 | [ResMLP](https://arxiv.org/abs/2105.03404)| 65.5 | 14.97M | - | - | - |
 
-  B_S - Batch Size \ 
-  H_C_R - High Compute Required
+B_S - Batch Size \ 
+H_C_R - High Compute Required
 
 ### Note: Marked few cells as high compute required because even with batch_size = 8, the kaggle compute was not enough. The performance of the model especially with regards to accuracy is less because the model runs only for 10 epochs, with more epochs the model converges further. Learning rate scheduler is underestimated, try out various learning rate scheduler to get the maximum out of the network.
 
 ### [Google Colab Notebook to tune hyperparameters with Weights and Biases Visualizations](https://colab.research.google.com/drive/1tIyEAbXcbRf4mKqXp2rqqQ6bOpTaPZKz?usp=sharing)
-
-### Plotting
-
-By default, the plots between train & test accuracy, train & test loss is stored in plot folder for each model. 
-
-| Model | Train vs Test Accuracy | Train vs Test Loss |
-| :---:        | :----:       | :---:       |
-| AlexNet | ![AlexNet Accuracy Curve](plot/alexnet_train_test_acc.png) | ![AlexNet Loss Curve](plot/alexnet_train_test_loss.png) |
-| ResNet | ![ResNet Accuracy Curve](plot/resnet_train_test_acc.png) | ![ResNet Loss Curve](plot/resnet_train_test_loss.png) |
-| ViT | ![ViT Accuracy Curve](plot/vit_train_test_acc.png) | ![ViT Loss Curve](plot/vit_train_test_loss.png) |
-| MLP-Mixer | ![MLP-Mixer Accuracy Curve](plot/mlpmixer_train_test_acc.png) | ![MLP-Mixer Loss Curve](plot/mlpmixer_train_test_loss.png) |
-| ResMLP | ![ResMLP Accuracy Curve](plot/resmlp_train_test_acc.png) | ![ResMLP Loss Curve](plot/resmlp_train_test_loss.png) |
-| SENet | ![SENet Accuracy Curve](plot/senet_train_test_acc.png) | ![SENet Loss Curve](plot/senet_train_test_loss.png) |
 
 <!--##########################################################################################-->
 
@@ -90,6 +77,22 @@ python main.py --model=resnet --checkpoint=True
 ```
 
 **Note:** Parameters can be changed in YAML file. The module supports only two datasets, MNIST and CIFAR-10, but you can modify the dataset file and include any other datasets.
+
+<!--##########################################################################################-->
+
+### Plotting
+
+By default, the plots between train & test accuracy, train & test loss is stored in plot folder for each model. 
+
+| Model | Train vs Test Accuracy | Train vs Test Loss |
+| :---:        | :----:       | :---:       |
+| AlexNet | ![AlexNet Accuracy Curve](plot/alexnet_train_test_acc.png) | ![AlexNet Loss Curve](plot/alexnet_train_test_loss.png) |
+| ResNet | ![ResNet Accuracy Curve](plot/resnet_train_test_acc.png) | ![ResNet Loss Curve](plot/resnet_train_test_loss.png) |
+| ViT | ![ViT Accuracy Curve](plot/vit_train_test_acc.png) | ![ViT Loss Curve](plot/vit_train_test_loss.png) |
+| MLP-Mixer | ![MLP-Mixer Accuracy Curve](plot/mlpmixer_train_test_acc.png) | ![MLP-Mixer Loss Curve](plot/mlpmixer_train_test_loss.png) |
+| ResMLP | ![ResMLP Accuracy Curve](plot/resmlp_train_test_acc.png) | ![ResMLP Loss Curve](plot/resmlp_train_test_loss.png) |
+| SENet | ![SENet Accuracy Curve](plot/senet_train_test_acc.png) | ![SENet Loss Curve](plot/senet_train_test_loss.png) |
+
 
 <!--##########################################################################################-->
 
