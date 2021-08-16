@@ -113,3 +113,8 @@ def optim(model_name, model, lr):
         optimizer = torch.optim.RMSprop(model.parameters(), weight_decay=0.9)
         scheduler = CosineAnnealingLR(optimizer, T_max=200)
         return optimizer, scheduler
+
+    if model_name == 'gmlp':
+        optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+        scheduler = CosineAnnealingLR(optimizer, T_max=200)
+        return optimizer, scheduler
