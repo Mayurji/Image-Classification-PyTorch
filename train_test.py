@@ -27,7 +27,7 @@ class training:
     def runner(self):
         best_accuracy = float('-inf')
         criterion = nn.CrossEntropyLoss()
-        if self.model_name in ['alexnet', 'vit', 'mlpmixer', 'resmlp', 'squeezenet', 'senet', 'mobilenetv1', 'resnet']:
+        if self.model_name in ['alexnet', 'vit', 'mlpmixer', 'resmlp', 'squeezenet', 'senet', 'mobilenetv1', 'resnet', 'gmlp']:
             self.optimizer, scheduler = optim(model_name=self.model_name, model=self.model, lr=self.learning_rate)
 
         elif self.optim == 'sgd':
@@ -58,9 +58,9 @@ class training:
                 loss = criterion(outputs, labels)
 
                 # Backward and optimize
-                optimizer.zero_grad()
+                self.optimizer.zero_grad()
                 loss.backward()
-                optimizer.step()
+                self.optimizer.step()
                 running_loss += loss.item()
 
                 _, predicted = outputs.max(1)
@@ -100,7 +100,7 @@ class training:
             for p in self.optimizer.param_groups:
                     print(f"Epoch {epoch+1} Learning Rate: {p['lr']}")
 
-            if self.model_name in ['alexnet', 'vit', 'mlpmixer', 'resmlp', 'squeezenet', 'senet', 'mobilenetv1', 'resnet']:
+            if self.model_name in ['alexnet', 'vit', 'mlpmixer', 'resmlp', 'squeezenet', 'senet', 'mobilenetv1', 'resnet', 'gmlp']:
                 scheduler.step()
 
             if self.checkpoint:
