@@ -24,6 +24,7 @@ from SqueezeNet import SqueezeNet
 from ShuffleNet import ShuffleNet
 from EfficientNet import EfficientNet
 from ResMLP import ResMLP
+from gMLP import gMLPForImageClassification
 
 from dataset import initialize_dataset
 from train_test import training
@@ -130,6 +131,11 @@ elif args.model == 'mlpmixer':
 elif args.model == 'resmlp':
     model = ResMLP(in_channels=input_channel, image_size=config['parameters']['image_resolution'], patch_size=16, 
             n_classes=n_classes, dim=384, depth=12, mlp_dim=384*4).to(device)
+
+elif args.model == 'gmlp':
+    model = gMLPForImageClassification(in_channels=input_channel, n_classes=n_classes, 
+                                        image_size=config['parameters']['image_resolution'], patch_size=16).to(device)
+
 
 #print(model)
 
