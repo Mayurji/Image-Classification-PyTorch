@@ -49,7 +49,7 @@ except FileNotFoundError:
 """Dataset Initialization"""
 data_initialization = initialize_dataset(image_resolution=config['parameters']['image_resolution'], batch_size=config['parameters']['batch_size'], 
                       MNIST=config['parameters']['MNIST'])
-train_dataloader, test_dataloader = data_initialization.load_dataset()
+train_dataloader, test_dataloader = data_initialization.load_dataset(transform=True)
 
 input_channel = next(iter(train_dataloader))[0].shape[1]
 #n_classes = len(torch.unique(next(iter(train_dataloader))[1]))

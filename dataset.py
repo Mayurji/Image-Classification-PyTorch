@@ -1,5 +1,6 @@
 import torch
 import torchvision
+from augmentations import augmentation, ContrastiveAugmentation
 import torchvision.transforms as transforms
 
 class initialize_dataset:
@@ -8,11 +9,11 @@ class initialize_dataset:
         self.batch_size=batch_size
         self.MNIST = MNIST
 
-    def load_dataset(self, transform=None):
+    def load_dataset(self, transform=False):
         path = "/home/mayur/Desktop/Pytorch/data"
         #path = './data'
         if transform:
-            transform = transform
+            transform = ContrastiveAugmentation(image_resolution=self.image_resolution)
         elif self.MNIST:
             transform = transforms.Compose([transforms.ToTensor(), transforms.Resize((self.image_resolution, self.image_resolution)),
                                             transforms.Normalize((0.1307,), (0.3081,))])
