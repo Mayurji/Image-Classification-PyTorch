@@ -13,7 +13,7 @@ class initialize_dataset:
         path = "/home/mayur/Desktop/Pytorch/data"
         #path = './data'
         if transform:
-            transform = ContrastiveAugmentation(image_resolution=self.image_resolution)
+            transform = augmentation(image_resolution=self.image_resolution)
         elif self.MNIST:
             transform = transforms.Compose([transforms.ToTensor(), transforms.Resize((self.image_resolution, self.image_resolution)),
                                             transforms.Normalize((0.1307,), (0.3081,))])
