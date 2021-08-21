@@ -1,4 +1,3 @@
-import torchvision
 import torchvision.transforms as transforms
 
 def augmentation(image_resolution):
@@ -20,8 +19,9 @@ def ContrastiveAugmentation(image_resolution):
     transforms.RandomResizedCrop(size=(image_resolution, image_resolution)),
     transforms.RandomHorizontalFlip(p=0.5),
     transforms.RandomApply([color_jitter], p=0.8),
-    transforms.RandomApply([blur], p=0.5),
+    #transforms.RandomApply([blur], p=0.5),
     transforms.RandomGrayscale(p=0.2),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
         
     return transform
+

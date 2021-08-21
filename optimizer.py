@@ -70,7 +70,7 @@ def optim(model_name, model, lr):
     """
     if model_name == 'resnet':
         optimizer = torch.optim.SGD(model.parameters(), lr=lr, weight_decay=0.0001, momentum=0.9)
-        scheduler = CyclicLR(optimizer, base_lr=1e-06, max_lr=0.1, step_size_up=100, mode='triangular2') #CosineAnnealingLR(optimizer, T_max=200)
+        scheduler = CyclicLR(optimizer, base_lr=1e-06, max_lr=0.1, step_size_up=50, mode='triangular2') #CosineAnnealingLR(optimizer, T_max=200)
         return optimizer, scheduler
     if model_name == 'alexnet':
         optimizer = torch.optim.SGD(model.parameters(), lr=lr, weight_decay=0.0005, momentum=0.9)
