@@ -672,5 +672,3 @@ Recommended Reading for NAS: https://lilianweng.github.io/lil-log/2020/08/06/neu
   </p>
 <img src="Images/resmlp.png"; alt="ResMLP">
 </details>
-
-### Thanks To Google Colab and Kaggle, for availing free compute for running all experiments.
