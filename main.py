@@ -25,6 +25,7 @@ from ShuffleNet import ShuffleNet
 from EfficientNet import EfficientNet
 from ResMLP import ResMLP
 from gMLP import gMLPForImageClassification
+from EfficientNetV2 import EfficientNetV2
 
 from dataset import initialize_dataset
 from train_test import training
@@ -95,7 +96,6 @@ elif args.model == 'xception':
 elif args.model == 'resnext':
     model = ResNeXt29_2x64d(input_channel=input_channel, n_classes=n_classes).to(device)
     
-
 elif args.model == 'vit':
     model = ViT(image_size=config['parameters']['image_resolution'], patch_size=32, dim=1024, depth=6, heads=16, 
             input_channel=input_channel, n_classes=n_classes,  mlp_dim=2048, dropout=0.1, emb_dropout=0.1).to(device)
@@ -135,6 +135,18 @@ elif args.model == 'resmlp':
 elif args.model == 'gmlp':
     model = gMLPForImageClassification(in_channels=input_channel, n_classes=n_classes, 
                                         image_size=config['parameters']['image_resolution'], patch_size=16).to(device)
+
+elif args.model in ['efficientnetv2']:
+    cfgs = [
+        # t, c, n, s, SE
+        [1,  24,  2, 1, 0],
+        [4,  48,  4, 2, 0],
+        [4,  64,  4, 2, 0],
+        [4, 128,  6, 2, 1],
+        [6, 160,  9, 1, 1],
+        [6, 256, 15, 2, 1],]
+
+    model = EfficientNetV2(cfgs=cfgs, in_channel=input_channel, num_classes=n_classes).to(device)
 
 
 #print(model)

@@ -48,8 +48,8 @@ Now, the most interesting part of EfficientNet-B0 is that the baseline architect
 Architecture Search(NAS). NAS is a wide topic and is not feasible to be discussed here. We can simply 
 consider it as searching through the architecture space for underlying base architecture like ResNet or 
 any other architecture for that matter. And on top of that, we can use grid search for finding the scale 
-factor for Depth, Width and Resolution. Combining NAS and with compound scaling leads us to the SOTA on 
-ImageNet. Model is evaluated by comparing accuracy over the # of FLOPS(Floating point operations per second).
+factor for Depth, Width and Resolution. Combining NAS and with compound scaling leads us to EfficientNet. 
+Model is evaluated by comparing accuracy over the # of FLOPS(Floating point operations per second).
 
 Recommended Reading for NAS: https://lilianweng.github.io/lil-log/2020/08/06/neural-architecture-search.html
 """
