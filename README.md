@@ -672,3 +672,40 @@ Recommended Reading for NAS: https://lilianweng.github.io/lil-log/2020/08/06/neu
   </p>
 <img src="Images/resmlp.png"; alt="ResMLP">
 </details>
+
+<details>
+  <summary>🔥 EfficientNetV2</summary>
+  <p>
+
+    Paper: EfficientNetV2: Smaller Models and Faster Training by Mingxing Tan, Quoc V. Le
+
+    Training efficiency has gained significant interests recently. For instance, 
+    NFNets aim to improve training efficiency by removing the expensive batch normalization; 
+    Several recent works focus on improving training speed by adding attention layers into 
+    convolutional networks (ConvNets); Vision Transformers improves training efficiency on 
+    large-scale datasets by using Transformer blocks. However, these methods often come with
+    significant overheads.
+
+    To develop these models, it uses a combination of training-aware neural search(NAS) and 
+    scaling, to jointly optimize training speed and parameter efficiency.
+
+    Drawbracks of previous version of EfficientNets
+
+    1. training with very large image sizes is slow. 
+    2. depthwise convolutions are slow in early layers.
+    3. equally scaling up every stage is sub-optimal. 
+
+    Whats New With EfficientNetV2
+
+    Based on the above observations, V2 is designed on a search space enriched with additional 
+    ops such as Fused-MBConv, and apply training-aware NAS and scaling to jointly optimize model 
+    accuracy, training speed, and parameter size. EfficientNetV2, train up to 4x faster than 
+    prior models, while being up to 6.8x smaller in parameter size.
+
+    To further increase the training speed, it uses progressive increase image size, previously
+    done by FixRes, Mix&Match. The only difference between the current approach from the previous 
+    approach is the use of adaptive regularization as the image size is increased.
+
+  </p>
+<img src="Images/efficientnetv2.png"; alt="EfficientNetV2">
+</details>
