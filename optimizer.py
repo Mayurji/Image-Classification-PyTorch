@@ -118,3 +118,8 @@ def optim(model_name, model, lr):
         optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
         scheduler = CyclicLR(optimizer, base_lr=1e-07, max_lr=0.1, step_size_up=100, mode="exp_range")
         return optimizer, scheduler
+
+    if model_name == 'efficientnetv2':
+        optimizer = torch.optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
+        scheduler = CyclicLR(optimizer, base_lr=1e-07, max_lr=0.1, step_size_up=100, mode="exp_range")
+        return optimizer, scheduler
