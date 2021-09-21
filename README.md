@@ -36,7 +36,7 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 | [SqueezeNet](https://arxiv.org/abs/1602.07360v4)   | 62.2 | 0.73M | 2.64GFlops | B_S = 64 |
 | [ShuffleNet](https://arxiv.org/abs/1707.01083)   | | | 2.03GFlops | B_S = 32 | - |
 | [EfficientNet-B0](https://arxiv.org/abs/1905.11946)   | - |4.02M| 0.4GFlops| | |
-| [EfficientNetV2](https://arxiv.org/abs/2104.00298)| 64.88 | 20.33M | - | - | CyclicLR(66.4) |
+| [EfficientNetV2](https://arxiv.org/abs/2104.00298)| | 20.33M | - | - | WarmupLinearSchedule(74.6) |
 | Transformer Based |
 | [ViT](https://arxiv.org/abs/2010.11929)   | - | 53.59M | - | - | WarmupCosineSchedule(55.34) |
 | MLP Based |
