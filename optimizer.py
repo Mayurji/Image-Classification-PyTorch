@@ -120,6 +120,6 @@ def optim(model_name, model, lr):
         return optimizer, scheduler
 
     if model_name == 'efficientnetv2':
-        optimizer = torch.optim.Adam(model.parameters(), momentum=0.9, weight_decay=1e-5)
-        scheduler = CyclicLR(optimizer, base_lr=1e-07, max_lr=0.1, step_size_up=10000, mode="triangular")
+        optimizer = torch.optim.Adam(model.parameters(), weight_decay=1e-5)
+        scheduler = WarmupLinearSchedule(optimizer, warmup_steps=100, t_total=10000)
         return optimizer, scheduler
