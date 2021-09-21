@@ -97,6 +97,7 @@ By default, the plots between train & test accuracy, train & test loss is stored
 | ResMLP | ![ResMLP Accuracy Curve](plot/resmlp_train_test_acc.png) | ![ResMLP Loss Curve](plot/resmlp_train_test_loss.png) |
 | SENet | ![SENet Accuracy Curve](plot/senet_train_test_acc.png) | ![SENet Loss Curve](plot/senet_train_test_loss.png) |
 | gMLP | ![gMLP Accuracy Curve](plot/gmlp_train_test_acc.png) | ![gMLP Loss Curve](plot/gmlp_train_test_loss.png) |
+| EfficientNetV2 | ![EfficientNetV2 Accuracy Curve](plot/efficientnetv2_train_test_acc.png) | ![EfficientNetV2 Loss Curve](plot/efficientnetv2_train_test_loss.png) |
 
 
 <!--##########################################################################################-->
