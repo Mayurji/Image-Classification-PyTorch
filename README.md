@@ -712,3 +712,8 @@ Recommended Reading for NAS: https://lilianweng.github.io/lil-log/2020/08/06/neu
   </p>
 <img src="Images/efficientnetv2.png"; alt="EfficientNetV2">
 </details>
+
+### Acknowledgement
+
+[Phil Wang](https://github.com/lucidrains)
+[Ross Wightman](https://github.com/rwightman)
