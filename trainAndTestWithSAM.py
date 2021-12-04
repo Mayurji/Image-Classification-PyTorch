@@ -120,4 +120,4 @@ class TrainingWithSAM:
             test_losses.append(test_loss)
             test_accu.append(test_accuracy)
     
-        trainTestPlot(self.plot, train_accu, test_accu, train_losses, test_losses, self.model_name)
+        trainTestPlot(self.plot, train_accu, test_accu, train_losses, test_losses, self.model_name+"with_SAM_")
