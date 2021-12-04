@@ -1,14 +1,12 @@
-from os import TMP_MAX
+from pathlib import Path
 import torch
 import torch.nn as nn
-import numpy as np
-from optimizer import optim 
-from pathlib import Path
 from plot import trainTestPlot
-
+from SAM import SAM
+from optimizer import CosineAnnealingLR, CyclicLR
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-class Training:
+class TrainingWithSAM:
     
     def __init__(self, model, optimizer, learning_rate, train_dataloader, num_epochs, 
                 test_dataloader, eval=True, plot=True, model_name=None, model_save=False, checkpoint=False):
@@ -27,18 +25,16 @@ class Training:
     def runner(self):
         best_accuracy = float('-inf')
         criterion = nn.CrossEntropyLoss()
-        if self.model_name in ['alexnet', 'vit', 'mlpmixer', 'resmlp', 'squeezenet', 'senet', 'mobilenetv1', 'resnet', 'gmlp', 'efficientnetv2']:
-            self.optimizer, scheduler = optim(model_name=self.model_name, model=self.model, lr=self.learning_rate)
-
-        elif self.optim == 'sgd':
-            self.optimizer = torch.optim.SGD(self.model.parameters(), lr=self.learning_rate)
+        if self.optim == 'sgd':
+            self.optimizer = torch.optim.SGD
             
         elif self.optim == 'adam':
-            self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.learning_rate)
+            self.optimizer = torch.optim.Adam
             
-        else:
-            pass
         
+        optimizer = SAM(self.model.parameters(), base_optimizer=self.optimizer, lr=0.1, momentum=0.9)
+        #scheduler = CyclicLR(optimizer, base_lr=1e-06, max_lr=0.1, step_size_up=50, mode='triangular2')
+        scheduler = CosineAnnealingLR(optimizer, T_max=200)
         train_losses = []
         train_accu = []
         test_losses = []
@@ -58,10 +54,11 @@ class Training:
                 loss = criterion(outputs, labels)
 
                 # Backward and optimize
-                self.optimizer.zero_grad()
                 loss.backward()
-                self.optimizer.step()
-                running_loss += loss.item()
+                optimizer.first_step(zero_grad=True)
+
+                criterion(self.model(images), labels).backward()
+                optimizer.second_step(zero_grad=True)
 
                 _, predicted = outputs.max(1)
                 total += labels.size(0)
@@ -92,16 +89,17 @@ class Training:
                         test_accuracy = (correct*100)/total
                     print('Epoch: %.0f | Test Loss: %.3f | Accuracy: %.3f'%(epoch+1, test_loss, test_accuracy))
 
+            
+
             if test_accuracy > best_accuracy and self.model_save:
                 Path('model_store/').mkdir(parents=True, exist_ok=True)
                 #torch.save(self.model, 'model_store/'+self.model_name+'_best-model.pt')
                 torch.save(self.model.state_dict(), 'model_store/'+self.model_name+'best-model-parameters.pt')
-
-            for p in self.optimizer.param_groups:
+            
+            for p in optimizer.param_groups:
                     print(f"Epoch {epoch+1} Learning Rate: {p['lr']}")
 
-            if self.model_name in ['alexnet', 'vit', 'mlpmixer', 'resmlp', 'squeezenet', 'senet', 'mobilenetv1', 'resnet', 'gmlp', 'efficientnetv2']:
-                scheduler.step()
+            scheduler.step()
 
             if self.checkpoint:
                 path = 'checkpoints/checkpoint{:04d}.pth.tar'.format(epoch)
