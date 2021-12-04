@@ -60,6 +60,7 @@ class TrainingWithSAM:
                 criterion(self.model(images), labels).backward()
                 optimizer.second_step(zero_grad=True)
 
+                running_loss += loss.item()
                 _, predicted = outputs.max(1)
                 total += labels.size(0)
                 correct += predicted.eq(labels).sum().item()

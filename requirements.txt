@@ -1,8 +1,8 @@
-matplotlib==3.3.1
-torchvision==0.9.1
-numpy==1.19.1
+einops==0.3.2
+matplotlib==3.4.3
+numpy==1.20.3
+PyYAML==6.0
+torch==1.10.0
+torch_optimizer==0.3.0
 torchstat==0.0.7
-torch_optimizer==0.1.0
-einops==0.3.0
-torch==1.8.1
-PyYAML==5.4.1
+torchvision==0.11.1
