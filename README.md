@@ -43,7 +43,8 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 | [MLP-Mixer](https://arxiv.org/abs/2105.01601) | 68.52 | 13.63M | - | - | WarmupLinearSchedule(69.5) |
 | [ResMLP](https://arxiv.org/abs/2105.03404)| 65.5 | 14.97M | - | - | - |
 | [gMLP](https://arxiv.org/abs/2105.08050)| 71.69 | 2.97M | - | - | CyclicLR(66.4) |
-
+| Other |
+| [ResNet With SAM](https://arxiv.org/pdf/2010.01412v3.pdf) | 76.2 | 11.8M | - | - | CyclicLR(76.2) |
 
 B_S - Batch Size
 
@@ -98,7 +99,7 @@ By default, the plots between train & test accuracy, train & test loss is stored
 | SENet | ![SENet Accuracy Curve](plot/senet_train_test_acc.png) | ![SENet Loss Curve](plot/senet_train_test_loss.png) |
 | gMLP | ![gMLP Accuracy Curve](plot/gmlp_train_test_acc.png) | ![gMLP Loss Curve](plot/gmlp_train_test_loss.png) |
 | EfficientNetV2 | ![EfficientNetV2 Accuracy Curve](plot/efficientnetv2_train_test_acc.png) | ![EfficientNetV2 Loss Curve](plot/efficientnetv2_train_test_loss.png) |
-
+| ResNet18 With SAM | ![ResNet With SAM Accuracy Curve](plot/resnetwith_SAM__train_test_acc.png) | ![ResNet With SAM Loss Curve](plot/resnetwith_SAM_train_test_loss.png) |
 
 <!--##########################################################################################-->
 
