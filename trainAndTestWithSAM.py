@@ -3,7 +3,7 @@ import torch
 import torch.nn as nn
 from plot import trainTestPlot
 from SAM import SAM
-from optimizer import CosineAnnealingLR, CyclicLR
+from optimizer import CosineAnnealingLR, CyclicLR, WarmupCosineSchedule
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 class TrainingWithSAM:
@@ -32,9 +32,8 @@ class TrainingWithSAM:
             self.optimizer = torch.optim.Adam
             
         
-        optimizer = SAM(self.model.parameters(), base_optimizer=self.optimizer, lr=0.1, momentum=0.9)
-        #scheduler = CyclicLR(optimizer, base_lr=1e-06, max_lr=0.1, step_size_up=50, mode='triangular2')
-        scheduler = CosineAnnealingLR(optimizer, T_max=200)
+        optimizer = SAM(self.model.parameters(), base_optimizer=self.optimizer, lr=1, momentum=0.9, weight_decay=0.0001)
+        scheduler = CyclicLR(optimizer, base_lr=1e-06, max_lr=0.1, step_size_up=50, mode='triangular2')
         train_losses = []
         train_accu = []
         test_losses = []

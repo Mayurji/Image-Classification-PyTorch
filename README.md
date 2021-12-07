@@ -453,10 +453,8 @@ Find all the basic and necessary details about the different architecture below.
     when those blocks are combined together to make a single block.
 
 <img src="https://towardsdatascience.com/review-resnext-1st-runner-up-of-ilsvrc-2016-image-classification-15d7f17b42ac" alt='RexNeXt Blog'>
-
-</p>  
-  <img src="Images/resnext.png" alt="ResNeXt">
-  
+<img src="Images/resnext.png" alt="ResNeXt">
+</p>   
 </details>
 <details>
   <summary>🔥 ViT</summary>

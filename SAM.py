@@ -5,6 +5,16 @@ From paper:
 
 - Sharpness-Aware Minimization for Efficiently Improving Generalization
 - ASAM: Adaptive Sharpness-Aware Minimization for Scale-Invariant Learning of Deep Neural Networks
+
+Idea behind SAM (Sharpness Aware Minimization):
+
+- Its motivation comes from the relation between the landscape of the loss function and generalization.
+- A regular model finds a parameter W with low training loss value but with SAM, it finds parameter
+whose neighborhood of parameters have uniformly low training loss value.
+- It improves model generalization by simultaneously minimizing loss value and loss sharpness.
+- It seeks parameters that lie in neighborhood having uniformly low loss value.
+- 
+
 """
 import torch
 
