@@ -1,7 +1,7 @@
 # Image Classification Using Deep Learning
 
-![GitHub stars](https://img.shields.io/github/stars/Mayurji/MLWithPytorch?style=social)
-![GitHub forks](https://img.shields.io/github/forks/Mayurji/MLWithPytorch?style=social)
+![GitHub stars](https://img.shields.io/github/stars/Mayurji/Image-Classification-PyTorch?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Mayurji/Image-Classification-PyTorch?style=social)
 
 <span class="badge-buymeacoffee">
 <a href="https://ko-fi.com/mayurjain" title="Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a>
