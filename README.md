@@ -1,5 +1,16 @@
 # Image Classification Using Deep Learning
 
+![GitHub stars](https://img.shields.io/github/stars/Mayurji/MLWithPytorch?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Mayurji/MLWithPytorch?style=social)
+
+<span class="badge-buymeacoffee">
+<a href="https://ko-fi.com/mayurjain" title="Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a>
+</span>
+<span class="badge-patreon">
+<a href="https://patreon.com/startingBrain" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a>
+</span>
+
+
 **Learning and Building Image Classification Models using PyTorch. Models, selected are based on number of citation of the paper with the help of [paperwithcode](https://paperswithcode.com/) along with unique idea deviating from typical architecture like using transformers for CNN.**
 
 <!-- ![Image Classification Using Deep Learning](Images/cnn.jpg) -->
