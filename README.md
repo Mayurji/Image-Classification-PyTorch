@@ -34,7 +34,7 @@ I've noticed that Google Colab has 12GB GPU while Kaggle has 16 GB GPU. So in wo
 | [AlexNet](https://papers.nips.cc/paper/2012/hash/c399862d3b9d6b76c8436e924a68c45b-Abstract.html")| 71.27 | 58.32M | 1.13GFlops | - | CyclicLR(79.56) |
 | [VGGNet](https://arxiv.org/abs/1409.1556)   | 75.93 | 128.81M | 7.63GFlops| - | - |
 | [Network In Network](https://arxiv.org/abs/1312.4400) | 71.03 | 2.02M | 0.833GFlops | - | - |
-| [ResNet](https://arxiv.org/abs/1512.03385)  | 83.39 | 11.18M | 1.82GFlops | - | CyclicLR(74.9) |
+| [ResNet](https://arxiv.org/abs/1512.03385)  | 74.9 | 11.18M | 1.82GFlops | - | CyclicLR(74.9) |
 | [DenseNet-Depth40](https://arxiv.org/abs/1608.06993)   | 68.25 | 0.18M | - | B_S = 8 | - |
 | [MobileNetV1](https://arxiv.org/abs/1704.04861)   | 81.72 | 3.22M | 0.582GFlops | - | - |
 | [MobileNetV2](https://arxiv.org/abs/1801.04381)   | 83.99 | 2.24M | 0.318GFlops | - | - |
